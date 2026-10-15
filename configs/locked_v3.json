@@ -1,0 +1,46 @@
+{
+ "selected": {
+  "th_on": 0.8,
+  "th_off": 0.5,
+  "margin": 0.5,
+  "t_trial": 2,
+  "bl": 256,
+  "verify": 4,
+  "slack": 0.6,
+  "rs_how": "coarse",
+  "rs_k": 3
+ },
+ "source": "rev_20261002/sel3_val.json, primary selection (PREREG sec. 4)",
+ "prereg_sha256": "76304a9da9669ea1dd308ec46730646a330fc7ae03cd877bf8bac3a8bd3892b6",
+ "val": {
+  "objective": -0.06708382166394046,
+  "per_scenario": {
+   "S9": {
+    "loss": 0.25750400965927245,
+    "regret": -0.22554884372609196,
+    "probes": 3.561111111111111,
+    "ref_probes": 3.7055555555555557,
+    "inv": 25.0,
+    "sweeps": 17
+   },
+   "S31": {
+    "loss": 0.07615226455109851,
+    "regret": 7.062720492534424e-05,
+    "probes": 2.264947245017585,
+    "ref_probes": 2.2930832356389215,
+    "inv": 4.572098475967175,
+    "sweeps": 6
+   },
+   "S32": {
+    "loss": 0.10495058889763766,
+    "regret": 0.024226751529345225,
+    "probes": 1.8597883597883598,
+    "ref_probes": 1.9576719576719577,
+    "inv": 1.0582010582010581,
+    "sweeps": 2
+   }
+  },
+  "mean_probes": 2.561948905305685,
+  "mean_inv": 10.210099844722743
+ }
+}

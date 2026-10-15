@@ -1,0 +1,9 @@
+{
+ "best_at_budget": "bayes(sv=1.0,eps=0.35,tau=1.0,k=5)",
+ "loss": 5.976208952372564,
+ "probes": 2.1805555555555554,
+ "budget": 2.64,
+ "uncon_best": "bayes(sv=1.6,eps=0.05,tau=1.0,k=13)",
+ "uncon_loss": 0.1224091081806913,
+ "uncon_probes": 10.341666666666667
+}

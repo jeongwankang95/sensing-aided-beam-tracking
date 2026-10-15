@@ -1,0 +1,9 @@
+
+=== dataset/scenario33 (18 test passes) tracker slack 0.8 ===
+policy                    mean    p/f model% >1dB >2dB >3dB     p95
+Causal persistence       3.068   0.00    0.0  84.2  68.8  52.6    5.61
+Feedback-only tracker    0.249   1.77    0.0   6.3   3.1   1.3    1.22
+Need x verify (ours)     0.186   2.12    1.5   3.6   2.2   1.6    0.73
+Always-on                2.421   0.12   97.3  74.6  57.7  38.2    4.93
+  + verification         1.959   3.04   97.3  69.1  47.6  26.1    4.15
+EXCEED_DONE

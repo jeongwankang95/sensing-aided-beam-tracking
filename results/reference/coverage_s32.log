@@ -1,0 +1,5 @@
+
+cache results/predictions/both_scenario32.npz
+  feedback-only  - controller  -0.015 dB  [-0.074, +0.010]
+  always-on      - controller  +1.388 dB  [+0.778, +2.175]
+COV_DONE

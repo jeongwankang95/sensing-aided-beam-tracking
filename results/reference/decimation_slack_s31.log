@@ -1,0 +1,7 @@
+
+[B-4] scenario31 comparator slack re-selected on scenario31 validation at each d (deployed d=1 slack 0.6)
+ d | val-best fb(reselected) | fb(deployed)  | controller    | VoI-res VoI-dep
+ 1 | 0.6       0.109 @  2.38 |  0.109 @  2.38 |  0.118 @  2.38 |  -0.008  -0.008
+ 2 | 0.6       0.129 @  3.12 |  0.129 @  3.12 |  0.136 @  2.41 |  -0.007  -0.007
+ 4 | 2.0       0.876 @  2.67 |  0.599 @  4.04 |  0.276 @  3.01 |  +0.600  +0.323
+REV7_DONE scenario31

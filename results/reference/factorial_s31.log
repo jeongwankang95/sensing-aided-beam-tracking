@@ -1,0 +1,16 @@
+
+######## scenario31: 11 test passes, factorial at the selected constants (slack 0.6), reference slack 0.6
+neither                    loss  0.10928  probes  2.270  model   0.0%  lock-loss passes 0
+sensor only                loss  0.11413  probes  2.184  model   4.8%  lock-loss passes 0
+re-sweep only              loss  0.11523  probes  2.408  model   0.0%  lock-loss passes 0
+both (METHOD)              loss  0.11753  probes  2.298  model   6.8%  lock-loss passes 0
+plain tracker (ref slack)  loss  0.10928  probes  2.270  model   0.0%  lock-loss passes 0
+differences (first minus second; positive = second better):
+  sensor without re-sweep   (neither - sensor only)          -0.00485 [-0.02247, +0.01725]
+  sensor with re-sweep      (re-sweep only - both)           -0.00231 [-0.01566, +0.01920]
+  re-sweep without sensor   (neither - re-sweep only)        -0.00595 [-0.02056, +0.00306]
+  re-sweep with sensor      (sensor only - both)             -0.00341 [-0.01726, +0.00707]
+  sensor only vs re-sweep only (re-sweep only - sensor only) +0.00110 [-0.01877, +0.02697]
+  plain tracker - sensor only                                -0.00485 [-0.02247, +0.01725]
+  interaction (sensor value without - with re-sweep)         -0.00254 [-0.01159, +0.00474]
+FACT3_DONE scenario31

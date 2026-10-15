@@ -1,0 +1,49 @@
+
+################ scenario32  (3 test passes, fb slack 0.8, cache both_scenario32.npz)
+SELF-CHECK Table II  feedback-only 0.055 dB @ 1.68 | controller 0.071 dB @ 2.04, model 1.0% (trial 1.0% + sense 0.0%)
+
+[1-1] gate x blacklist grid (verification, margin, K unchanged)
+gate                     bl |    loss   p/ep  model%  trial%  sense%    p95
+deployed 0.6/0.5          0 |   0.286   1.79    30.1    18.6    11.5   1.63
+deployed 0.6/0.5          8 |   0.082   1.90     3.7     3.7     0.0   0.41
+deployed 0.6/0.5         16 |   0.294   1.92     2.5     2.5     0.0   1.65
+deployed 0.6/0.5         32 |   0.078   1.89     4.7     1.7     2.9   0.39
+deployed 0.6/0.5         64 |   0.069   2.07     1.7     1.7     0.0   0.37
+deployed 0.6/0.5        128 |   0.070   2.08     1.5     1.5     0.0   0.38
+deployed 0.6/0.5        256 |   0.071   2.04     1.0     1.0     0.0   0.38
+open, thoff kept          0 |   1.078   2.48    97.8    70.1    27.7   3.68
+open, thoff kept          8 |   0.083   2.42    21.8    21.8     0.0   0.40
+open, thoff kept         16 |   0.085   2.27    14.1    12.0     2.1   0.41
+open, thoff kept         32 |   0.106   1.94    11.2     6.2     4.9   0.50
+open, thoff kept         64 |   0.082   2.02     3.2     3.2     0.0   0.41
+open, thoff kept        128 |   0.075   2.03     1.7     1.7     0.0   0.39
+open, thoff kept        256 |   0.069   2.06     1.0     1.0     0.0   0.38
+open, thoff off           0 |   1.298   1.18    97.8    11.9    85.9   3.98
+open, thoff off           8 |   0.083   2.42    21.8    21.8     0.0   0.40
+open, thoff off          16 |   0.646   1.69    55.9     6.1    49.8   2.81
+open, thoff off          32 |   0.656   1.41    61.3     2.8    58.5   2.77
+open, thoff off          64 |   0.082   2.02     3.2     3.2     0.0   0.41
+open, thoff off         128 |   0.075   2.03     1.7     1.7     0.0   0.39
+open, thoff off         256 |   0.069   2.06     1.0     1.0     0.0   0.38
+
+[1-1] trial log (deployed): trials 8 (won 0) over 3 passes; passes with >=1 trial 3; trials/pass max 4
+      first trial opened at the first covered frame in 3 of 3 passes with a trial; first covered frame median 7.0
+      opening frame index: median 8, IQR [7, 93]; sigma at opening: median 1.42, min 0.81
+      SENSE exits: 0 via theta_off, 0 via verified collapse (blacklist)
+      mean scored frames per pass 272.0; blacklist B=256 epochs
+
+[1-3a] decision-interval rows: feedback-only at deployed slack 0.8 and at slack 1.0, controller (SELF-CHECK vs Table IV)
+ d |  fb slack dep |  fb slack 1.0 | controller (loss p inv%) |  VoI dep  VoI 1.0
+ 1 |  0.055 @ 1.68 |  0.073 @ 1.57 |  0.071 @ 2.04   1.0% |   -0.015   +0.003
+ 2 |  0.090 @ 2.11 |  0.110 @ 1.93 |  0.061 @ 2.41   1.5% |   +0.029   +0.048
+ 4 |  0.243 @ 2.86 |  0.202 @ 2.66 |  0.733 @ 3.08   4.5% |   -0.490   -0.531
+      slack sweep d=1: 0.4:0.043@2.60  0.6:0.048@1.97  0.8:0.055@1.68  1.0:0.073@1.57  1.2:0.090@1.26  1.5:0.112@1.06
+
+[1-3b] always-on vision with feedback fallback, verification every K frames (SELF-CHECK: K=none/1/2 vs Tables II/III)
+      K=None loss 1.459 @ 0.10 probes, model 97.8%
+      K=1    loss 1.149 @ 3.03 probes, model 97.8%
+      K=2    loss 1.306 @ 1.56 probes, model 97.8%
+      K=4    loss 1.379 @ 0.83 probes, model 97.8%
+      K=8    loss 1.422 @ 0.46 probes, model 97.8%
+      K=16   loss 1.444 @ 0.28 probes, model 97.8%
+REV_DONE scenario32

@@ -1,0 +1,31 @@
+
+######## scenario31 d=1 (11 test passes; held = every native frame, dec = decision frames only)
+policy                       held dB    dec dB   prb/frm   prb/dec call%frm call%dec
+plain                         0.1093    0.1093     2.270     2.270      0.0      0.0
+controller                    0.1175    0.1175     2.298     2.298      6.8      6.8
+sensor off                    0.1152    0.1152     2.408     2.408      0.0      0.0
+paired [plain] - [controller]: held -0.008 [-0.026, +0.015] | dec -0.008 [-0.026, +0.015]
+paired [sensor off] - [controller]: held -0.002 [-0.016, +0.019] | dec -0.002 [-0.016, +0.019]
+record check (decsk_scenario31.json opt_d1): off 0.11523 vs 0.11523 | on 0.11753 vs 0.11753 | V -0.00231 vs -0.00231
+
+######## scenario31 d=2 (11 test passes; held = every native frame, dec = decision frames only)
+policy                       held dB    dec dB   prb/frm   prb/dec call%frm call%dec
+plain                         0.1708    0.1292     1.431     2.877      0.0      0.0
+controller                    0.1692    0.1359     1.227     2.467     11.6     23.4
+sensor off                    0.1646    0.1193     1.571     3.158      0.0      0.0
+paired [plain] - [controller]: held +0.002 [-0.033, +0.029] | dec -0.007 [-0.049, +0.028]
+paired [sensor off] - [controller]: held -0.005 [-0.034, +0.018] | dec -0.017 [-0.050, +0.004]
+record check (decsk_scenario31.json opt_d2): off 0.11930 vs 0.11930 | on 0.13591 vs 0.13591 | V -0.01661 vs -0.01661
+
+######## scenario31 d=4 (11 test passes; held = every native frame, dec = decision frames only)
+policy                       held dB    dec dB   prb/frm   prb/dec call%frm call%dec
+plain                         0.7012    0.5988     0.958     3.875      0.0      0.0
+controller                    0.3887    0.2761     0.774     3.128      8.4     34.0
+sensor off                    0.6256    0.4731     1.082     4.375      0.0      0.0
+plain, re-selected slack      0.9702    0.8757     0.628     2.538      0.0      0.0
+paired [plain] - [controller]: held +0.312 [-0.029, +0.833] | dec +0.323 [-0.041, +0.874]
+paired [sensor off] - [controller]: held +0.237 [+0.008, +0.603] | dec +0.197 [-0.031, +0.560]
+paired [plain, re-selected slack] - [controller]: held +0.581 [+0.155, +1.184] | dec +0.600 [+0.148, +1.257]
+record check (decsk_scenario31.json opt_d4): off 0.47308 vs 0.47308 | on 0.27609 vs 0.27609 | V +0.19699 vs +0.19699
+record check (perd_slack d=4, slack 2.0): 0.87572 vs 0.87572
+HOLD_DONE scenario31

@@ -1,0 +1,10 @@
+
+=== dataset/scenario31 (11 test passes) slack 0.6 ===
+policy                    loss    p/f  model%     p95
+Feedback-only tracker    0.109   2.27     0.0    0.42
+Need x verify (ours)     0.118   2.30     6.8    0.46
+Need only (A: no trial)   0.297   1.57    40.4    1.53
+Need only (B: no check)   0.452   0.39    95.0    1.77
+  Need only (A: no trial) minus Need x verify (ours)   +0.180 [-0.017, +0.378]
+  Need only (B: no check) minus Need x verify (ours)   +0.334 [+0.120, +0.512]
+NEEDONLY_DONE

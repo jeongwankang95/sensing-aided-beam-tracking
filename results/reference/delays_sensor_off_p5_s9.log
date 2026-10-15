@@ -1,0 +1,35 @@
+
+################ scenario9  commit-lag / delay conditions (fb slack 0.4)
+-- none (SELF-CHECK Table II)
+   skeleton (no sensor) minus ctl +0.03503 [-0.05907, +0.15385]
+   persistence 6.352@0.00 | feedback-only 1.045@3.64 | controller 0.225@3.25 | skeleton 0.260@4.12 | always-on 0.479@0.55 | always-on+verify1 0.295@3.11 | always-on+verify2 0.397@1.81 | always-on+verify8 0.458@0.84
+   VoI fb-ctl +0.81998 [+0.29917, +1.39607]   ao+v1 minus ctl +0.07033 [-0.03271, +0.18967]   ao+v2 minus ctl +0.17213 [+0.06625, +0.29645]   ctl model 33.0%
+-- sensor delay 1 (SELF-CHECK 0.820 on S9)
+   skeleton (no sensor) minus ctl -0.25081 [-0.37690, -0.12739]
+   persistence 6.352@0.00 | feedback-only 1.045@3.64 | controller 0.511@3.41 | skeleton 0.260@4.12 | always-on 1.056@0.64 | always-on+verify1 0.666@3.13 | always-on+verify2 0.860@1.87 | always-on+verify8 1.022@0.92
+   VoI fb-ctl +0.53414 [+0.00110, +1.11936]   ao+v1 minus ctl +0.15507 [-0.00346, +0.32112]   ao+v2 minus ctl +0.34960 [+0.18352, +0.52204]   ctl model 32.2%
+-- sensor delay 2
+   skeleton (no sensor) minus ctl -0.42048 [-0.70484, -0.17475]
+   persistence 6.352@0.00 | feedback-only 1.045@3.64 | controller 0.680@3.91 | skeleton 0.260@4.12 | always-on 2.840@0.73 | always-on+verify1 1.872@3.14 | always-on+verify2 2.346@1.92 | always-on+verify8 2.735@1.00
+   VoI fb-ctl +0.36447 [-0.16829, +0.93773]   ao+v1 minus ctl +1.19159 [+0.86728, +1.50910]   ao+v2 minus ctl +1.66569 [+1.33579, +1.99234]   ctl model 16.8%
+-- link delay 1 (SELF-CHECK 1.086/1.904 on S9)
+   skeleton (no sensor) minus ctl +0.57201 [+0.31296, +0.93295]
+   persistence 6.352@0.00 | feedback-only 1.904@3.59 | controller 0.743@3.26 | skeleton 1.315@4.11 | always-on 0.534@0.52 | always-on+verify1 0.622@3.08 | always-on+verify2 0.592@1.78 | always-on+verify8 0.541@0.81
+   VoI fb-ctl +1.16130 [+0.68066, +1.69059]   ao+v1 minus ctl -0.12054 [-0.23835, -0.00495]   ao+v2 minus ctl -0.15069 [-0.27020, -0.03342]   ctl model 37.3%
+-- JOINT sensor 1 + link 1
+   skeleton (no sensor) minus ctl +0.26946 [+0.01034, +0.63404]
+   persistence 6.352@0.00 | feedback-only 1.904@3.59 | controller 1.045@3.18 | skeleton 1.315@4.11 | always-on 1.139@0.61 | always-on+verify1 1.173@3.09 | always-on+verify2 1.165@1.83 | always-on+verify8 1.148@0.89
+   VoI fb-ctl +0.85874 [+0.37540, +1.39513]   ao+v1 minus ctl +0.12730 [+0.01120, +0.25201]   ao+v2 minus ctl +0.12008 [-0.00420, +0.25221]   ctl model 37.0%
+-- COMMIT LAG 1 (all commitments)
+   skeleton (no sensor) minus ctl +0.12947 [-0.00787, +0.29541]
+   persistence 6.352@0.00 | feedback-only 1.993@3.64 | controller 1.053@3.25 | skeleton 1.183@4.12 | always-on 1.137@0.55 | always-on+verify1 1.170@3.11 | always-on+verify2 1.163@1.81 | always-on+verify8 1.146@0.84
+   VoI fb-ctl +0.94018 [+0.40594, +1.52855]   ao+v1 minus ctl +0.11712 [-0.00529, +0.24600]   ao+v2 minus ctl +0.10990 [-0.02561, +0.25133]   ctl model 33.0%
+-- PROBE LAG (probe results usable next epoch)
+   skeleton (no sensor) minus ctl +0.17188 [+0.01774, +0.34817]
+   persistence 6.352@0.00 | feedback-only 1.649@3.64 | controller 0.693@3.25 | skeleton 0.865@4.12 | always-on 0.522@0.55 | always-on+verify1 0.522@3.11 | always-on+verify2 0.522@1.81 | always-on+verify8 0.522@0.84
+   VoI fb-ctl +0.95642 [+0.40941, +1.55517]   ao+v1 minus ctl -0.17077 [-0.29099, -0.04102]   ao+v2 minus ctl -0.17077 [-0.29099, -0.04102]   ctl model 33.0%
+-- PROBE LAG + sensor delay 1
+   skeleton (no sensor) minus ctl -0.20122 [-0.34977, -0.05283]
+   persistence 6.352@0.00 | feedback-only 1.649@3.64 | controller 1.066@3.41 | skeleton 0.865@4.12 | always-on 1.113@0.64 | always-on+verify1 1.113@3.13 | always-on+verify2 1.113@1.87 | always-on+verify8 1.113@0.92
+   VoI fb-ctl +0.58332 [+0.03778, +1.17968]   ao+v1 minus ctl +0.04703 [-0.11200, +0.20445]   ao+v2 minus ctl +0.04703 [-0.11200, +0.20445]   ctl model 32.2%
+REV6_DONE scenario9

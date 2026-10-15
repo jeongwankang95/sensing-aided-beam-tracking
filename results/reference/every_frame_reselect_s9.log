@@ -1,0 +1,32 @@
+scenario9: 17 validation passes from dataset/scenario9
+
+######## scenario9 d=1 (every-frame scoring; validation selection on every-frame losses)
+controller: 0.2248 dB, 3.247 probes/decision
+plain, native slack                          0.4                                test 1.0448 dB @ 3.64/dec | controller gain +0.820 [+0.299, +1.396]
+plain, slack re-selected on decision frames  0.4                                test 1.0448 dB @ 3.64/dec | controller gain +0.820 [+0.299, +1.396]
+plain, slack re-selected on every frame      0.4                                test 1.0448 dB @ 3.64/dec | controller gain +0.820 [+0.299, +1.396]
+re-sweep, selected on decision frames        {"slack": 0.4, "how": "full", "k": 3} test 0.1381 dB @ 5.40/dec | controller gain -0.087 [-0.138, -0.040]
+re-sweep, selected on every frame            {"slack": 0.4, "how": "full", "k": 3} test 0.1381 dB @ 5.40/dec | controller gain -0.087 [-0.138, -0.040]
+re-sweep <=4, selected on decision frames    {"slack": 1.0, "how": "coarse", "k": 5} test 0.3699 dB @ 3.78/dec | controller gain +0.145 [+0.035, +0.270]
+re-sweep <=4, selected on every frame        {"slack": 1.0, "how": "coarse", "k": 5} test 0.3699 dB @ 3.78/dec | controller gain +0.145 [+0.035, +0.270]
+
+######## scenario9 d=2 (every-frame scoring; validation selection on every-frame losses)
+controller: 0.6815 dB, 3.117 probes/decision
+plain, native slack                          0.4                                test 2.5606 dB @ 4.88/dec | controller gain +1.879 [+1.233, +2.562]
+plain, slack re-selected on decision frames  1.2                                test 3.0175 dB @ 4.50/dec | controller gain +2.336 [+1.591, +3.145]
+plain, slack re-selected on every frame      0.6                                test 2.5622 dB @ 4.87/dec | controller gain +1.881 [+1.236, +2.563]
+re-sweep, selected on decision frames        {"slack": 0.4, "how": "full", "k": 2} test 1.8338 dB @ 8.06/dec | controller gain +1.152 [+0.595, +1.797]  vs d-spaced controller +0.003 [-0.460, +0.532]
+re-sweep, selected on every frame            {"slack": 0.6, "how": "coarse", "k": 2} test 1.8618 dB @ 5.85/dec | controller gain +1.180 [+0.629, +1.817]  vs d-spaced controller +0.031 [-0.428, +0.554]
+re-sweep <=4, selected on decision frames    {"slack": 3.0, "how": "coarse", "k": 20} test 5.1904 dB @ 4.02/dec | controller gain +4.509 [+3.878, +5.106]  vs d-spaced controller +3.359 [+2.812, +3.867]
+re-sweep <=4, selected on every frame        {"slack": 2.0, "how": "coarse", "k": 20} test 4.6607 dB @ 4.10/dec | controller gain +3.979 [+3.295, +4.655]  vs d-spaced controller +2.830 [+2.147, +3.491]
+
+######## scenario9 d=4 (every-frame scoring; validation selection on every-frame losses)
+controller: 2.3170 dB, 4.328 probes/decision
+plain, native slack                          0.4                                test 5.9751 dB @ 5.22/dec | controller gain +3.658 [+3.335, +3.979]
+plain, slack re-selected on decision frames  0.6                                test 5.9751 dB @ 5.22/dec | controller gain +3.658 [+3.335, +3.979]
+plain, slack re-selected on every frame      0.6                                test 5.9751 dB @ 5.22/dec | controller gain +3.658 [+3.335, +3.979]
+re-sweep, selected on decision frames        {"slack": 0.4, "how": "full", "k": 7} test 4.9351 dB @ 11.55/dec | controller gain +2.618 [+2.405, +2.828]  vs d-spaced controller -0.148 [-0.335, +0.030]
+re-sweep, selected on every frame            {"slack": 0.4, "how": "full", "k": 7} test 4.9351 dB @ 11.55/dec | controller gain +2.618 [+2.405, +2.828]  vs d-spaced controller -0.148 [-0.335, +0.030]
+re-sweep <=4, selected on decision frames    {"slack": 1.5, "how": "full", "k": 15} test 6.2940 dB @ 3.80/dec | controller gain +3.977 [+3.656, +4.311]  vs d-spaced controller +1.211 [+1.043, +1.387]
+re-sweep <=4, selected on every frame        {"slack": 1.5, "how": "full", "k": 15} test 6.2940 dB @ 3.80/dec | controller gain +3.977 [+3.656, +4.311]  vs d-spaced controller +1.211 [+1.043, +1.387]
+HOLDSEL_DONE scenario9

@@ -1,0 +1,12 @@
+
+=== dataset/scenario9   Sec. VI-D, 28 passes, R=20 realizations, B=100000 ===
+  no noise               feedback  0.260  controller  0.225  value +0.035 [-0.059, +0.154]
+  sigma_m = 0.5 dB       feedback  0.756  controller  0.427  value +0.330 [+0.173, +0.518]
+  sigma_m = 1.0 dB       feedback  1.515  controller  0.605  value +0.909 [+0.655, +1.193]
+  sigma_m = 2.0 dB       feedback  2.868  controller  1.071  value +1.797 [+1.472, +2.133]
+
+  sensor lag 1 (none)    feedback  0.260  controller  0.511  value -0.251 [-0.377, -0.127]
+  sensor lag 2 (none)    feedback  0.260  controller  0.680  value -0.420 [-0.705, -0.175]
+  sensor lag 1 (clamp)   feedback  0.260  controller  0.511  value -0.251 [-0.377, -0.127]
+  sensor lag 2 (clamp)   feedback  0.260  controller  0.680  value -0.420 [-0.705, -0.175]
+VID_DONE (comparator = own tracker + re-sweep, no sensor)

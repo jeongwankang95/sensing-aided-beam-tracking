@@ -1,0 +1,5 @@
+
+cache results/predictions/both_scenario9.npz
+  feedback-only  - controller  +0.820 dB  [+0.294, +1.370]
+  always-on      - controller  +0.254 dB  [+0.139, +0.388]
+COV_DONE

@@ -1,0 +1,22 @@
+
+=== dataset/scenario9 (28 test passes) ===
+selected 0.225 dB @ 3.25 probes (33.0% model)   feedback-only 1.045 dB @ 3.64
+  th_on=0.6        0.210  -0.015  probes 3.27  model  33.1%
+  th_on=1.0        0.276  +0.051  probes 3.23  model  31.9%
+  th_off=0.3       0.225  +0.001  probes 3.22  model  35.4%
+  th_off=0.65      0.244  +0.020  probes 3.28  model  32.4%
+  margin=0.25      0.229  +0.005  probes 3.11  model  37.9%
+  margin=1.0       0.241  +0.017  probes 3.60  model  23.0%
+  t_trial=1        0.207  -0.018  probes 3.83  model  16.3%
+  t_trial=4        0.273  +0.048  probes 2.84  model  46.0%
+  bl=64            0.225  +0.000  probes 3.25  model  33.0%
+  bl=512           0.225  +0.000  probes 3.25  model  33.0%
+  verify=2         0.264  +0.039  probes 3.45  model  26.5%
+  verify=8         0.222  -0.002  probes 3.04  model  40.0%
+  slack=0.4        0.186  -0.039  probes 3.24  model  37.3%
+  slack=0.8        0.321  +0.096  probes 3.03  model  32.3%
+  rs_k=2           0.255  +0.030  probes 3.14  model  37.3%
+  rs_k=5           0.285  +0.060  probes 3.19  model  34.8%
+  rs_how=full      0.233  +0.009  probes 4.40  model  30.3%
+17 of 17 perturbations within 0.1 dB of the selected point; 4 better; loss range 0.186..0.321; probes range 2.84..4.40
+SWEEP3_DONE

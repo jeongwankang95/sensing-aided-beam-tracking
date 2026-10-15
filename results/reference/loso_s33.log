@@ -1,0 +1,6 @@
+
+=== scenario33: feedback-only 0.249 @ 1.77 | selected method 0.186 @ 2.12 (1.5%)
+  loso_without_S9    0.302 @ 1.94 (4.7%) | value vs fb -0.053 [-0.267, +0.150] | method minus this -0.116 [-0.325, +0.028]
+  loso_without_S31   0.245 @ 2.12 (4.6%) | value vs fb +0.004 [-0.212, +0.229] | method minus this -0.058 [-0.255, +0.101]
+  loso_without_S32   0.164 @ 2.15 (1.1%) | value vs fb +0.085 [-0.009, +0.252] | method minus this +0.022 [-0.006, +0.061]
+LOSO3_DONE scenario33

@@ -1,0 +1,15 @@
+
+################ scenario33  follow-up variants (fb-only 0.249 dB)
+variant                            |    loss   p/ep  model%    p95 | trials  won wrong  red | first-cov open-med
+deployed (s0=1.5, bl 64/64)        |   0.187   2.12     1.6   0.73 |     23    2    18    3 |   13/18          7   VoI +0.062
+s0=0.5 (gate needs measured innov.) |   0.187   2.09     1.6   0.73 |     23    2    18    3 |   13/18          7   VoI +0.062
+s0=0.3                             |   0.187   2.08     1.6   0.73 |     23    2    18    3 |   13/18          7   VoI +0.061
+wrong 64 / redundant 0             |   0.211   2.11     3.5   0.87 |     36    5    19   12 |   13/18         11   VoI +0.038
+wrong 64 / redundant 8             |   0.240   2.13     2.1   1.29 |     27    3    20    4 |   13/18          8   VoI +0.009
+wrong 64 / redundant 16            |   0.240   2.12     2.6   1.29 |     27    4    19    4 |   13/18          8   VoI +0.009
+s0=0.5 + wrong 64 / redundant 8    |   0.241   2.09     2.1   1.29 |     27    3    20    4 |   13/18          8   VoI +0.008
+s0=0.5 + wrong 64 / redundant 16   |   0.240   2.09     2.6   1.29 |     27    4    19    4 |   13/18          8   VoI +0.008
+   deployed minus [wrong 64 / redundant 8]: -0.053 dB  95% [-0.179, +0.000]
+   deployed minus [s0=0.5 (gate needs measured innov.)]: -0.001 dB  95% [-0.001, -0.000]
+   deployed minus [s0=0.5 + wrong 64 / redundant 8]: -0.054 dB  95% [-0.180, -0.000]
+REV2_DONE scenario33

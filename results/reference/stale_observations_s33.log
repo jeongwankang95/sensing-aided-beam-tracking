@@ -1,0 +1,14 @@
+
+=== dataset/scenario33 (18 test passes) probe/report delay, slack 0.8 ===
+policy                      d=0      d=1      d=2
+Causal persistence     3.068/0.00 3.068/0.00 3.068/0.00
+Feedback-only tracker  0.249/1.77 0.325/1.76 0.294/1.80
+Need x verify (ours)   0.186/2.12 0.384/2.07 0.394/2.12
+Always-on              2.421/0.12 2.424/0.12 2.426/0.09
+  + verification       1.959/3.04 2.102/3.04 2.154/3.01
+
+value of sensing (feedback - controller), paired pass bootstrap:
+  d=0  +0.063 dB  [-0.045, +0.246]
+  d=1  -0.059 dB  [-0.159, +0.022]
+  d=2  -0.100 dB  [-0.234, -0.002]
+DELAY_DONE

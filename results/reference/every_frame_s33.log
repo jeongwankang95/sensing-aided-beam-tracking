@@ -1,0 +1,34 @@
+
+######## scenario33 d=1 (18 test passes; held = every native frame, dec = decision frames only)
+policy                       held dB    dec dB   prb/frm   prb/dec call%frm call%dec
+plain                         0.2490    0.2490     1.768     1.768      0.0      0.0
+controller                    0.1864    0.1864     2.122     2.122      1.5      1.5
+sensor off                    0.1631    0.1631     2.086     2.086      0.0      0.0
+paired [plain] - [controller]: held +0.063 [-0.045, +0.240] | dec +0.063 [-0.045, +0.240]
+paired [sensor off] - [controller]: held -0.023 [-0.059, +0.005] | dec -0.023 [-0.059, +0.005]
+record check (decsk_scenario33.json opt_d1): off 0.16308 vs 0.16308 | on 0.18645 vs 0.18645 | V -0.02337 vs -0.02337
+
+######## scenario33 d=2 (18 test passes; held = every native frame, dec = decision frames only)
+policy                       held dB    dec dB   prb/frm   prb/dec call%frm call%dec
+plain                         0.2258    0.1731     1.129     2.263      0.0      0.0
+controller                    0.2777    0.2184     1.334     2.673      2.1      4.1
+sensor off                    0.4002    0.3344     1.369     2.744      0.0      0.0
+plain, re-selected slack      0.3533    0.3219     0.875     1.753      0.0      0.0
+paired [plain] - [controller]: held -0.052 [-0.195, +0.071] | dec -0.045 [-0.183, +0.072]
+paired [sensor off] - [controller]: held +0.122 [-0.011, +0.362] | dec +0.116 [-0.011, +0.347]
+paired [plain, re-selected slack] - [controller]: held +0.076 [-0.014, +0.159] | dec +0.103 [+0.027, +0.176]
+record check (decsk_scenario33.json opt_d2): off 0.33440 vs 0.33440 | on 0.21839 vs 0.21839 | V +0.11600 vs +0.11600
+record check (perd_slack d=2, slack 2.0): 0.32188 vs 0.32188
+
+######## scenario33 d=4 (18 test passes; held = every native frame, dec = decision frames only)
+policy                       held dB    dec dB   prb/frm   prb/dec call%frm call%dec
+plain                         0.9424    0.8633     0.766     3.090      0.0      0.0
+controller                    0.9607    0.8805     0.812     3.275      3.4     13.8
+sensor off                    0.3802    0.2830     0.856     3.450      0.0      0.0
+plain, re-selected slack      0.9168    0.8114     0.873     3.521      0.0      0.0
+paired [plain] - [controller]: held -0.018 [-0.149, +0.119] | dec -0.017 [-0.165, +0.130]
+paired [sensor off] - [controller]: held -0.580 [-1.028, -0.156] | dec -0.597 [-1.071, -0.154]
+paired [plain, re-selected slack] - [controller]: held -0.044 [-0.185, +0.106] | dec -0.069 [-0.232, +0.097]
+record check (decsk_scenario33.json opt_d4): off 0.28300 vs 0.28300 | on 0.88045 vs 0.88045 | V -0.59745 vs -0.59745
+record check (perd_slack d=4, slack 0.4): 0.81140 vs 0.81140
+HOLD_DONE scenario33

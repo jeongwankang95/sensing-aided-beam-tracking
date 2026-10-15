@@ -1,0 +1,59 @@
+
+######## scenario9 d=1 (28 test passes; held = every native frame, dec = decision frames only)
+policy                       held dB    dec dB   prb/frm   prb/dec call%frm call%dec
+plain                         1.0448    1.0448     3.639     3.639      0.0      0.0
+controller                    0.2248    0.2248     3.247     3.247     33.0     33.0
+sensor off                    0.2598    0.2598     4.119     4.119      0.0      0.0
+re-sweep ref                  0.1381    0.1381     5.400     5.400      0.0      0.0
+re-sweep ref <=4              0.3699    0.3699     3.782     3.782      0.0      0.0
+paired [plain] - [controller]: held +0.820 [+0.299, +1.396] | dec +0.820 [+0.299, +1.396]
+paired [sensor off] - [controller]: held +0.035 [-0.059, +0.154] | dec +0.035 [-0.059, +0.154]
+paired [re-sweep ref] - [controller]: held -0.087 [-0.138, -0.040] | dec -0.087 [-0.138, -0.040]
+paired [re-sweep ref <=4] - [controller]: held +0.145 [+0.035, +0.270] | dec +0.145 [+0.035, +0.270]
+record check (decsk_scenario9.json opt_d1): off 0.25982 vs 0.25982 | on 0.22478 vs 0.22478 | V +0.03503 vs +0.03503
+record check (resweep_decim): plain 1.0448 vs 1.0448 | re-sweep ref 0.1381 vs 0.1381
+
+######## scenario9 d=2 (28 test passes; held = every native frame, dec = decision frames only)
+policy                       held dB    dec dB   prb/frm   prb/dec call%frm call%dec
+plain                         2.5606    2.0813     2.409     4.879      0.0      0.0
+controller                    0.6815    0.2845     1.540     3.117     30.9     62.6
+sensor off                    2.5972    2.0099     2.944     5.961      0.0      0.0
+re-sweep ref                  1.8338    1.2554     3.981     8.060      0.0      0.0
+re-sweep ref <=4              5.1904    4.9491     1.987     4.023      0.0      0.0
+plain, re-selected slack      3.0175    2.5255     2.222     4.500      0.0      0.0
+controller, d-spaced          1.8312    0.9659     1.999     4.048     23.6     47.7
+paired [plain] - [controller]: held +1.879 [+1.233, +2.562] | dec +1.797 [+1.126, +2.511]
+paired [sensor off] - [controller]: held +1.916 [+1.259, +2.643] | dec +1.725 [+1.015, +2.510]
+paired [re-sweep ref] - [controller]: held +1.152 [+0.595, +1.797] | dec +0.971 [+0.384, +1.647]
+paired [re-sweep ref <=4] - [controller]: held +4.509 [+3.878, +5.106] | dec +4.665 [+3.981, +5.312]
+paired [plain, re-selected slack] - [controller]: held +2.336 [+1.591, +3.145] | dec +2.241 [+1.434, +3.128]
+paired [plain] - [controller, d-spaced]: held +0.729 [+0.050, +1.438] | dec +1.115 [+0.415, +1.854]
+paired [sensor off] - [controller, d-spaced]: held +0.766 [+0.221, +1.368] | dec +1.044 [+0.433, +1.721]
+paired [re-sweep ref] - [controller, d-spaced]: held +0.003 [-0.460, +0.532] | dec +0.290 [-0.203, +0.857]
+record check (decsk_scenario9.json opt_d2): off 2.00991 vs 2.00991 | on 0.28445 vs 0.28445 | V +1.72546 vs +1.72546
+record check (pess_d2): on 0.96585 vs 0.96585
+record check (perd_slack d=2, slack 1.2): 2.52554 vs 2.52554
+record check (resweep_decim): plain 2.0813 vs 2.0813 | re-sweep ref 1.2554 vs 1.2554
+
+######## scenario9 d=4 (28 test passes; held = every native frame, dec = decision frames only)
+policy                       held dB    dec dB   prb/frm   prb/dec call%frm call%dec
+plain                         5.9751    5.5936     1.257     5.219      0.0      0.0
+controller                    2.3170    0.3158     1.042     4.328     16.9     70.1
+sensor off                    5.6567    5.0065     1.612     6.693      0.0      0.0
+re-sweep ref                  4.9351    4.0477     2.780    11.547      0.0      0.0
+re-sweep ref <=4              6.2940    6.1062     0.914     3.796      0.0      0.0
+plain, re-selected slack      5.9751    5.5936     1.257     5.219      0.0      0.0
+controller, d-spaced          5.0827    4.2059     1.424     5.916      8.3     34.7
+paired [plain] - [controller]: held +3.658 [+3.335, +3.979] | dec +5.278 [+4.840, +5.704]
+paired [sensor off] - [controller]: held +3.340 [+3.045, +3.636] | dec +4.691 [+4.351, +5.020]
+paired [re-sweep ref] - [controller]: held +2.618 [+2.405, +2.828] | dec +3.732 [+3.417, +4.044]
+paired [re-sweep ref <=4] - [controller]: held +3.977 [+3.656, +4.311] | dec +5.790 [+5.379, +6.228]
+paired [plain, re-selected slack] - [controller]: held +3.658 [+3.335, +3.979] | dec +5.278 [+4.840, +5.704]
+paired [plain] - [controller, d-spaced]: held +0.892 [+0.704, +1.056] | dec +1.388 [+1.058, +1.678]
+paired [sensor off] - [controller, d-spaced]: held +0.574 [+0.412, +0.747] | dec +0.801 [+0.560, +1.061]
+paired [re-sweep ref] - [controller, d-spaced]: held -0.148 [-0.335, +0.030] | dec -0.158 [-0.462, +0.127]
+record check (decsk_scenario9.json opt_d4): off 5.00646 vs 5.00646 | on 0.31584 vs 0.31584 | V +4.69062 vs +4.69062
+record check (pess_d4): on 4.20593 vs 4.20593
+record check (perd_slack d=4, slack 0.6): 5.59363 vs 5.59363
+record check (resweep_decim): plain 5.5936 vs 5.5936 | re-sweep ref 4.0477 vs 4.0477
+HOLD_DONE scenario9

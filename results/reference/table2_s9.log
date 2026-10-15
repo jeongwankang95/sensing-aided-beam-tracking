@@ -1,0 +1,35 @@
+
+######## scenario9: 28 test passes, reference slack 0.4; LLR<=4 {'X': 3, 'N': 2, 'how': 'coarse', 'ref': 'sweep'}; LLR same {'X': 5, 'N': 3, 'how': 'full', 'ref': 'sweep'}; RS free {'slack': 0.4, 'how': 'full', 'k': 3}; RS same {'slack': 1.5, 'how': 'coarse', 'k': 5}
+policy                                  loss probes model%    p95  >1dB%  >2dB%  >3dB%  LL
+causal persistence                     6.352   0.00    0.0  11.87   91.2   85.0   78.5  28
+feedback-only tracker                  1.045   3.64    0.0   5.53   24.6   19.6   16.7   7
+plain tracker slack 0.6                1.209   3.43    0.0   5.76   28.6   22.5   18.3   7
+plain tracker slack 0.8                1.442   3.22    0.0   6.49   32.1   25.0   20.6   9
+plain tracker slack 1.0                1.620   3.07    0.0   6.85   34.0   25.9   22.8   9
+plain tracker slack 1.5                1.564   2.64    0.0   7.13   35.3   24.6   19.0   7
+plain tracker slack 2.0                2.272   2.60    0.0   8.56   46.3   35.2   30.1  11
+own tracker + re-sweep, no sensor      0.260   4.12    0.0   1.40    7.5    3.5    1.5   0
+LLR, <=4 probes (09-29)                0.824   3.83    0.0   5.18   19.5   15.0   12.6   5
+LLR, same criterion                    0.913   3.74    0.0   5.30   21.9   17.0   14.2   6
+re-sweep, any budget (09-30)           0.138   5.40    0.0   0.87    3.6    1.1    0.4   0
+re-sweep, same criterion               0.632   3.31    0.0   3.08   18.0    8.7    5.3   1
+re-sweep, <=4 probes (09-30)           0.370   3.78    0.0   1.72    9.8    4.1    2.7   0
+METHOD                                 0.225   3.25   33.0   1.14    5.7    1.8    0.9   0
+unverified invocation                  0.360   1.34   84.7   1.71   10.7    3.8    1.7   0
+always-on                              0.479   0.55   85.2   2.37   13.6    6.2    3.7   0
+always-on + verification               0.295   3.11   85.2   1.55    7.6    4.0    2.9   0
+value = reference minus METHOD (positive: METHOD better); 10^5 paired pass bootstrap, seed 42
+  causal persistence                   +6.127 [+5.782, +6.485]   pass range +4.178..+8.464
+  feedback-only tracker                +0.820 [+0.299, +1.396]   pass range -0.483..+3.633
+  own tracker + re-sweep, no sensor    +0.035 [-0.059, +0.154]   pass range -0.476..+1.063
+  LLR, <=4 probes (09-29)              +0.599 [+0.149, +1.124]   pass range -0.483..+3.633
+  LLR, same criterion                  +0.689 [+0.215, +1.227]   pass range -0.483..+3.633
+  re-sweep, any budget (09-30)         -0.087 [-0.138, -0.040]   pass range -0.483..+0.160
+  re-sweep, same criterion             +0.408 [+0.237, +0.633]   pass range -0.086..+2.990
+  re-sweep, <=4 probes (09-30)         +0.145 [+0.035, +0.270]   pass range -0.503..+1.343
+  unverified invocation                +0.135 [+0.056, +0.229]   pass range -0.253..+1.105
+  always-on                            +0.254 [+0.141, +0.387]   pass range -0.244..+1.550
+  always-on + verification             +0.070 [-0.033, +0.190]   pass range -0.411..+1.202
+per-pass value (fb - METHOD), sorted: -0.48 -0.38 -0.31 -0.13 -0.13 -0.08 -0.08 -0.07 -0.07 -0.06 -0.05 -0.04 -0.03 -0.01 -0.01 -0.00 0.04 0.11 0.18 0.24 0.99 2.73 2.88 2.89 3.31 3.49 3.61 3.63
+  frame-weighted mean +0.820, unweighted mean +0.792, median -0.009, passes > 1 dB: 7, positive: 12 of 28
+T2_DONE scenario9

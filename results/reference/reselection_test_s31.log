@@ -1,0 +1,29 @@
+
+######## scenario31: 11 test passes; reference slack 0.6; feedback selections from S31
+  primary: {'th_on': 0.8, 'th_off': 0.5, 'margin': 0.5, 't_trial': 2, 'bl': 256, 'verify': 4, 'slack': 0.6} ['coarse', 3]
+  re-sweep same criterion: {'slack': 0.8, 'how': 'coarse', 'k': 5}  LLR same criterion: {'X': 6, 'N': 2, 'how': 'full', 'ref': 'sweep'}  re-sweep any budget: {'slack': 0.4, 'how': 'coarse', 'k': 2}
+TEST policy                                 loss dB  probes  model% sweeps  lockloss
+reference tracker                             0.109    2.27     0.0      0         0
+re-sweep tracker, same criterion              0.086    2.24     0.0     11         0
+LLR tracker, same criterion                   0.109    2.27     0.0      0         0
+re-sweep tracker, any budget (09-30)          0.120    2.95     0.0     11         0
+controller, deployed 08-10                    0.132    1.91     4.2      0         0
+METHOD primary (= S1)                         0.118    2.30     6.8     11         0
+S2 loss-only                                  0.102    2.86     7.3     11         0
+S3 no re-sweep                                0.119    2.09     5.8      0         0
+post hoc: primary without its re-sweep        0.114    2.18     4.8      0         0
+value = first minus second (positive: second has lower loss); 10^5 paired pass bootstrap, seed 42
+  [reference tracker                     ] - [METHOD primary (= S1)         ] -0.008 [-0.026, +0.015]
+  [re-sweep tracker, same criterion      ] - [METHOD primary (= S1)         ] -0.032 [-0.130, +0.022]
+  [LLR tracker, same criterion           ] - [METHOD primary (= S1)         ] -0.008 [-0.026, +0.015]
+  [re-sweep tracker, any budget (09-30)  ] - [METHOD primary (= S1)         ] +0.003 [-0.052, +0.091]
+  [controller, deployed 08-10            ] - [METHOD primary (= S1)         ] +0.015 [-0.101, +0.129]
+  [S2 loss-only                          ] - [METHOD primary (= S1)         ] -0.015 [-0.064, +0.036]
+  [S3 no re-sweep                        ] - [METHOD primary (= S1)         ] +0.001 [-0.020, +0.022]
+  [post hoc: primary without its re-sweep] - [METHOD primary (= S1)         ] -0.003 [-0.017, +0.007]
+  [reference tracker                     ] - [S2 loss-only                  ] +0.007 [-0.050, +0.059]
+  [reference tracker                     ] - [S3 no re-sweep                ] -0.010 [-0.031, +0.015]
+  [re-sweep tracker, same criterion      ] - [S3 no re-sweep                ] -0.033 [-0.133, +0.021]
+  [re-sweep tracker, any budget (09-30)  ] - [S2 loss-only                  ] +0.018 [-0.077, +0.148]
+  [reference tracker                     ] - [controller, deployed 08-10    ] -0.023 [-0.147, +0.094]
+TEST3_DONE scenario31

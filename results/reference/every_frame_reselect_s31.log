@@ -1,0 +1,20 @@
+scenario31: 6 validation passes from dataset/scenario31
+
+######## scenario31 d=1 (every-frame scoring; validation selection on every-frame losses)
+controller: 0.1175 dB, 2.298 probes/decision
+plain, native slack                          0.6                                test 0.1093 dB @ 2.27/dec | controller gain -0.008 [-0.026, +0.015]
+plain, slack re-selected on decision frames  0.6                                test 0.1093 dB @ 2.27/dec | controller gain -0.008 [-0.026, +0.015]
+plain, slack re-selected on every frame      0.6                                test 0.1093 dB @ 2.27/dec | controller gain -0.008 [-0.026, +0.015]
+
+######## scenario31 d=2 (every-frame scoring; validation selection on every-frame losses)
+controller: 0.1692 dB, 2.467 probes/decision
+plain, native slack                          0.6                                test 0.1708 dB @ 2.88/dec | controller gain +0.002 [-0.033, +0.029]
+plain, slack re-selected on decision frames  0.6                                test 0.1708 dB @ 2.88/dec | controller gain +0.002 [-0.033, +0.029]
+plain, slack re-selected on every frame      0.6                                test 0.1708 dB @ 2.88/dec | controller gain +0.002 [-0.033, +0.029]
+
+######## scenario31 d=4 (every-frame scoring; validation selection on every-frame losses)
+controller: 0.3887 dB, 3.128 probes/decision
+plain, native slack                          0.6                                test 0.7012 dB @ 3.88/dec | controller gain +0.312 [-0.029, +0.833]
+plain, slack re-selected on decision frames  2.0                                test 0.9702 dB @ 2.54/dec | controller gain +0.581 [+0.155, +1.184]
+plain, slack re-selected on every frame      2.0                                test 0.9702 dB @ 2.54/dec | controller gain +0.581 [+0.155, +1.184]
+HOLDSEL_DONE scenario31

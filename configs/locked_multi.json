@@ -1,0 +1,30 @@
+{
+ "selected": {
+  "th_on": 0.6,
+  "th_off": 0.5,
+  "margin": 0.5,
+  "t_trial": 1,
+  "bl": 64,
+  "verify": 8,
+  "slack": 1.0
+ },
+ "mean_regret": -0.002794214936418659,
+ "per_scenario": {
+  "dataset/scenario9": -0.06218775085716083,
+  "dataset/scenario31": 0.01780219535172435,
+  "dataset/scenario32": 0.0360029106961805
+ },
+ "val_probes": 2.1849544144434727,
+ "val_invocation_pct": 10.451296492718923,
+ "feedback_reference": {
+  "dataset/scenario9": 0.4830528533853644,
+  "dataset/scenario31": 0.07608163734617317,
+  "dataset/scenario32": 0.08072383736829243
+ },
+ "n_configs": 2592,
+ "roots": [
+  "dataset/scenario9",
+  "dataset/scenario31",
+  "dataset/scenario32"
+ ]
+}

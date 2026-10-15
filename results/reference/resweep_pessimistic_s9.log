@@ -1,0 +1,23 @@
+
+######## scenario9 d=2 PESSIMISTIC input (results/predictions/dec2_s9.npz); re-sweep settings from resweep_decim: {'slack': 0.4, 'how': 'full', 'k': 2} / {'slack': 3.0, 'how': 'coarse', 'k': 20}
+reference tracker (native slack)                  2.081    4.88     0.0      0        14
+re-sweep tracker, val-selected                    1.255    8.06     0.0     28         8
+re-sweep tracker, val-selected (<=4 probes)       4.949    4.02     0.0     17        26
+controller (pessimistic input)                    0.966    4.05    47.7     28         2
+controller + same re-sweep (pessimistic)          0.797    6.96    47.3     56         2
+paired  [reference tracker (native slack)] - [controller (pessimistic input)]: +1.115 [+0.415, +1.854]
+paired  [re-sweep tracker, val-selected] - [controller (pessimistic input)]: +0.290 [-0.203, +0.857]
+paired  [re-sweep tracker, val-selected] - [controller + same re-sweep (pessimistic)]: +0.458 [-0.059, +1.053]
+paired  [re-sweep tracker, val-selected (<=4 probes)] - [controller (pessimistic input)]: +3.983 [+3.363, +4.557]
+
+######## scenario9 d=4 PESSIMISTIC input (results/predictions/dec4_s9.npz); re-sweep settings from resweep_decim: {'slack': 0.4, 'how': 'full', 'k': 7} / {'slack': 1.5, 'how': 'full', 'k': 15}
+reference tracker (native slack)                  5.594    5.22     0.0      0        28
+re-sweep tracker, val-selected                    4.048   11.55     0.0     28        28
+re-sweep tracker, val-selected (<=4 probes)       6.106    3.80     0.0      0        28
+controller (pessimistic input)                    4.206    5.92    34.7     28        28
+controller + same re-sweep (pessimistic)          3.723   12.29    25.5     56        28
+paired  [reference tracker (native slack)] - [controller (pessimistic input)]: +1.388 [+1.058, +1.678]
+paired  [re-sweep tracker, val-selected] - [controller (pessimistic input)]: -0.158 [-0.462, +0.127]
+paired  [re-sweep tracker, val-selected] - [controller + same re-sweep (pessimistic)]: +0.325 [+0.089, +0.553]
+paired  [re-sweep tracker, val-selected (<=4 probes)] - [controller (pessimistic input)]: +1.900 [+1.603, +2.200]
+RESWEEP_PESS_DONE

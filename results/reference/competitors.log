@@ -1,0 +1,100 @@
+#### reference and controller (validation / test)
+  val S9  fb 0.483  controller 0.258  regret -0.226
+  val S31 fb 0.076  controller 0.076  regret +0.000
+  val S32 fb 0.081  controller 0.105  regret +0.024
+  method mean val regret -0.0671 (sel3 primary: -0.0671)
+  test S9  fb 1.045 @ 3.64  controller 0.225 @ 3.25, model 33.0%
+  test S31 fb 0.109 @ 2.27  controller 0.118 @ 2.30, model 6.8%
+  test S32 fb 0.055 @ 1.68  controller 0.071 @ 2.04, model 1.0%
+  test S33 fb 0.249 @ 1.77  controller 0.186 @ 2.12, model 1.5%
+
+#### always-on + verification every K (select K by the controller criterion)
+   val K=None mean regret +0.502  (S9 0.447@0.52, S31 0.449@0.19, S32 1.249@0.15)
+   val K=16   mean regret +0.490  (S9 0.432@0.66, S31 0.443@0.36, S32 1.233@0.32)
+   val K=8    mean regret +0.477  (S9 0.416@0.82, S31 0.437@0.54, S32 1.217@0.51)
+   val K=4    mean regret +0.455  (S9 0.391@1.14, S31 0.427@0.91, S32 1.186@0.86)
+   val K=2    mean regret +0.409  (S9 0.335@1.79, S31 0.408@1.63, S32 1.124@1.59)
+   val K=1    mean regret +0.321  (S9 0.226@3.10, S31 0.368@3.06, S32 1.010@3.05)
+  always-on selected -> {'K': 2}
+     test S9  0.397 @ 1.81, model  85.2% | minus controller +0.172 [+0.066, +0.296] | value vs fb +0.648 [+0.201, +1.149]
+     test S31 0.413 @ 1.63, model  95.3% | minus controller +0.295 [+0.084, +0.473] | value vs fb -0.303 [-0.480, -0.094]
+     test S32 1.306 @ 1.56, model  97.8% | minus controller +1.236 [+0.725, +1.874] | value vs fb -1.251 [-1.864, -0.799]
+     test S33 2.187 @ 1.58, model  97.3% | minus controller +2.001 [+1.707, +2.267] | value vs fb -1.938 [-2.259, -1.591]
+
+#### confidence admission (one absolute threshold across scenarios)
+   conf pmax verify=None follow: best val mean regret 0.0 at th=9000000000.0 (th=inf means never admit)
+  conf pmax verify=None follow -> {'th': 9000000000.0, 'kind': 'pmax', 'per': None, 'follow': True}
+     test S9  1.045 @ 3.64, model  85.2% | minus controller +0.820 [+0.299, +1.396] | value vs fb +0.000 [+0.000, +0.000]
+     test S31 0.109 @ 2.27, model  95.3% | minus controller -0.008 [-0.026, +0.015] | value vs fb +0.000 [+0.000, +0.000]
+     test S32 0.055 @ 1.68, model  97.8% | minus controller -0.015 [-0.074, +0.010] | value vs fb +0.000 [+0.000, +0.000]
+     test S33 0.249 @ 1.77, model  97.3% | minus controller +0.063 [-0.045, +0.240] | value vs fb +0.000 [+0.000, +0.000]
+   conf pmax verify=None freeze: best val mean regret -0.0188 at th=0.5157 (th=inf means never admit)
+  conf pmax verify=None freeze -> {'th': 0.5157, 'kind': 'pmax', 'per': None, 'follow': False}
+     test S9  1.012 @ 3.46, model  85.2% | minus controller +0.787 [+0.295, +1.330] | value vs fb +0.033 [-0.011, +0.079]
+     test S31 0.083 @ 2.18, model  95.3% | minus controller -0.035 [-0.137, +0.029] | value vs fb +0.027 [-0.035, +0.128]
+     test S32 0.055 @ 1.68, model  97.8% | minus controller -0.015 [-0.074, +0.010] | value vs fb +0.000 [+0.000, +0.000]
+     test S33 0.249 @ 1.77, model  97.3% | minus controller +0.063 [-0.045, +0.240] | value vs fb +0.000 [+0.000, +0.000]
+   conf pmax verify=1 follow: best val mean regret 0.0 at th=9000000000.0 (th=inf means never admit)
+  conf pmax verify=1 follow -> {'th': 9000000000.0, 'kind': 'pmax', 'per': 1, 'follow': True}
+     test S9  1.045 @ 3.64, model  85.2% | minus controller +0.820 [+0.299, +1.396] | value vs fb +0.000 [+0.000, +0.000]
+     test S31 0.109 @ 2.27, model  95.3% | minus controller -0.008 [-0.026, +0.015] | value vs fb +0.000 [+0.000, +0.000]
+     test S32 0.055 @ 1.68, model  97.8% | minus controller -0.015 [-0.074, +0.010] | value vs fb +0.000 [+0.000, +0.000]
+     test S33 0.249 @ 1.77, model  97.3% | minus controller +0.063 [-0.045, +0.240] | value vs fb +0.000 [+0.000, +0.000]
+   conf pmax verify=1 freeze: best val mean regret 0.0 at th=9000000000.0 (th=inf means never admit)
+  conf pmax verify=1 freeze -> {'th': 9000000000.0, 'kind': 'pmax', 'per': 1, 'follow': False}
+     test S9  1.045 @ 3.64, model  85.2% | minus controller +0.820 [+0.299, +1.396] | value vs fb +0.000 [+0.000, +0.000]
+     test S31 0.109 @ 2.27, model  95.3% | minus controller -0.008 [-0.026, +0.015] | value vs fb +0.000 [+0.000, +0.000]
+     test S32 0.055 @ 1.68, model  97.8% | minus controller -0.015 [-0.074, +0.010] | value vs fb +0.000 [+0.000, +0.000]
+     test S33 0.249 @ 1.77, model  97.3% | minus controller +0.063 [-0.045, +0.240] | value vs fb +0.000 [+0.000, +0.000]
+   conf margin verify=None follow: best val mean regret 0.0 at th=9000000000.0 (th=inf means never admit)
+  conf margin verify=None follow -> {'th': 9000000000.0, 'kind': 'margin', 'per': None, 'follow': True}
+     test S9  1.045 @ 3.64, model  85.2% | minus controller +0.820 [+0.299, +1.396] | value vs fb +0.000 [+0.000, +0.000]
+     test S31 0.109 @ 2.27, model  95.3% | minus controller -0.008 [-0.026, +0.015] | value vs fb +0.000 [+0.000, +0.000]
+     test S32 0.055 @ 1.68, model  97.8% | minus controller -0.015 [-0.074, +0.010] | value vs fb +0.000 [+0.000, +0.000]
+     test S33 0.249 @ 1.77, model  97.3% | minus controller +0.063 [-0.045, +0.240] | value vs fb +0.000 [+0.000, +0.000]
+   conf margin verify=None freeze: best val mean regret -0.0166 at th=0.3008 (th=inf means never admit)
+  conf margin verify=None freeze -> {'th': 0.3008, 'kind': 'margin', 'per': None, 'follow': False}
+     test S9  0.975 @ 3.45, model  85.2% | minus controller +0.750 [+0.270, +1.277] | value vs fb +0.070 [+0.002, +0.148]
+     test S31 0.072 @ 2.29, model  95.3% | minus controller -0.045 [-0.142, +0.010] | value vs fb +0.037 [-0.017, +0.133]
+     test S32 0.055 @ 1.68, model  97.8% | minus controller -0.015 [-0.074, +0.010] | value vs fb +0.000 [+0.000, +0.000]
+     test S33 0.249 @ 1.77, model  97.3% | minus controller +0.063 [-0.045, +0.240] | value vs fb +0.000 [+0.000, +0.000]
+   conf margin verify=1 follow: best val mean regret 0.0 at th=9000000000.0 (th=inf means never admit)
+  conf margin verify=1 follow -> {'th': 9000000000.0, 'kind': 'margin', 'per': 1, 'follow': True}
+     test S9  1.045 @ 3.64, model  85.2% | minus controller +0.820 [+0.299, +1.396] | value vs fb +0.000 [+0.000, +0.000]
+     test S31 0.109 @ 2.27, model  95.3% | minus controller -0.008 [-0.026, +0.015] | value vs fb +0.000 [+0.000, +0.000]
+     test S32 0.055 @ 1.68, model  97.8% | minus controller -0.015 [-0.074, +0.010] | value vs fb +0.000 [+0.000, +0.000]
+     test S33 0.249 @ 1.77, model  97.3% | minus controller +0.063 [-0.045, +0.240] | value vs fb +0.000 [+0.000, +0.000]
+   conf margin verify=1 freeze: best val mean regret 0.0 at th=9000000000.0 (th=inf means never admit)
+  conf margin verify=1 freeze -> {'th': 9000000000.0, 'kind': 'margin', 'per': 1, 'follow': False}
+     test S9  1.045 @ 3.64, model  85.2% | minus controller +0.820 [+0.299, +1.396] | value vs fb +0.000 [+0.000, +0.000]
+     test S31 0.109 @ 2.27, model  95.3% | minus controller -0.008 [-0.026, +0.015] | value vs fb +0.000 [+0.000, +0.000]
+     test S32 0.055 @ 1.68, model  97.8% | minus controller -0.015 [-0.074, +0.010] | value vs fb +0.000 [+0.000, +0.000]
+     test S33 0.249 @ 1.77, model  97.3% | minus controller +0.063 [-0.045, +0.240] | value vs fb +0.000 [+0.000, +0.000]
+
+#### sensor-prior fusion (Bayes filter x sensor posterior)
+   SELF-CHECK S9-only budget 2.64 -> {'sigma_v': 1.6, 'eps': 0.2, 'tau': 1.0, 'kmax': 9, 'fuse': 'pow', 'a': 2.0} : test 0.288 @ 2.58 (paper 0.343 @ 2.28)
+   same criterion: best val mean regret 0.5894
+  fusion, 3-site selected (no probe cap) -> {'sigma_v': 1.6, 'eps': 0.05, 'tau': 1.0, 'kmax': 1, 'fuse': 'mix', 'a': 0.7}
+     test S9  0.613 @ 1.00, model  85.2% | minus controller +0.388 [+0.266, +0.531] | value vs fb +0.432 [-0.028, +0.943]
+     test S31 0.477 @ 1.00, model  95.3% | minus controller +0.360 [+0.159, +0.530] | value vs fb -0.368 [-0.536, -0.169]
+     test S32 1.316 @ 1.00, model  97.8% | minus controller +1.246 [+0.876, +1.443] | value vs fb -1.261 [-1.433, -0.950]
+     test S33 2.368 @ 1.00, model  97.3% | minus controller +2.182 [+1.813, +2.512] | value vs fb -2.119 [-2.506, -1.699]
+   cap 2.64 probes on every validation scenario: best val mean regret +0.589
+  fusion, 3-site selected, val probes <= 2.64 -> {'sigma_v': 1.6, 'eps': 0.05, 'tau': 1.0, 'kmax': 1, 'fuse': 'mix', 'a': 0.7}
+     test S9  0.613 @ 1.00, model  85.2% | minus controller +0.388 [+0.266, +0.531] | value vs fb +0.432 [-0.028, +0.943]
+     test S31 0.477 @ 1.00, model  95.3% | minus controller +0.360 [+0.159, +0.530] | value vs fb -0.368 [-0.536, -0.169]
+     test S32 1.316 @ 1.00, model  97.8% | minus controller +1.246 [+0.876, +1.443] | value vs fb -1.261 [-1.433, -0.950]
+     test S33 2.368 @ 1.00, model  97.3% | minus controller +2.182 [+1.813, +2.512] | value vs fb -2.119 [-2.506, -1.699]
+   cap 4.00 probes on every validation scenario: best val mean regret +0.150
+  fusion, 3-site selected, val probes <= 4.00 -> {'sigma_v': 1.6, 'eps': 0.05, 'tau': 3.0, 'kmax': 3, 'fuse': 'pow', 'a': 1.0}
+     test S9  0.293 @ 3.00, model  85.2% | minus controller +0.069 [-0.045, +0.193] | value vs fb +0.751 [+0.301, +1.249]
+     test S31 0.285 @ 3.00, model  95.3% | minus controller +0.167 [-0.039, +0.379] | value vs fb -0.175 [-0.385, +0.028]
+     test S32 2.356 @ 3.00, model  97.8% | minus controller +2.285 [+0.742, +3.751] | value vs fb -2.301 [-3.740, -0.816]
+     test S33 2.178 @ 3.00, model  97.3% | minus controller +1.992 [+1.393, +2.596] | value vs fb -1.929 [-2.586, -1.276]
+   cap 6.00 probes on every validation scenario: best val mean regret -0.146
+  fusion, 3-site selected, val probes <= 6.00 -> {'sigma_v': 1.0, 'eps': 0.05, 'tau': 3.0, 'kmax': 5, 'fuse': 'mix', 'a': 0.3}
+     test S9  0.169 @ 4.96, model  85.2% | minus controller -0.055 [-0.155, +0.061] | value vs fb +0.875 [+0.425, +1.380]
+     test S31 0.210 @ 4.99, model  95.3% | minus controller +0.092 [-0.131, +0.276] | value vs fb -0.101 [-0.281, +0.122]
+     test S32 0.168 @ 5.00, model  97.8% | minus controller +0.098 [-0.031, +0.494] | value vs fb -0.113 [-0.567, +0.041]
+     test S33 0.188 @ 5.00, model  97.3% | minus controller +0.001 [-0.115, +0.170] | value vs fb +0.061 [-0.009, +0.138]
+COMP4_DONE

@@ -1,0 +1,11 @@
+
+=== dataset/scenario32 (3 test passes) slack 0.8 ===
+                            top-1 %   mean dB    med dB   cover %
+arm: vision                     7.0     1.491     0.960      97.8
+arm: radar                     16.9     1.259     0.475      97.8
+
+controller                     loss      p/f   model%
+feedback-only                 0.055     1.68      0.0
+need x verify, vision         0.071     2.04      1.0   (VoI -0.015)
+need x verify, radar          0.071     2.04      1.0   (VoI -0.015)
+ARMS_DONE

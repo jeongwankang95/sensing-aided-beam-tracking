@@ -1,0 +1,49 @@
+
+######## scenario9 d=1: 17 val / 28 test passes (optimistic input: cached native-cadence predictions at retained frames)
+selected on val: re-sweep {'slack': 0.4, 'how': 'full', 'k': 3} | within 4 probes {'slack': 1.0, 'how': 'coarse', 'k': 5} | plain tracker slack 0.4
+reference tracker (native slack)                  1.045    3.64     0.0      0         7
+plain tracker, val-reselected slack               1.045    3.64     0.0      0         7
+controller (deployed)                             0.225    3.25    33.0     28         0
+re-sweep tracker, val-selected                    0.138    5.40     0.0     28         0
+controller + same re-sweep                        0.238    4.66    35.8     56         0
+re-sweep tracker, val-selected (<=4 probes)       0.370    3.78     0.0     28         0
+controller + same re-sweep (<=4)                  0.239    3.67    34.8     56         0
+paired  [reference tracker (native slack)] - [controller (deployed)]: +0.820 [+0.299, +1.396]
+paired  [plain tracker, val-reselected slack] - [controller (deployed)]: +0.820 [+0.299, +1.396]
+paired  [re-sweep tracker, val-selected] - [controller (deployed)]: -0.087 [-0.138, -0.040]
+paired  [re-sweep tracker, val-selected] - [controller + same re-sweep]: -0.100 [-0.172, -0.039]
+paired  [re-sweep tracker, val-selected (<=4 probes)] - [controller (deployed)]: +0.145 [+0.035, +0.270]
+paired  [re-sweep tracker, val-selected (<=4 probes)] - [controller + same re-sweep (<=4)]: +0.131 [+0.031, +0.239]
+
+######## scenario9 d=2: 17 val / 28 test passes (optimistic input: cached native-cadence predictions at retained frames)
+selected on val: re-sweep {'slack': 0.4, 'how': 'full', 'k': 2} | within 4 probes {'slack': 3.0, 'how': 'coarse', 'k': 20} | plain tracker slack 1.2
+reference tracker (native slack)                  2.081    4.88     0.0      0        14
+plain tracker, val-reselected slack               2.526    4.50     0.0      0        12
+controller (deployed)                             0.284    3.12    62.6     28         0
+re-sweep tracker, val-selected                    1.255    8.06     0.0     28         8
+controller + same re-sweep                        0.232    6.27    55.9     56         0
+re-sweep tracker, val-selected (<=4 probes)       4.949    4.02     0.0     17        26
+controller + same re-sweep (<=4)                  0.253    3.70    61.9     45         0
+paired  [reference tracker (native slack)] - [controller (deployed)]: +1.797 [+1.126, +2.511]
+paired  [plain tracker, val-reselected slack] - [controller (deployed)]: +2.241 [+1.434, +3.128]
+paired  [re-sweep tracker, val-selected] - [controller (deployed)]: +0.971 [+0.384, +1.647]
+paired  [re-sweep tracker, val-selected] - [controller + same re-sweep]: +1.024 [+0.447, +1.689]
+paired  [re-sweep tracker, val-selected (<=4 probes)] - [controller (deployed)]: +4.665 [+3.981, +5.312]
+paired  [re-sweep tracker, val-selected (<=4 probes)] - [controller + same re-sweep (<=4)]: +4.696 [+4.011, +5.341]
+
+######## scenario9 d=4: 17 val / 28 test passes (optimistic input: cached native-cadence predictions at retained frames)
+selected on val: re-sweep {'slack': 0.4, 'how': 'full', 'k': 7} | within 4 probes {'slack': 1.5, 'how': 'full', 'k': 15} | plain tracker slack 0.6
+reference tracker (native slack)                  5.594    5.22     0.0      0        28
+plain tracker, val-reselected slack               5.594    5.22     0.0      0        28
+controller (deployed)                             0.316    4.33    70.1     28         0
+re-sweep tracker, val-selected                    4.048   11.55     0.0     28        28
+controller + same re-sweep                        0.384   10.23    67.5     56         0
+re-sweep tracker, val-selected (<=4 probes)       6.106    3.80     0.0      0        28
+controller + same re-sweep (<=4)                  0.316    4.33    70.1     28         0
+paired  [reference tracker (native slack)] - [controller (deployed)]: +5.278 [+4.840, +5.704]
+paired  [plain tracker, val-reselected slack] - [controller (deployed)]: +5.278 [+4.840, +5.704]
+paired  [re-sweep tracker, val-selected] - [controller (deployed)]: +3.732 [+3.417, +4.044]
+paired  [re-sweep tracker, val-selected] - [controller + same re-sweep]: +3.664 [+3.365, +3.962]
+paired  [re-sweep tracker, val-selected (<=4 probes)] - [controller (deployed)]: +5.790 [+5.379, +6.228]
+paired  [re-sweep tracker, val-selected (<=4 probes)] - [controller + same re-sweep (<=4)]: +5.790 [+5.379, +6.228]
+RESWEEP_DECIM_DONE scenario9

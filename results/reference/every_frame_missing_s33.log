@@ -1,0 +1,17 @@
+scenario33: 38 of 3963 scored test frames have a missing reading
+scenario33 d=1 held      plain 0.2490 ctl 0.1864 off 0.1631 | gain +0.0625 V -0.0234
+scenario33 d=1 held excl plain 0.2194 ctl 0.1726 off 0.1490 | gain +0.0468 V -0.0236
+scenario33 d=1 dec       plain 0.2490 ctl 0.1864 off 0.1631 | gain +0.0625 V -0.0234
+scenario33 d=1 dec excl  plain 0.2194 ctl 0.1726 off 0.1490 | gain +0.0468 V -0.0236
+scenario33 d=1 change by exclusion: held gain -0.0157 V -0.0002 | dec gain -0.0157 V -0.0002
+scenario33 d=2 held      plain 0.2258 ctl 0.2777 off 0.4002 | gain -0.0519 V +0.1225
+scenario33 d=2 held excl plain 0.2114 ctl 0.2642 off 0.3868 | gain -0.0528 V +0.1227
+scenario33 d=2 dec       plain 0.1731 ctl 0.2184 off 0.3344 | gain -0.0453 V +0.1160
+scenario33 d=2 dec excl  plain 0.1731 ctl 0.2197 off 0.3364 | gain -0.0466 V +0.1167
+scenario33 d=2 change by exclusion: held gain -0.0009 V +0.0002 | dec gain -0.0013 V +0.0007
+scenario33 d=4 held      plain 0.9424 ctl 0.9607 off 0.3802 | gain -0.0183 V -0.5805
+scenario33 d=4 held excl plain 0.9123 ctl 0.9328 off 0.3504 | gain -0.0205 V -0.5824
+scenario33 d=4 dec       plain 0.8633 ctl 0.8805 off 0.2830 | gain -0.0171 V -0.5974
+scenario33 d=4 dec excl  plain 0.8020 ctl 0.8208 off 0.2208 | gain -0.0188 V -0.6000
+scenario33 d=4 change by exclusion: held gain -0.0022 V -0.0019 | dec gain -0.0017 V -0.0025
+HOLDX_DONE scenario33

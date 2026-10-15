@@ -1,0 +1,11 @@
+
+######## scenario33: 18 test passes, reference slack 0.8, precision pass (cache both_scenario33.npz)
+policy                                 loss probes model%    p95
+METHOD                              0.18645  2.122   1.54  0.727
+feedback-only tracker               0.24897  1.768   0.00  1.224   minus METHOD +0.06252 [-0.04524, +0.23959]
+own tracker + re-sweep, no sensor   0.16308  2.086   0.00  0.692   minus METHOD -0.02337 [-0.05944, +0.00469]
+need only (A: no trial)             1.34815  1.676  30.10  4.254   minus METHOD +1.16170 [+0.85812, +1.52246]
+need only (B: no check)             2.36357  0.339  92.48  4.903   minus METHOD +2.17712 [+1.85905, +2.47204]
+  accuracy, consecutive inputs [cache]: d=1 2.80%  d=2 2.76%  d=4 3.01%   coverage 97.3 / 97.3 / 98.2%
+  accuracy, consecutive inputs [oldcache]: d=1 2.88%  d=2 2.84%  d=4 3.09%   coverage 94.5 / 94.5 / 95.6%
+PREC_DONE scenario33

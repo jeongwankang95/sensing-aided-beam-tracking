@@ -1,0 +1,16 @@
+  frontier bayes budget 2.6 {'sigma_v': 1.0, 'eps': 0.35, 'tau': 1.0, 'kmax': 5} -> test 6.158 @ 2.31
+  frontier viterbi budget 3.6 {'band': 2, 'ent_scale': 0.5, 'wmax': 2} -> test 5.850 @ 3.00
+  frontier bayes budget 5.0 {'sigma_v': 1.0, 'eps': 0.02, 'tau': 3.0, 'kmax': 5} -> test 0.877 @ 4.98
+  frontier bayes budget 7.0 {'sigma_v': 1.0, 'eps': 0.02, 'tau': 3.0, 'kmax': 5} -> test 0.877 @ 4.98
+  frontier bayes budget 9.0 {'sigma_v': 1.0, 'eps': 0.02, 'tau': 1.0, 'kmax': 9} -> test 0.613 @ 8.61
+  frontier bayes budget 11.0 {'sigma_v': 1.6, 'eps': 0.05, 'tau': 1.0, 'kmax': 17} -> test 0.164 @ 10.38
+candidates 183; hull vertices [(np.float64(2.31), np.float64(6.158)), (np.float64(2.55), np.float64(2.014)), (np.float64(2.64), np.float64(1.564)), (np.float64(3.07), np.float64(0.747)), (np.float64(3.22), np.float64(0.607)), (np.float64(3.78), np.float64(0.37)), (np.float64(4.06), np.float64(0.274)), (np.float64(4.4), np.float64(0.176)), (np.float64(5.4), np.float64(0.138)), (np.float64(10.38), np.float64(0.164)), (np.float64(10.9), np.float64(0.474))]
+POINT METHOD primary                         loss 0.225 @ 3.25 | equal-budget value (hull) +0.370 | best single policy within budget +0.382 | equal-loss ratio 1.304
+POINT S2 loss-only                           loss 0.274 @ 3.31 | equal-budget value (hull) +0.293 | best single policy within budget +0.333 | equal-loss ratio 1.226
+POINT S3 no re-sweep                         loss 0.329 @ 2.73 | equal-budget value (hull) +1.051 | best single policy within budget +1.235 | equal-loss ratio 1.427
+POINT controller (deployed 08-10)            loss 0.390 @ 2.59 | equal-budget value (hull) +1.434 | best single policy within budget +1.624 | equal-loss ratio 1.443
+BOOT  METHOD primary                         equal-budget (hull) [+0.186, +0.657] median +0.331 (undefined 0) | single within budget [+0.252, +1.137] median +0.388 (undefined 0) | ratio [+1.149, +1.433] median +1.274 (undefined 0)
+BOOT  S2 loss-only                           equal-budget (hull) [+0.091, +0.455] median +0.255 (undefined 0) | single within budget [+0.178, +0.596] median +0.312 (undefined 0) | ratio [+1.075, +1.305] median +1.204 (undefined 0)
+BOOT  S3 no re-sweep                         equal-budget (hull) [+0.326, +4.051] median +0.989 (undefined 257) | single within budget [+0.420, +6.010] median +1.329 (undefined 257) | ratio [+1.221, +1.592] median +1.398 (undefined 0)
+BOOT  controller (deployed 08-10)            equal-budget (hull) [+0.420, +5.156] median +1.313 (undefined 946) | single within budget [+0.617, +6.068] median +1.600 (undefined 946) | ratio [+1.208, +1.670] median +1.411 (undefined 0)
+HULL5_DONE

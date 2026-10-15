@@ -1,0 +1,20 @@
+
+=== dataset/scenario31 (11 test passes) attribution, cache both_scenario31.npz ===
+  hook check: Ctl 0.118 dB / 2.30 p/f / 6.8%   CtlVar 0.118 / 2.30 / 6.8   IDENTICAL
+  random-gate opening probability matched to 6.8% invocations: p = 0.1721
+
+policy                         loss     p/f  model%     p95  delta vs ours [95% CI]
+feedback-only tracker         0.109    2.27     0.0    0.42
+need x verify (ours)          0.118    2.30     6.8    0.46   (deployed)
+  -- candidate replaced (perfect sensing information) --
+  oracle candidate            0.124    2.28     7.6    0.53  +0.006 [-0.018, +0.041]   trials 1/2 won
+  -- candidate replaced (no sensing information) --
+  own extrapolation           0.177    2.32     3.1    0.89  +0.059 [-0.004, +0.205]   trials 0/1 won
+  random offset               0.175    2.34     1.6    0.88  +0.058 [-0.008, +0.200]   trials 0/1 won
+  stale prediction            0.216    2.26     9.3    0.90  +0.099 [+0.000, +0.330]   trials 2/2 won
+  -- gate replaced (everything else unchanged) --
+  random opening              0.117    2.28     7.5    0.47  -0.000 [-0.002, +0.002]   trials 2/3 won
+  measurement age >=2         0.071    2.32     3.8    0.35  -0.046 [-0.132, -0.001]   trials 0/1 won
+  measurement age >=3         0.077    2.55     1.5    0.41  -0.040 [-0.132, +0.009]   trials 0/1 won
+  no gate at all              0.117    2.24     7.5    0.46  -0.000 [-0.002, +0.001]   trials 1/2 won
+ATTRIB_DONE

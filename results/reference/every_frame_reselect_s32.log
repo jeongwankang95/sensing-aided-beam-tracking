@@ -1,0 +1,20 @@
+scenario32: 2 validation passes from dataset/scenario32
+
+######## scenario32 d=1 (every-frame scoring; validation selection on every-frame losses)
+controller: 0.0705 dB, 2.043 probes/decision
+plain, native slack                          0.8                                test 0.0553 dB @ 1.68/dec | controller gain -0.015 [-0.074, +0.010]
+plain, slack re-selected on decision frames  0.8                                test 0.0553 dB @ 1.68/dec | controller gain -0.015 [-0.074, +0.010]
+plain, slack re-selected on every frame      0.8                                test 0.0553 dB @ 1.68/dec | controller gain -0.015 [-0.074, +0.010]
+
+######## scenario32 d=2 (every-frame scoring; validation selection on every-frame losses)
+controller: 0.0853 dB, 2.405 probes/decision
+plain, native slack                          0.8                                test 0.1129 dB @ 2.11/dec | controller gain +0.028 [-0.020, +0.068]
+plain, slack re-selected on decision frames  2.0                                test 0.2607 dB @ 1.45/dec | controller gain +0.175 [+0.077, +0.435]
+plain, slack re-selected on every frame      2.0                                test 0.2607 dB @ 1.45/dec | controller gain +0.175 [+0.077, +0.435]
+
+######## scenario32 d=4 (every-frame scoring; validation selection on every-frame losses)
+controller: 0.8765 dB, 3.079 probes/decision
+plain, native slack                          0.8                                test 0.3181 dB @ 2.86/dec | controller gain -0.558 [-1.292, +0.259]
+plain, slack re-selected on decision frames  0.4                                test 0.2133 dB @ 3.04/dec | controller gain -0.663 [-1.368, -0.037]
+plain, slack re-selected on every frame      0.4                                test 0.2133 dB @ 3.04/dec | controller gain -0.663 [-1.368, -0.037]
+HOLDSEL_DONE scenario32

@@ -1,0 +1,3 @@
+
+[seed] scenario33 cache=both_scenario33_s1 | vision arm top-1 3.6% loss 2.389 cover 97.3% | fb 0.249@1.77 | ctl 0.185@2.12 model 1.5% p95 0.71 | VoI +0.064 [-0.046, +0.241] | always-on 2.327@0.12, +verify1 1.816@3.04, +verify2 2.073@1.58
+REV3_DONE scenario33 both_scenario33_s1

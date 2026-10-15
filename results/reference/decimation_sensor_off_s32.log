@@ -1,0 +1,4 @@
+scenario32 d=1 optimistic: sensor off 0.05168 @ 2.091 | with sensor 0.07054 @ 2.043 (model 1.0%) | V_sense -0.01886 [-0.05707, -0.00514] | probe saving 2.3%
+scenario32 d=2 optimistic: sensor off 0.06417 @ 2.423 | with sensor 0.06141 @ 2.405 (model 1.5%) | V_sense +0.00276 [-0.00344, +0.00851] | probe saving 0.7%
+scenario32 d=4 optimistic: sensor off 0.14442 @ 3.025 | with sensor 0.73309 @ 3.079 (model 4.5%) | V_sense -0.58867 [-1.24133, -0.01554] | probe saving -1.8%
+DECSK_DONE scenario32

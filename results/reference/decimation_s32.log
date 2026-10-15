@@ -1,0 +1,7 @@
+
+=== dataset/scenario32 decimation (cache both_scenario32.npz) ===
+ d      drift  innov med |  fb loss  p/step |  ctl loss  p/step   inv% |     VoI
+ 1       2.13       0.36 |    0.055    1.68 |     0.071    2.04    1.0 |  -0.015
+ 2       1.64       0.41 |    0.090    2.11 |     0.061    2.41    1.5 |  +0.029
+ 4       2.13       0.64 |    0.243    2.86 |     0.733    3.08    4.5 |  -0.490
+DECIM_DONE

@@ -1,0 +1,27 @@
+
+######## scenario9: 28 test passes, reference slack 0.4, precision pass (cache both_scenario9.npz)
+policy                                 loss probes model%    p95
+METHOD                              0.22478  3.247  33.04  1.142
+feedback-only tracker               1.04477  3.639   0.00  5.526   minus METHOD +0.81998 [+0.29917, +1.39607]
+own tracker + re-sweep, no sensor   0.25982  4.119   0.00  1.404   minus METHOD +0.03503 [-0.05907, +0.15385]
+need only (A: no trial)             0.30961  2.721  46.31  1.369   minus METHOD +0.08483 [+0.02150, +0.15284]
+need only (B: no check)             0.35992  1.344  84.71  1.707   minus METHOD +0.13513 [+0.05582, +0.22931]
+  hook check: CtlVar 0.224785 / 3.2469 / 33.040   IDENTICAL
+  random-gate opening probability matched to 33.04% invocations: p = 0.2418
+oracle candidate                    0.17949  2.864  40.25  0.967   minus METHOD -0.04529 [-0.07972, -0.01240]
+own extrapolation                   2.15785  3.657  19.77  9.081   minus METHOD +1.93307 [+1.06166, +2.86869]
+random offset                       3.14530  3.290  31.55  9.666   minus METHOD +2.92052 [+2.04477, +3.79119]
+stale prediction                    0.39287  3.344  30.58  1.896   minus METHOD +0.16809 [+0.00243, +0.41472]
+random opening                      0.24364  3.279  33.22  1.129   minus METHOD +0.01885 [-0.03461, +0.07806]
+measurement age >=2                 0.24830  3.977  13.80  1.304   minus METHOD +0.02352 [-0.05336, +0.10264]
+measurement age >=3                 0.25368  4.107   0.44  1.338   minus METHOD +0.02889 [-0.06291, +0.14698]
+no gate at all                      0.25134  3.296  33.48  1.129   minus METHOD +0.02656 [-0.02811, +0.08639]
+always-on, no verification          0.47859  0.554  85.24  2.374   minus METHOD +0.25380 [+0.14082, +0.38677]
+always-on, verify period 2          0.39692  1.815  85.24  2.026   minus METHOD +0.17213 [+0.06625, +0.29645]
+always-on, verify period 1          0.29511  3.112  85.24  1.549   minus METHOD +0.07033 [-0.03271, +0.18967]
+  LLR sel_free (no cap): {'X': 3, 'N': 2, 'how': 'full', 'ref': 'runmax'}
+LLR, no probing cap                 0.60630  8.434   0.00  4.716   minus METHOD +0.38152 [+0.06173, +0.77011]
+velocity-initialized start          0.89456  5.342   0.00  5.940   minus METHOD +0.66978 [+0.15402, +1.28572]
+  accuracy, consecutive inputs [cache]: d=1 44.74%  d=2 46.03%  d=4 48.78%   coverage 85.2 / 85.1 / 89.8%
+  accuracy, consecutive inputs [oldcache]: d=1 48.45%  d=2 50.53%  d=4 54.82%   coverage 68.0 / 67.6 / 71.9%
+PREC_DONE scenario9
