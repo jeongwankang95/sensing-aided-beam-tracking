@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Cold-review check (2026-09-29), reviewer B-M1: does the Scenario-9 value of sensing survive a
-feedback-only reference with an absolute lock-loss detector and a charged re-acquisition sweep
-(BFR-like), or a velocity-initialized start? LLR parameters are selected on VALIDATION passes and
-evaluated once on TEST. The controller (class Ctl, copied verbatim from needonly.py) is unchanged.
-usage: llr.py locked_multi.json <root> <ref slack> --cache=results/predictions/both_<scn>.npz [--inherit=<json>]"""
+"""frontier.py LOCKED ROOT SLACK --cache=CACHE: the Scenario-9 probe/loss frontier of the feedback-only policies (Fig. 3) and
+its comparison with the controller. The policies are the tracker slack sweep, the posterior-carrying estimators selected on
+validation per budget (src/strong_fb.py, which writes results/analysis/scenario9_strongfb_val.json), and the lock-loss-recovery
+and re-sweep settings. For the controller of configs/sel3_val.json, its loss-only and no-re-sweep variants and the earlier
+constants (LOCKED, configs/locked_multi.json), the equal-budget value against the lower convex hull and against the best single
+policy within budget, and the equal-loss probing ratio; intervals rebuild the hull in each of 10^4 pass resamples. Writes
+results/analysis/hull5_scenario9.json.
+Paper: Fig. 3 and Sec. VI-A (0.37 dB [0.19, 0.66] at 3.25 probes/epoch; ratio 1.30 [1.15, 1.43]), supplementary Secs. S6-A
+and S17-P (loss-only selection 0.29 dB [0.09, 0.45], ratio 1.23 [1.07, 1.30]; earlier constants 1.44 [1.21, 1.67]).
+usage: python analysis/frontier.py configs/locked_multi.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json, itertools
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]; TSL = float(sys.argv[3])

@@ -1,0 +1,10 @@
+S35 no-dup: passes 35 frames 2423, frames with a missing reading 137 (5.7%)
+hold-previous mean/p95: reported 0.289 / 0.372 | held-missing excluded (4) 0.101 / 0.365 | any-missing excluded 0.100 / 0.361
+   largest hold-previous losses (dB): [  1.3   1.4 111.4 112.  112.2 112.5]
+causal persistence: reported 0.725 | any-missing excluded 0.718 | capped frames 0
+tracker slack 0.4: reported 0.193 | any-missing excluded 0.142 | 60-dB frames 2
+tracker slack 0.6: reported 0.221 | any-missing excluded 0.143 | 60-dB frames 3
+tracker slack 0.8: reported 0.205 | any-missing excluded 0.152 | 60-dB frames 2
+tracker slack 1.0: reported 0.161 | any-missing excluded 0.134 | 60-dB frames 1
+hold-previous under the 60 dB cap: mean 0.202 p95 0.372 (n=2388)
+profile: peak/median med 0.748 -> 0.743 | peak/min med 1.406 -> 1.361 | runner-up adj 68.7 -> 68.7 %

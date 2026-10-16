@@ -1,0 +1,15 @@
+[missing_rescoring] analysis/stale_observations.py: 2 scoring lines patched
+
+=== dataset/scenario31 (11 test passes) probe/report delay, slack 0.6 ===
+policy                      d=0      d=1      d=2
+Causal persistence     1.551/0.00 1.551/0.00 1.551/0.00
+Feedback-only tracker  0.109/2.27 0.181/2.21 0.268/2.13
+Need x verify (ours)   0.117/2.30 0.137/2.43 0.351/2.28
+Always-on              0.451/0.21 0.459/0.20 0.468/0.15
+  + verification       0.367/3.07 0.429/3.06 0.450/3.01
+
+value of sensing (feedback - controller), paired pass bootstrap:
+  d=0  -0.008 dB  [-0.026, +0.016]
+  d=1  +0.044 dB  [-0.003, +0.135]
+  d=2  -0.083 dB  [-0.242, +0.043]
+DELAY_DONE

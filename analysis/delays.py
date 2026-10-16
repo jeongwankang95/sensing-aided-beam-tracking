@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""Final locked evaluation: multi-regime val-selected constants, run ONCE per
-scenario test set, with the feedback-only tracker at its own val-selected slack."""
+"""delays.py LOCKED ROOT SLACK --cache=CACHE: delays and lags: sensor delay and link-observation (stale) delay in epochs,
+every commitment applied one epoch late (commit lag), and probe outcomes usable only from the next epoch (probe lag), for
+persistence, the feedback-only tracker, the controller and the always-on variants. Paired bootstrap (10^5 resamples, seed 42).
+Writes results/analysis/<scenario>_lag.json.
+Paper: Sec. VI-D (delays) and supplementary Sec. S4-A (always-on against feedback-only under the timing conditions).
+usage: python analysis/delays.py configs/locked_v3.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]
@@ -38,7 +42,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # rev_20260930/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1

@@ -1,0 +1,25 @@
+
+################ scenario32 full-sweep feedback-only anchors
+policy                                    loss dB   probes     p95   >3dB %
+causal persistence (SELF-CHECK)             2.490     0.00    5.66     38.1
+innovation tracker, deployed slack          0.055     1.68    0.28      0.0
+controller                                  0.070     1.61    0.33      0.0
+periodic full sweep every 1                 0.000    64.00    0.00      0.0
+periodic full sweep every 2                 0.047    31.92    0.26      0.0
+periodic full sweep every 3                 0.066    21.33    0.33      0.0
+periodic full sweep every 4                 0.088    15.84    0.41      0.0
+periodic full sweep every 6                 0.142    10.59    0.59      0.5
+periodic full sweep every 8                 0.200     7.84    0.92      0.6
+periodic full sweep every 12                0.332     5.25    1.77      2.1
+periodic full sweep every 16                0.489     3.92    2.71      3.9
+periodic full sweep every 24                0.698     2.51    3.52      7.4
+periodic full sweep every 32                0.752     1.88    3.47      7.2
+alarm-triggered full sweep, eta=1 dB        1.282     1.33    4.04     13.7
+alarm-triggered full sweep, eta=2 dB        1.356     0.94    3.93     13.4
+alarm-triggered full sweep, eta=3 dB        1.418     0.55    3.98     15.3
+alarm-triggered full sweep, eta=4 dB        1.451     0.55    4.05     16.5
+alarm-triggered full sweep, eta=6 dB        2.010     0.08    4.58     27.1
+periodic 8 + alarm 2 dB                     0.176     8.86    0.81      0.5
+periodic 16 + alarm 2 dB                    0.364     5.33    1.91      2.0
+periodic 32 + alarm 2 dB                    0.469     3.29    2.55      3.2
+REV5_DONE scenario32

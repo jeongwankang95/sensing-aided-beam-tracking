@@ -1,0 +1,19 @@
+results/figures/fig6_vsense.tikz: 18 rows
+  native interval              $+0.04$ $[-0.06,0.15]$
+  noise $0.5$\,dB              $+0.33$ $[0.17,0.52]$
+  noise $1$\,dB                $+0.91$ $[0.65,1.19]$
+  noise $2$\,dB                $+1.80$ $[1.47,2.13]$
+  stale link power             $+0.57$ $[0.31,0.93]$
+  late probe outcomes          $+0.17$ $[0.02,0.35]$
+  late commitment              $+0.13$ $[-0.01,0.30]$
+  $d=2$, consecutive           $+1.92$ $[1.26,2.64]$
+  $d=4$, consecutive           $+3.34$ $[3.04,3.64]$
+  $d=2$, $d$-spaced            $+0.77$ $[0.22,1.37]$
+  $d=4$, $d$-spaced            $+0.57$ $[0.41,0.75]$
+  late sensor, 1 epoch         $-0.25$ $[-0.38,-0.13]$
+  late sensor, 2 epochs        $-0.42$ $[-0.70,-0.17]$
+  late sensor and probes       $-0.20$ $[-0.35,-0.05]$
+  late sensor, stale link      $+0.27$ $[0.01,0.63]$
+  S31 arm, $d=4$               $+0.24$ $[0.01,0.60]$
+  S32 arm, $d=4$               $-0.65$
+  S33 arm, $d=4$               $-0.58$ $[-1.03,-0.16]$

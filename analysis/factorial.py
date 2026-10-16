@@ -4,7 +4,7 @@ exec(compile(open(_CORE).read(), _CORE, "exec"))   # same namespace as the origi
 
 # ======================= Option 3 (2026-10-02): Table II rows with the re-selected method =======================
 # Run on prelude3 (patched Ctl) with configs/locked_v3.json. Persist/SAFB verbatim from exceed_tail.py,
-# LLR verbatim from rev_20260929/llr_tail_classes.py, RS verbatim from rev_20260930/rs_classes.py.
+# LLR verbatim from src/llr_tail_classes.py, RS verbatim from src/rs_classes.py.
 class Persist:
     """Causal persistence: hold the link-setup beam, never probe."""
     def reset(self, a0, p0): self.a = int(a0); self.sense = self.trial = 0

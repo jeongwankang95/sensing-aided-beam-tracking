@@ -1,0 +1,39 @@
+% Figs. 2-6 of the paper, one tikzpicture per figure environment. figures/make_figures.sh compiles this file with
+% pdflatex -shell-escape: TikZ externalization writes one PDF per picture into build/, cut to its bounding box, in the
+% paper's document class, so fonts and sizes are those of the paper.
+\documentclass[journal]{IEEEtran}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, external}
+\tikzexternalize[prefix=build/]
+\begin{document}
+\begin{figure}[t]\centering
+\tikzsetnextfilename{fig2_controller_flow}
+\input{fig2_controller_flow.tikz}
+\end{figure}
+
+\begin{figure}[t]\centering
+\tikzsetnextfilename{fig3_frontier}
+\input{fig3_frontier.tikz}
+\end{figure}
+
+\begin{figure}[t]\centering
+\tikzsetnextfilename{fig4_perpass}
+\input{fig4_perpass.tikz}
+\end{figure}
+
+\begin{figure}[t]\centering
+\tikzsetnextfilename{fig5_example}
+\input{fig5_example.tikz}
+\end{figure}
+
+\begin{figure}[t]\centering
+\tikzsetnextfilename{fig6_vsense}
+\input{fig6_vsense.tikz}
+\end{figure}
+\end{document}

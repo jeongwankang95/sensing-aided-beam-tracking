@@ -1,0 +1,16 @@
+[missing_rescoring] analysis/controls_gate.py: 3 scoring lines patched
+
+################ scenario32  follow-up variants (fb-only 0.055 dB)
+variant                            |    loss   p/ep  model%    p95 | trials  won wrong  red | first-cov open-med
+deployed (s0=1.5, bl 64/64)        |   0.069   2.07     1.5   0.37 |      6    0     4    2 |    3/3          44   VoI -0.014
+s0=0.5 (gate needs measured innov.) |   0.070   2.04     1.5   0.37 |      6    0     4    2 |    3/3          44   VoI -0.015
+s0=0.3                             |   0.070   2.03     1.5   0.37 |      6    0     4    2 |    3/3          44   VoI -0.015
+wrong 64 / redundant 0             |   0.061   2.05     2.5   0.29 |     10    0     4    6 |    3/3          12   VoI -0.007
+wrong 64 / redundant 8             |   0.072   1.97     1.7   0.38 |      7    0     4    3 |    3/3          16   VoI -0.018
+wrong 64 / redundant 16            |   0.288   1.95     1.7   1.63 |      7    0     3    4 |    3/3          28   VoI -0.233
+s0=0.5 + wrong 64 / redundant 8    |   0.073   1.94     1.7   0.38 |      7    0     4    3 |    3/3          16   VoI -0.018
+s0=0.5 + wrong 64 / redundant 16   |   0.288   1.92     1.7   1.63 |      7    0     3    4 |    3/3          28   VoI -0.234
+   deployed minus [wrong 64 / redundant 8]: -0.003 dB  95% [-0.015, +0.000]
+   deployed minus [s0=0.5 (gate needs measured innov.)]: -0.001 dB  95% [-0.001, -0.001]
+   deployed minus [s0=0.5 + wrong 64 / redundant 8]: -0.004 dB  95% [-0.016, -0.001]
+REV2_DONE scenario32

@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Cold-review check (2026-09-29), reviewer B-M1: does the Scenario-9 value of sensing survive a
-feedback-only reference with an absolute lock-loss detector and a charged re-acquisition sweep
-(BFR-like), or a velocity-initialized start? LLR parameters are selected on VALIDATION passes and
-evaluated once on TEST. The controller (class Ctl, copied verbatim from needonly.py) is unchanged.
-usage: llr.py locked_multi.json <root> <ref slack> --cache=results/predictions/both_<scn>.npz [--inherit=<json>]"""
+"""every_frame.py LOCKED ROOT SLACK --cache=CACHE: frame decimation scored on every native frame. Each policy observes,
+decides and probes only on every d-th frame (d = 1, 2, 4) and serves its last committed beam in between; every native frame
+with a reading is scored. Policies: the plain tracker at the reference slack and at the slack re-selected for each d on
+decimated validation passes (results/analysis/<scenario>_perd_slack.json, analysis/decimation_slack.py), the Scenario-9 re-sweep
+reference re-selected the same way (results/analysis/resweep_decim_scenario9.json, analysis/resweep_decimation.py), the
+controller with and without its sensor, and on Scenario 9 the controller with d-spaced sensor inputs
+(results/predictions/dec2_s9.npz, dec4_s9.npz). Asserts that the decision-frame scores equal the decimated replay and that d = 1
+equals the native replay, and checks them against results/analysis/decsk_<scenario>.json (analysis/decimation_sensor_off.py).
+Paired bootstrap over passes (10^5 resamples, seed 42). Writes results/analysis/hold_<scenario>.json.
+Paper: Table IV and Sec. VI-C, the decimation rows of Fig. 6, supplementary Sec. S1-G and Tables S27-S28 (printed by
+analysis/table4.py).
+usage: python analysis/every_frame.py configs/locked_v3.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json, itertools
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]; TSL = float(sys.argv[3])
@@ -44,7 +51,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # results/analysis/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1
@@ -164,7 +171,7 @@ ctl = lambda **kw: RS(**K, **kw)
 # Regression (asserted): (a) at d = 1 the held scores equal perpass() on the native test passes; (b) the
 # decision-frame scores equal perpass() on dec(TEST0, d), i.e. the decimated replay behind Table IV and Table S28.
 # Paired pass-level bootstrap boot() (10^5, seed 42), frame-weighted over the scored frames.
-# usage: hold3.py locked_v3.json dataset/scenario<s> <ref slack> --cache=results/predictions/both_scenario<s>.npz
+# usage: python analysis/every_frame.py configs/locked_v3.json dataset/scenario<s> <ref slack> --cache=results/predictions/both_scenario<s>.npz
 def perpass_hold(passes, pol, D):
     out, dout = [], []
     for P, keys, pid in passes:

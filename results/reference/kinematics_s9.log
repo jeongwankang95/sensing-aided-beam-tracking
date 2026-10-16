@@ -1,0 +1,3 @@
+scenario9   val  gps=unit2_loc_cal passes=17 dur=4.7800 net=60.0 trav=12.5497 step=1.718 straight=0.882 rate=16.9692 rmed=11.179 rmin=10.102 innov=1.000
+scenario9   test gps=unit2_loc_cal passes=28 dur=4.4555 net=60.0 trav=12.3737 step=1.820 straight=0.857 rate=16.4474 rmed=11.298 rmin=10.306 innov=1.000
+KIN2_DONE

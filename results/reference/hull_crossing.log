@@ -1,0 +1,5 @@
+controller 0.2248 dB at 3.2469 probes/epoch
+without recovery and re-sweep settings          35 policies: crossing 9.9136 probes/epoch, ratio 3.0532, on the segment 1.045 dB at 3.64 -> 0.164 dB at 10.38
+with the lock-loss-recovery settings           107 policies: crossing 9.5534 probes/epoch, ratio 2.9423, on the segment 0.487 dB at 5.98 -> 0.164 dB at 10.38
+with the recovery and re-sweep settings (all)  205 policies: crossing 4.2325 probes/epoch, ratio 1.3035, on the segment 0.274 dB at 4.06 -> 0.176 dB at 4.40
+setup sweep: 64 x 28 passes / 1138 scored frames = 1.5747 probes/epoch; controller 3.2469 -> 4.8216, crossing 4.2325 -> 5.8072, ratio 1.3035 -> 1.2044

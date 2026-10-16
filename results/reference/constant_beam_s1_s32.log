@@ -1,0 +1,9 @@
+
+  vision arm on scenario32: 6 distinct beams over 798 anchors; modal beam 16 on 88.6% of them
+    arm as replayed      top-1  14.0%  loss  1.381 dB
+    constant beam 16     top-1  16.9%  loss  1.259 dB   differs
+
+  radar arm on scenario32: 1 distinct beams over 798 anchors; modal beam 16 on 100.0% of them
+    arm as replayed      top-1  16.9%  loss  1.259 dB
+    constant beam 16     top-1  16.9%  loss  1.259 dB   IDENTICAL
+CONST_DONE

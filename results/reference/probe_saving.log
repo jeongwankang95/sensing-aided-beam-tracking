@@ -1,0 +1,2 @@
+probe saving 0.872 [0.531, 1.218] probes/epoch; 21.2% [13.2, 28.9]
+V_sense 0.035 [-0.060, 0.154]; one-sided 95% bound on added loss 0.047 dB

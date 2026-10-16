@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""Final locked evaluation: multi-regime val-selected constants, run ONCE per
-scenario test set, with the feedback-only tracker at its own val-selected slack."""
+"""seeds.py LOCKED ROOT SLACK --cache=CACHE: the Table II rows, the vision arm's current-slot top-1 and loss, and the paired
+gain over the feedback-only tracker (10^5 resamples, seed 42) with the predictions of another training seed of the vision arm
+(--cache=results/predictions/both_scenario<s>_s1.npz or _s2.npz; the radar arm and all constants unchanged). Writes
+results/analysis/seed_<scenario>_<cache>.json.
+Paper: supplementary Sec. S17-F and Table S15.
+usage: python analysis/seeds.py configs/locked_v3.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9_s1.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]
@@ -38,7 +42,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # rev_20260930/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1

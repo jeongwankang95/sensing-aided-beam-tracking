@@ -1,0 +1,4 @@
+scenario9 d=1 excluded 0 | feedback-only 1.045 -> 1.045 | controller 0.225 -> 0.225 | gain +0.820 -> +0.820
+scenario9 d=2 excluded 0 | feedback-only 2.081 -> 2.081 | controller 0.284 -> 0.284 | gain +1.797 -> +1.797
+scenario9 d=4 excluded 0 | feedback-only 5.594 -> 5.594 | controller 0.316 -> 0.316 | gain +5.278 -> +5.278
+NAN4_DONE

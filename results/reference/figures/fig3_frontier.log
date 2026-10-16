@@ -1,0 +1,11 @@
+results/figures/fig3_frontier.tikz: 205 policies (194 distinct points; the 72 lock-loss-recovery settings give 61), hull vertices at 0.343, 2.636, 3.070, 3.217, 3.782, 4.062, 4.401, 5.400 probes/epoch; crossing at 4.2325 probes/epoch (1.304 times the controller's 3.2469)
+largest difference from the paper's coordinates (probes/epoch, log10 dB):
+  frontier                         26 points  0.001  0.00013
+  periodic                         18 points  0.001  0.00012
+  cadence                           3 points  0.000  0.00011
+  extrap                            2 points  0.000  0.00003
+  tracker                           7 points  0.000  0.00006
+  bayes                             5 points  0.005  0.00137
+  llr                              11 points  0.000  0.00000
+  rs                               12 points  0.000  0.00000
+  diamonds, dotted segment, tick    8 points  0.000  0.00041

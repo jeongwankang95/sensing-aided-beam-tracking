@@ -1,0 +1,12 @@
+[missing_rescoring] analysis/arms.py: 2 scoring lines patched
+
+=== dataset/scenario31 (11 test passes) slack 0.6 ===
+                            top-1 %   mean dB    med dB   cover %
+arm: vision                    27.9     0.474     0.148      95.3
+arm: radar                     16.8     0.775     0.384      95.3
+
+controller                     loss      p/f   model%
+feedback-only                 0.109     2.27      0.0
+need x verify, vision         0.117     2.30      6.9   (VoI -0.008)
+need x verify, radar          0.113     2.36      3.5   (VoI -0.003)
+ARMS_DONE

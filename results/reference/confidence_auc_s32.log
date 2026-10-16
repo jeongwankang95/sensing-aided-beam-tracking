@@ -1,0 +1,6 @@
+
+################ scenario32  model-side confidence (post cache post_scenario32.npz)
+covered frames 798; large-error (>1 bin) rate 86.2%; >1 dB rate 49.0%
+  AUC(pmax  ) for large-error event 0.588, for >1 dB event 0.614
+  AUC(margin) for large-error event 0.511, for >1 dB event 0.497
+CONF_DONE scenario32

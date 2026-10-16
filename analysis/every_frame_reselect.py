@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Cold-review check (2026-09-29), reviewer B-M1: does the Scenario-9 value of sensing survive a
-feedback-only reference with an absolute lock-loss detector and a charged re-acquisition sweep
-(BFR-like), or a velocity-initialized start? LLR parameters are selected on VALIDATION passes and
-evaluated once on TEST. The controller (class Ctl, copied verbatim from needonly.py) is unchanged.
-usage: llr.py locked_multi.json <root> <ref slack> --cache=results/predictions/both_<scn>.npz [--inherit=<json>]"""
+"""every_frame_reselect.py LOCKED ROOT SLACK --cache=CACHE: the comparators of the decimation study re-selected on the
+every-frame validation losses (the plain-tracker slack over 0.4-3.0 plus 1.2, with Scenario 33 using Scenario 32's validation
+passes; on Scenario 9 the 98 re-sweep settings, with and without 4 validation probes per decision), then scored on every test
+frame as in analysis/every_frame.py. The controller and its constants are unchanged and nothing is selected on test. Writes
+results/analysis/holdsel_<scenario>.json.
+Paper: Sec. VI-C (re-sweeping reference under decimation) and supplementary Secs. S1-G and S17-I (the slack changes only on
+Scenario 9 at d = 2, to 0.6; the re-selected re-sweep reference loses 1.862 and 4.935 dB at d = 2 and 4).
+usage: python analysis/every_frame_reselect.py configs/locked_v3.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json, itertools
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]; TSL = float(sys.argv[3])
@@ -44,7 +47,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # results/analysis/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1

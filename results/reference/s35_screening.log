@@ -1,0 +1,51 @@
+S35 passes reusing earlier passes' pwr files (pass, frac, n): [(18, 0.6, 70), (20, 0.28, 103), (22, 0.25, 83), (28, 0.31, 104), (32, 0.44, 61), (34, 0.74, 70), (38, 0.63, 60), (39, 0.25, 71)]
+  8 of 43 passes, 259 frames, reuse power files already assigned to an earlier pass; 35 passes and 2423 frames remain
+
+metric                                  S9 test (28 passes)            S9 all           S35 all        S35 no-dup
+passes                                                  28               136                43                35
+frames                                                1166              5964              3045              2423
+frames/pass med                                     41.000            43.000            64.000            63.000
+SNR proxy peak/median dB (med)                       7.345             8.314             0.737             0.748
+peak/median dB p10                                   2.907             3.550             0.287             0.292
+peak/min dB (med)                                    8.576            10.022             1.393             1.406
+runner-up within +-1 (%)                            86.192            87.391            68.210            68.675
+persistence b*_t==b*_t-1 (%)                        22.232            25.412            36.775            37.186
+|db*|<=1 (%)                                        48.067            51.733            69.853            70.142
+|db*| mean (beams)                                   1.835             1.734             1.765             1.724
+|db*| p95                                            4.000             4.000             4.000             4.000
+hold-previous loss mean dB                           0.981             0.819             0.248             0.289
+hold-previous loss p95 dB                            3.391             2.951             0.359             0.372
+hold-prev best-of-+-1 loss mean dB                   0.435             0.353             0.076             0.087
+trajectory tortuosity (med)                          1.167             1.133             2.263             2.263
+|corr(t,b*)| (med)                                   0.988             0.987             0.933             0.929
+GPS angular rate deg/s (med)                         1.882             5.780             7.244             6.947
+GPS angular rate deg/s p90                           4.610            15.176            17.635            18.162
+BS-vehicle dist m (med)                             25.635            19.983            44.677            44.587
+FB slack 0.4: loss dB                                1.045             0.988             0.170             0.193
+FB slack 0.4: probes/epoch                           3.639             3.637             3.169             3.134
+FB slack 0.4: sigma med                              0.916             0.909             0.756             0.741
+FB slack 0.4: sigma>th_on %                         88.752            86.033            66.089            64.363
+FB slack 0.4: sigma<th_off %                         5.975             8.391            28.181            30.025
+FB slack 0.4: raw innov med                          1.000             1.000             1.000             1.000
+FB slack 0.4: acq/100 ep                            98.770            97.872            89.374            88.358
+FB slack 0.6: loss dB                                1.209             1.148             0.189             0.221
+FB slack 0.6: probes/epoch                           3.428             3.373             2.746             2.720
+FB slack 0.6: sigma med                              0.899             0.865             0.564             0.554
+FB slack 0.6: sigma>th_on %                         76.011            71.362            44.903            43.090
+FB slack 0.6: sigma<th_off %                        10.369            13.264            36.143            36.725
+FB slack 0.6: raw innov med                          1.000             1.000             0.500             0.500
+FB slack 0.6: acq/100 ep                            88.225            85.707            70.786            69.933
+FB slack 0.8: loss dB                                1.442             1.404             0.186             0.205
+FB slack 0.8: probes/epoch                           3.223             3.169             2.525             2.513
+FB slack 0.8: sigma med                              0.801             0.786             0.591             0.586
+FB slack 0.8: sigma>th_on %                         77.944            78.140            49.201            48.534
+FB slack 0.8: sigma<th_off %                        12.478            10.553            34.544            34.422
+FB slack 0.8: raw innov med                          1.000             1.000             0.500             0.500
+FB slack 0.8: acq/100 ep                            74.956            72.907            56.496            56.365
+FB slack 1.0: loss dB                                1.620             1.585             0.145             0.161
+FB slack 1.0: probes/epoch                           3.073             2.934             2.420             2.387
+FB slack 1.0: sigma med                              0.854             0.825             0.613             0.580
+FB slack 1.0: sigma>th_on %                         88.313            82.001            51.532            48.744
+FB slack 1.0: sigma<th_off %                         3.779             8.459            35.776            38.652
+FB slack 1.0: raw innov med                          1.000             1.000             0.500             0.500
+FB slack 1.0: acq/100 ep                            64.323            61.410            48.534            47.906

@@ -1,0 +1,23 @@
+[missing_rescoring] analysis/sensitivity.py: 2 scoring lines patched
+
+=== dataset/scenario31 (11 test passes) ===
+selected 0.117 dB @ 2.30 probes (6.9% model)   feedback-only 0.109 dB @ 2.27
+  th_on=0.6        0.118  +0.001  probes 2.35  model   5.7%
+  th_on=1.0        0.115  -0.002  probes 2.33  model   4.6%
+  th_off=0.3       0.125  +0.008  probes 2.17  model  10.2%
+  th_off=0.65      0.119  +0.001  probes 2.28  model   5.7%
+  margin=0.25      0.117  -0.001  probes 2.27  model   8.3%
+  margin=1.0       0.179  +0.062  probes 2.25  model   3.2%
+  t_trial=1        0.110  -0.007  probes 2.38  model   2.5%
+  t_trial=4        0.248  +0.130  probes 2.35  model  12.6%   <-- outside 0.1 dB
+  bl=64            0.119  +0.002  probes 2.27  model   7.8%
+  bl=512           0.117  +0.000  probes 2.30  model   6.9%
+  verify=2         0.114  -0.003  probes 2.33  model   5.3%
+  verify=8         0.117  -0.001  probes 2.23  model   9.8%
+  slack=0.4        0.090  -0.028  probes 2.78  model   6.5%
+  slack=0.8        0.185  +0.067  probes 2.10  model   4.4%
+  rs_k=2           0.141  +0.024  probes 2.39  model   4.6%
+  rs_k=5           0.123  +0.006  probes 2.34  model   8.1%
+  rs_how=full      0.117  +0.000  probes 2.65  model   6.9%
+16 of 17 perturbations within 0.1 dB of the selected point; 6 better; loss range 0.090..0.248; probes range 2.10..2.78
+SWEEP3_DONE

@@ -1,0 +1,4 @@
+S9: 1.04 dB · 45%   (loss 1.0448 dB, accuracy 44.74%)
+S31: 0.11 dB · 28%   (loss 0.1093 dB, accuracy 27.92%)
+S32: 0.06 dB · 7%   (loss 0.0553 dB, accuracy 7.02%)
+S33: 0.25 dB · 3%   (loss 0.2490 dB, accuracy 2.80%)

@@ -1,0 +1,12 @@
+[missing_rescoring] analysis/table3.py: 2 scoring lines patched
+
+######## scenario31: 11 test passes, reference slack 0.6, precision pass (cache both_scenario31.npz)
+policy                                 loss probes model%    p95
+METHOD                              0.11733  2.300   6.89  0.452
+feedback-only tracker               0.10944  2.274   0.00  0.420   minus METHOD -0.00789 [-0.02639, +0.01557]
+own tracker + re-sweep, no sensor   0.11498  2.407   0.00  0.465   minus METHOD -0.00235 [-0.01584, +0.01932]
+need only (A: no trial)             0.29662  1.573  40.78  1.544   minus METHOD +0.17930 [-0.01780, +0.38441]
+need only (B: no check)             0.44972  0.392  95.94  1.775   minus METHOD +0.33239 [+0.11958, +0.51262]
+  accuracy, consecutive inputs [cache]: d=1 27.92%  d=2 28.53%  d=4 28.23%   coverage 95.3 / 95.2 / 96.8%
+  accuracy, consecutive inputs [oldcache]: d=1 27.80%  d=2 28.59%  d=4 27.94%   coverage 90.5 / 90.5 / 91.6%
+PREC_DONE scenario31

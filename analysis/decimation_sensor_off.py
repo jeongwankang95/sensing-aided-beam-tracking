@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Cold-review check (2026-09-29), reviewer B-M1: does the Scenario-9 value of sensing survive a
-feedback-only reference with an absolute lock-loss detector and a charged re-acquisition sweep
-(BFR-like), or a velocity-initialized start? LLR parameters are selected on VALIDATION passes and
-evaluated once on TEST. The controller (class Ctl, copied verbatim from needonly.py) is unchanged.
-usage: llr.py locked_multi.json <root> <ref slack> --cache=results/predictions/both_<scn>.npz [--inherit=<json>]"""
+"""decimation_sensor_off.py LOCKED ROOT SLACK --cache=CACHE: the marginal value of sensing under frame decimation: the
+controller with and without its sensor (re-sweep kept) at d = 1, 2, 4 on the decimated test passes (decision frames), with the
+cached native-cadence predictions at the retained frames and, on Scenario 9, d-spaced sensor inputs
+(results/predictions/dec2_s9.npz, dec4_s9.npz). Paired bootstrap (10^5 resamples, seed 42). Writes
+results/analysis/decsk_<scenario>.json, which analysis/every_frame.py checks against.
+Paper: supplementary Table S26 and Sec. S1-D (enabling the sensor lowers the d-spaced controller's loss by 0.80 dB at d = 4).
+usage: python analysis/decimation_sensor_off.py configs/locked_v3.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json, itertools
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]; TSL = float(sys.argv[3])
@@ -44,7 +46,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # results/analysis/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1

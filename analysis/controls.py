@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""Final locked evaluation: multi-regime val-selected constants, run ONCE per
-scenario test set, with the feedback-only tracker at its own val-selected slack."""
+"""controls.py LOCKED ROOT SLACK --cache=CACHE: controls of the controller. Each block first reproduces Table II (SELF-CHECK):
+the blacklist length with the innovation gate selected or held open, the trial log, decision-interval rows of the feedback-only
+tracker and the controller, always-on vision with feedback fallback and verification every K frames, and (Scenario 9) the
+per-pass statistics with a sign test and a sign-flip permutation test. Writes results/analysis/<scenario>.json.
+Paper: Sec. VI-A (sign test p = 0.57, permutation test p = 0.009) and supplementary Secs. S17-A, S17-B and S17-D (Tables S11,
+S12 and S14).
+usage: python analysis/controls.py configs/locked_v3.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]
@@ -38,7 +43,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # rev_20260930/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1

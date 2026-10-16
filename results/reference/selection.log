@@ -1,0 +1,44 @@
+validation passes: {9: 17, 31: 6, 32: 2}
+val anchors: new {9: 618, 31: 817, 32: 366}  old {9: 499, 31: 781, 32: 354}
+reference tracker S9: val-selected slack 0.4  loss 0.4831  probes 3.706  (720 scored frames)
+reference tracker S31: val-selected slack 0.6  loss 0.0761  probes 2.293  (853 scored frames)
+reference tracker S32: val-selected slack 0.8  loss 0.0807  probes 1.958  (378 scored frames)
+SELF-CHECK deployed constants, OLD caches: regret {9: -0.0622, 31: 0.0178, 32: 0.036} mean -0.002794 (locked -0.002794) probes 2.1850 (locked 2.1850) inv 10.451 (locked 10.451)
+SELF-CHECK re-sweep val grid S9 vs 2026-09-30: max |dloss|+|dprobes| = 0.0e+00
+SELF-CHECK LLR val grid S9 vs 2026-09-29: max |dloss|+|dprobes| = 0.0e+00
+SELF-CHECK re-sweep val grid S31 vs 2026-09-30: max |dloss|+|dprobes| = 0.0e+00
+SELF-CHECK LLR val grid S31 vs 2026-09-29: max |dloss|+|dprobes| = 0.0e+00
+SELF-CHECK re-sweep val grid S32 vs 2026-09-30: max |dloss|+|dprobes| = 0.0e+00
+SELF-CHECK LLR val grid S32 vs 2026-09-29: max |dloss|+|dprobes| = 0.0e+00
+resweep  S9  same criterion (val probes <= 3.706): {'slack': 1.5, 'how': 'coarse', 'k': 5} -> 0.5242 @ 3.349 | any budget: {'slack': 0.4, 'how': 'full', 'k': 3} -> 0.1687 @ 5.396
+resweep  S31 same criterion (val probes <= 2.293): {'slack': 0.8, 'how': 'coarse', 'k': 5} -> 0.0825 @ 2.234 | any budget: {'slack': 0.4, 'how': 'coarse', 'k': 2} -> 0.0649 @ 3.025
+resweep  S32 same criterion (val probes <= 1.958): {'slack': 0.6, 'how': 'coarse', 'k': 3} -> 0.0868 @ 1.910 | any budget: {'slack': 0.8, 'how': 'coarse', 'k': 2} -> 0.0796 @ 2.042
+llr      S9  same criterion (val probes <= 3.706): {'X': 5, 'N': 3, 'how': 'full', 'ref': 'sweep'} -> 0.4831 @ 3.706 | any budget: {'X': 3, 'N': 2, 'how': 'full', 'ref': 'runmax'} -> 0.2529 @ 9.278
+llr      S31 same criterion (val probes <= 2.293): {'X': 6, 'N': 2, 'how': 'full', 'ref': 'sweep'} -> 0.0761 @ 2.293 | any budget: {'X': 6, 'N': 2, 'how': 'coarse', 'ref': 'runmax'} -> 0.0671 @ 2.470
+llr      S32 same criterion (val probes <= 1.958): {'X': 8, 'N': 1, 'how': 'full', 'ref': 'sweep'} -> 0.0807 @ 1.958 | any budget: {'X': 8, 'N': 1, 'how': 'full', 'ref': 'sweep'} -> 0.0807 @ 1.958
+grid: 136080 settings (127008 with re-sweep), 64 workers
+feasible (val probes <= reference on all three): 55718 of 127008 with re-sweep, 6999 of 9072 without
+primary            obj -0.0671 feas True | th_on=0.8 th_off=0.5 margin=0.5 t_trial=2 bl=256 verify=4 slack=0.6 | resweep ('coarse', 3) | S9 0.258(-0.226)@3.56/3.71 inv 25.0%  S31 0.076(+0.000)@2.26/2.29 inv 4.6%  S32 0.105(+0.024)@1.86/1.96 inv 1.1%
+S1_frame_weighted  obj -0.0785 feas True | th_on=0.8 th_off=0.5 margin=0.5 t_trial=2 bl=256 verify=4 slack=0.6 | resweep ('coarse', 3) | S9 0.258(-0.226)@3.56/3.71 inv 25.0%  S31 0.076(+0.000)@2.26/2.29 inv 4.6%  S32 0.105(+0.024)@1.86/1.96 inv 1.1%
+S2_loss_only       obj -0.1126 feas False | th_on=1.0 th_off=0.65 margin=1.0 t_trial=4 bl=256 verify=4 slack=0.4 | resweep ('coarse', 3) | S9 0.184(-0.299)@3.41/3.71 inv 35.4%  S31 0.059(-0.017)@2.95/2.29 inv 5.9%  S32 0.059(-0.022)@2.67/1.96 inv 2.1%
+S3_no_resweep      obj -0.0483 feas True | th_on=0.4 th_off=0.3 margin=1.0 t_trial=2 bl=64 verify=4 slack=0.6 | resweep None | S9 0.272(-0.211)@2.85/3.71 inv 31.7%  S31 0.124(+0.048)@2.22/2.29 inv 11.3%  S32 0.099(+0.018)@1.85/1.96 inv 2.6%
+S4_deployed        obj -0.0042 feas False | th_on=0.6 th_off=0.5 margin=0.5 t_trial=1 bl=64 verify=8 slack=1.0 | resweep None | S9 0.417(-0.066)@2.41/3.71 inv 29.9%  S31 0.094(+0.018)@2.14/2.29 inv 1.4%  S32 0.117(+0.036)@1.97/1.96 inv 1.3%
+plateau (feasible re-sweep settings within t dB of the primary): {'within_0.001dB': 2, 'within_0.005dB': 8, 'within_0.01dB': 22, 'within_0.02dB': 67, 'within_0.05dB': 419}
+top 15 under the primary criterion:
+  -0.0671  probes 2.56 inv  10.2% | th_on=0.8 th_off=0.5 margin=0.5 t_trial=2 bl=256 verify=4 slack=0.6 | ('coarse', 3)
+  -0.0666  probes 2.51 inv  12.7% | th_on=0.4 th_off=0.3 margin=0.5 t_trial=2 bl=64 verify=2 slack=0.8 | ('coarse', 3)
+  -0.0655  probes 2.53 inv  13.6% | th_on=0.8 th_off=0.3 margin=0.5 t_trial=2 bl=32 verify=2 slack=0.8 | ('coarse', 3)
+  -0.0641  probes 2.52 inv  13.4% | th_on=0.8 th_off=0.3 margin=0.5 t_trial=2 bl=64 verify=2 slack=0.8 | ('coarse', 3)
+  -0.0636  probes 2.55 inv  10.1% | th_on=0.8 th_off=0.65 margin=0.5 t_trial=2 bl=32 verify=2 slack=0.8 | ('coarse', 3)
+  -0.0629  probes 2.50 inv  13.4% | th_on=0.8 th_off=0.65 margin=0.5 t_trial=2 bl=32 verify=8 slack=0.8 | ('coarse', 3)
+  -0.0627  probes 2.49 inv  14.3% | th_on=0.8 th_off=0.5 margin=0.5 t_trial=2 bl=32 verify=8 slack=0.8 | ('coarse', 3)
+  -0.0624  probes 2.55 inv  11.0% | th_on=0.8 th_off=0.3 margin=0.5 t_trial=2 bl=256 verify=4 slack=0.6 | ('coarse', 3)
+  -0.0615  probes 2.48 inv  13.1% | th_on=0.8 th_off=0.65 margin=0.5 t_trial=2 bl=64 verify=8 slack=0.8 | ('coarse', 3)
+  -0.0614  probes 2.52 inv  11.3% | th_on=0.8 th_off=0.5 margin=0.5 t_trial=2 bl=32 verify=2 slack=0.8 | ('coarse', 3)
+  -0.0613  probes 2.47 inv  14.1% | th_on=0.8 th_off=0.5 margin=0.5 t_trial=2 bl=64 verify=8 slack=0.8 | ('coarse', 3)
+  -0.0610  probes 2.32 inv  13.9% | th_on=1.0 th_off=0.65 margin=0.5 t_trial=4 bl=64 verify=4 slack=0.8 | ('coarse', 3)
+  -0.0608  probes 2.61 inv   9.1% | th_on=0.4 th_off=0.3 margin=1.0 t_trial=2 bl=64 verify=2 slack=0.8 | ('coarse', 3)
+  -0.0606  probes 2.34 inv  13.4% | th_on=1.0 th_off=0.65 margin=0.5 t_trial=4 bl=256 verify=4 slack=0.8 | ('coarse', 3)
+  -0.0600  probes 2.51 inv  11.0% | th_on=0.8 th_off=0.5 margin=0.5 t_trial=2 bl=64 verify=2 slack=0.8 | ('coarse', 3)
+-> results/analysis/sel3_val.json
+SEL3_DONE

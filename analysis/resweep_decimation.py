@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Cold-review check (2026-09-29), reviewer B-M1: does the Scenario-9 value of sensing survive a
-feedback-only reference with an absolute lock-loss detector and a charged re-acquisition sweep
-(BFR-like), or a velocity-initialized start? LLR parameters are selected on VALIDATION passes and
-evaluated once on TEST. The controller (class Ctl, copied verbatim from needonly.py) is unchanged.
-usage: llr.py locked_multi.json <root> <ref slack> --cache=results/predictions/both_<scn>.npz [--inherit=<json>]"""
+"""resweep_decimation.py LOCKED ROOT SLACK --cache=CACHE: the scheduled re-sweep reference under frame decimation. At
+each d = 1, 2, 4 the 98 re-sweep settings are selected on the decimated validation passes (lowest loss, and lowest loss within
+4 probes per decision) and scored once on the decimated test passes against the controller (consecutive sensor inputs). Paired
+bootstrap (10^5 resamples, seed 42). Writes results/analysis/resweep_decim_<scenario>.json (read by analysis/every_frame.py,
+every_frame_reselect.py and resweep_pessimistic.py).
+Paper: supplementary Table S24 and Sec. S17-I (0.138, 1.255 and 4.048 dB at d = 1, 2 and 4).
+usage: python analysis/resweep_decimation.py configs/locked_v3.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json, itertools
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]; TSL = float(sys.argv[3])
@@ -44,7 +46,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # results/analysis/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1

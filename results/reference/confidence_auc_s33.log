@@ -1,0 +1,6 @@
+
+################ scenario33  model-side confidence (post cache post_scenario33.npz)
+covered frames 3855; large-error (>1 bin) rate 93.6%; >1 dB rate 76.6%
+  AUC(pmax  ) for large-error event 0.484, for >1 dB event 0.539
+  AUC(margin) for large-error event 0.452, for >1 dB event 0.512
+CONF_DONE scenario33

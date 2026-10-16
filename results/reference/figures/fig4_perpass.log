@@ -1,0 +1,2 @@
+results/figures/fig4_perpass.tikz: frame-weighted mean gain over the plain tracker +0.820 dB; 12 of 28 passes positive
+the 7 passes with the largest gain: 2.728-3.633 dB; the other 21: mean -0.0181 dB (frame-weighted -0.0207)

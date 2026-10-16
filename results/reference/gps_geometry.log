@@ -1,0 +1,5 @@
+scenario9   gps=unit2_loc_cal  passes=28 span= 4.46s dbeam= 60.0 path= 70.0 straight=0.86 dtheta=  77.3deg rate_med= 16.45deg/s rmin= 10.3m rmed= 11.3m speed=3.86m/s
+scenario31  gps=unit2_loc      passes=11 span=11.91s dbeam= 45.0 path=160.0 straight=0.28 dtheta=  66.1deg rate_med=  2.71deg/s rmin= 17.1m rmed= 30.4m speed=4.89m/s
+scenario32  gps=unit2_loc      passes= 3 span=25.70s dbeam= 55.0 path=545.0 straight=0.09 dtheta=  95.1deg rate_med=  1.97deg/s rmin= 18.5m rmed= 41.5m speed=2.50m/s
+scenario33  gps=unit2_loc      passes=18 span=18.85s dbeam= 53.0 path=308.0 straight=0.17 dtheta=  97.8deg rate_med=  2.12deg/s rmin= 11.1m rmed= 38.5m speed=3.40m/s
+scenario9   gps=unit2_loc      passes=28 span= 4.46s dbeam= 60.0 path= 70.0 straight=0.86 dtheta=   8.2deg rate_med=  1.75deg/s rmin= 15.1m rmed= 23.5m speed=3.86m/s

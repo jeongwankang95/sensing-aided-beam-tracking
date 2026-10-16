@@ -1,0 +1,24 @@
+scenario33: scored 3963, frames with a missing reading 38
+  causal persistence                 served-missing  3 | 3.068 | (a) 3.025 | (b) 3.023 | probes 0.00 -> (b) 0.00
+  feedback-only tracker              served-missing  2 | 0.249 | (a) 0.219 | (b) 0.219 | probes 1.77 -> (b) 1.77
+  own tracker + re-sweep, no sensor  served-missing  1 | 0.163 | (a) 0.148 | (b) 0.149 | probes 2.09 -> (b) 2.09
+  LLR, <=4 probes (09-29)            served-missing  2 | 0.248 | (a) 0.218 | (b) 0.219 | probes 1.82 -> (b) 1.80
+  LLR, same criterion                served-missing  2 | 0.248 | (a) 0.218 | (b) 0.219 | probes 1.82 -> (b) 1.80
+  re-sweep, any budget (09-30)       served-missing  2 | 0.270 | (a) 0.239 | (b) 0.241 | probes 2.10 -> (b) 2.10
+  re-sweep, same criterion           served-missing  1 | 0.163 | (a) 0.148 | (b) 0.149 | probes 2.09 -> (b) 2.09
+  METHOD                             served-missing  1 | 0.186 | (a) 0.171 | (b) 0.173 | probes 2.12 -> (b) 2.12
+  unverified invocation              served-missing  2 | 2.364 | (a) 2.334 | (b) 2.338 | probes 0.34 -> (b) 0.34
+  always-on                          served-missing  2 | 2.421 | (a) 2.392 | (b) 2.396 | probes 0.12 -> (b) 0.12
+  always-on + verification           served-missing  2 | 1.959 | (a) 1.929 | (b) 1.933 | probes 3.04 -> (b) 3.04
+  value = reference minus METHOD: current | (b)
+  causal persistence                 +2.882 [+2.408, +3.319] | +2.851 [+2.401, +3.261]
+  feedback-only tracker              +0.063 [-0.045, +0.240] | +0.047 [-0.055, +0.222]
+  own tracker + re-sweep, no sensor  -0.023 [-0.059, +0.005] | -0.024 [-0.060, +0.005]
+  LLR, <=4 probes (09-29)            +0.062 [-0.046, +0.239] | +0.046 [-0.055, +0.221]
+  LLR, same criterion                +0.062 [-0.046, +0.239] | +0.046 [-0.055, +0.221]
+  re-sweep, any budget (09-30)       +0.083 [-0.047, +0.313] | +0.068 [-0.056, +0.298]
+  re-sweep, same criterion           -0.023 [-0.059, +0.005] | -0.024 [-0.060, +0.005]
+  unverified invocation              +2.177 [+1.859, +2.472] | +2.166 [+1.852, +2.456]
+  always-on                          +2.234 [+1.922, +2.521] | +2.223 [+1.915, +2.505]
+  always-on + verification           +1.772 [+1.496, +2.019] | +1.761 [+1.488, +2.002]
+NAN3_DONE scenario33

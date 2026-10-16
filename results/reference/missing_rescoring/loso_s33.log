@@ -1,0 +1,7 @@
+[missing_rescoring] analysis/loso.py: 2 scoring lines patched
+
+=== scenario33: feedback-only 0.219 @ 1.77 | selected method 0.173 @ 2.12 (1.6%)
+  loso_without_S9    0.272 @ 1.94 (4.7%) | value vs fb -0.053 [-0.265, +0.150] | method minus this -0.100 [-0.307, +0.040]
+  loso_without_S31   0.231 @ 2.12 (4.6%) | value vs fb -0.012 [-0.231, +0.215] | method minus this -0.059 [-0.255, +0.101]
+  loso_without_S32   0.150 @ 2.15 (1.1%) | value vs fb +0.069 [-0.016, +0.233] | method minus this +0.022 [-0.006, +0.062]
+LOSO3_DONE scenario33

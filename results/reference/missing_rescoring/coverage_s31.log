@@ -1,0 +1,6 @@
+[missing_rescoring] analysis/coverage.py: 2 scoring lines patched
+
+cache results/predictions/both_scenario31.npz
+  feedback-only  - controller  -0.008 dB  [-0.026, +0.016]
+  always-on      - controller  +0.334 dB  [+0.121, +0.512]
+COV_DONE

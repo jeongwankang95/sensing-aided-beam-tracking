@@ -1,0 +1,5 @@
+scenario9  all  136 passes,  5964 frames: largest gap 20.97 dB | test 1166 frames: 19.44 dB | present readings equal to zero: 0
+scenario31 all   52 passes,  7012 frames: largest gap 7.38 dB | test 1402 frames: 6.98 dB | present readings equal to zero: 0
+scenario32 all   15 passes,  3235 frames: largest gap 7.75 dB | test  819 frames: 7.75 dB | present readings equal to zero: 0
+scenario33 all   18 passes,  3981 frames: largest gap 7.67 dB | test 3981 frames: 7.67 dB | present readings equal to zero: 0
+largest gap over all recorded frames: 20.97 dB

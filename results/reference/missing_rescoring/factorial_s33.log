@@ -1,0 +1,17 @@
+[missing_rescoring] analysis/factorial.py: 2 scoring lines patched
+
+######## scenario33: 18 test passes, factorial at the selected constants (slack 0.6), reference slack 0.8
+neither                    loss  0.22117  probes  1.980  model   0.0%  lock-loss passes 0
+sensor only                loss  0.25050  probes  1.972  model   1.6%  lock-loss passes 0
+re-sweep only              loss  0.14901  probes  2.085  model   0.0%  lock-loss passes 0
+both (METHOD)              loss  0.17261  probes  2.122  model   1.6%  lock-loss passes 0
+plain tracker (ref slack)  loss  0.21939  probes  1.768  model   0.0%  lock-loss passes 0
+differences (first minus second; positive = second better):
+  sensor without re-sweep   (neither - sensor only)          -0.02933 [-0.06470, -0.00302]
+  sensor with re-sweep      (re-sweep only - both)           -0.02360 [-0.05967, +0.00455]
+  re-sweep without sensor   (neither - re-sweep only)        +0.07216 [-0.00499, +0.23925]
+  re-sweep with sensor      (sensor only - both)             +0.07789 [+0.00172, +0.24850]
+  sensor only vs re-sweep only (re-sweep only - sensor only) -0.10149 [-0.26763, -0.00586]
+  plain tracker - sensor only                                -0.03111 [-0.07429, +0.00592]
+  interaction (sensor value without - with re-sweep)         -0.00573 [-0.01538, +0.00077]
+FACT3_DONE scenario33

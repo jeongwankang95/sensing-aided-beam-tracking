@@ -1,0 +1,47 @@
+dataset/scenario9: 28 test passes
+  periodic      W=2 N=2                5.62079 dB @ 2.4367 probes/epoch
+  periodic      W=2 N=3                6.00431 dB @ 1.5808 probes/epoch
+  periodic      W=2 N=4                6.10279 dB @ 1.1529 probes/epoch
+  periodic      W=2 N=6                6.19786 dB @ 0.7592 probes/epoch
+  periodic      W=2 N=8                6.29408 dB @ 0.5343 probes/epoch
+  periodic      W=2 N=12               6.35163 dB @ 0.3427 probes/epoch
+  periodic      W=3 N=2                4.80909 dB @ 3.3796 probes/epoch
+  periodic      W=3 N=3                5.69978 dB @ 2.1907 probes/epoch
+  periodic      W=3 N=4                5.94993 dB @ 1.5993 probes/epoch
+  periodic      W=3 N=6                6.13188 dB @ 1.0422 probes/epoch
+  periodic      W=3 N=8                6.29571 dB @ 0.7293 probes/epoch
+  periodic      W=3 N=12               6.30083 dB @ 0.4675 probes/epoch
+  periodic      W=5 N=2                0.86273 dB @ 5.1336 probes/epoch
+  periodic      W=5 N=3                4.40551 dB @ 3.4438 probes/epoch
+  periodic      W=5 N=4                5.60981 dB @ 2.5079 probes/epoch
+  periodic      W=5 N=6                5.94351 dB @ 1.6142 probes/epoch
+  periodic      W=5 N=8                6.21374 dB @ 1.1476 probes/epoch
+  periodic      W=5 N=12               6.29496 dB @ 0.7021 probes/epoch
+  fixed cadence K=1                    5.50711 dB @ 3.0000 probes/epoch
+  fixed cadence K=2                    2.34555 dB @ 4.9385 probes/epoch
+  fixed cadence K=3                    0.79870 dB @ 6.7583 probes/epoch
+  extrapolation K=1 m=1                1.38191 dB @ 2.9569 probes/epoch
+  extrapolation K=2 m=1                1.11786 dB @ 4.8427 probes/epoch
+  tracker       slack=0.4              1.04477 dB @ 3.6388 probes/epoch
+  tracker       slack=0.6              1.20893 dB @ 3.4279 probes/epoch
+  tracker       slack=1.0              1.62010 dB @ 3.0729 probes/epoch
+  tracker       slack=1.5              1.56387 dB @ 2.6362 probes/epoch
+  tracker       slack=2.0              2.27181 dB @ 2.6046 probes/epoch
+  tracker       slack=3.0              2.01449 dB @ 2.5510 probes/epoch
+  tracker       slack=5.0              2.06490 dB @ 2.5923 probes/epoch
+dataset/scenario9: Bayes/Viterbi frontier (params selected on val, evaluated once on test)
+ budget | val loss  val p/f | TEST loss TEST p/f  family
+    2.6 |    5.976     2.18 |     6.158     2.31  bayes {'sigma_v': 1.0, 'eps': 0.35, 'tau': 1.0, 'kmax': 5}
+    3.6 |    5.593     3.00 |     5.850     3.00  viterbi {'band': 2, 'ent_scale': 0.5, 'wmax': 2}
+    5.0 |    0.418     4.98 |     0.877     4.98  bayes {'sigma_v': 1.0, 'eps': 0.02, 'tau': 3.0, 'kmax': 5}
+    7.0 |    0.418     4.98 |     0.877     4.98  bayes {'sigma_v': 1.0, 'eps': 0.02, 'tau': 3.0, 'kmax': 5}
+    9.0 |    0.224     8.59 |     0.613     8.61  bayes {'sigma_v': 1.0, 'eps': 0.02, 'tau': 1.0, 'kmax': 9}
+   11.0 |    0.121    10.35 |     0.164    10.38  bayes {'sigma_v': 1.6, 'eps': 0.05, 'tau': 1.0, 'kmax': 17}
+STRONG_FRONTIER_DONE
+-> results/analysis/policy_family_s9.json
+Sec. IV-B baselines on the same passes:
+  causal persistence (hold)    6.35180 dB @ 0.0000 probes/epoch; capture >= 90% on 6.24% of scored frames
+  naive triggering, 1 dB, +-2  6.26848 dB @ 0.5510 probes/epoch; capture >= 90% on 6.85% of scored frames
+  fixed cadence K=1            5.50711 dB @ 3.0000 probes/epoch; capture >= 90% on 10.72% of scored frames
+  fixed cadence K=3            0.79870 dB @ 6.7583 probes/epoch; capture >= 90% on 79.00% of scored frames
+  tracker slack=0.4            capture >= 90% on 69.51% of 1138 scored frames

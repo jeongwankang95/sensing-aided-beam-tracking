@@ -1,0 +1,6 @@
+
+=== dataset/scenario9   pessimistic bracket (d-spaced sensing input) ===
+ d |       fb  ctl opt   inv% | ctl pess   p/step   inv% |  VoI opt VoI pess
+ 2 |    2.081    0.460   63.3 |    1.097     3.50   37.2 |   +1.621   +0.985
+ 4 |    5.594    1.822   58.0 |    4.863     4.24   33.6 |   +3.772   +0.731
+PESS_DONE

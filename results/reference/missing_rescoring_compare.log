@@ -1,0 +1,88 @@
+S31 delays    +0.230 -> +0.271 (+0.041) [-0.045,+0.445]->[+0.056,+0.453] | ao+v1 minus ctl :: persistence 1.633@0.00 | feedback-only 0.229@2.27 
+S31 delays    +0.230 -> +0.271 (+0.041) [-0.045,+0.445]->[+0.056,+0.453] | ao+v2 minus ctl :: persistence 1.633@0.00 | feedback-only 0.229@2.27 
+S31 delays    +0.140 -> +0.180 (+0.040) [-0.161,+0.389]->[-0.077,+0.401] | ao+v1 minus ctl :: persistence 1.633@0.00 | feedback-only 0.229@2.27 
+S31 delays    +0.140 -> +0.180 (+0.040) [-0.161,+0.389]->[-0.077,+0.401] | ao+v2 minus ctl :: persistence 1.633@0.00 | feedback-only 0.229@2.27 
+S31 delays_sensor_off +0.230 -> +0.271 (+0.041) [-0.045,+0.445]->[+0.056,+0.453] | ao+v1 minus ctl :: persistence 1.633@0.00 | feedback-only 0.229@2.27 
+S31 delays_sensor_off +0.230 -> +0.271 (+0.041) [-0.045,+0.445]->[+0.056,+0.453] | ao+v2 minus ctl :: persistence 1.633@0.00 | feedback-only 0.229@2.27 
+S31 delays_sensor_off +0.140 -> +0.180 (+0.040) [-0.161,+0.389]->[-0.077,+0.401] | ao+v1 minus ctl :: persistence 1.633@0.00 | feedback-only 0.229@2.27 
+S31 delays_sensor_off +0.140 -> +0.180 (+0.040) [-0.161,+0.389]->[-0.077,+0.401] | ao+v2 minus ctl :: persistence 1.633@0.00 | feedback-only 0.229@2.27 
+S31 table2    +1.516 -> +1.434 (-0.082) [+1.114,+2.038]->[+1.020,+1.992] | causal persistence :: value = reference minus METHOD (positive: METHOD b
+S32 invocation_ablation +0.839 -> +0.772 (-0.067) [+0.086,+1.465]->[+0.086,+1.465] | only (A: no trial) minus Need x verify (ours) :: Need only (B: no check)   1.458   0.18    97.8    
+S32 delays    +1.146 -> +1.076 (-0.070) [+0.574,+1.609]->[+0.566,+1.609] | ao+v1 minus ctl :: persistence 2.490@0.00 | feedback-only 0.100@1.63 
+S32 delays    +1.143 -> +1.072 (-0.071) [+0.583,+1.594]->[+0.575,+1.594] | ao+v1 minus ctl :: persistence 2.490@0.00 | feedback-only 0.100@1.63 
+S32 delays    +1.279 -> +1.209 (-0.070) [+0.624,+1.865]->[+0.616,+1.865] | ao+v2 minus ctl :: persistence 2.490@0.00 | feedback-only 0.100@1.63 
+S32 delays    +1.159 -> +1.087 (-0.072) [+0.663,+1.594]->[+0.655,+1.594] | ao+v1 minus ctl :: persistence 2.490@0.00 | feedback-only 0.095@1.68 
+S32 delays    +1.294 -> +1.224 (-0.070) [+0.704,+1.865]->[+0.696,+1.865] | ao+v2 minus ctl :: persistence 2.490@0.00 | feedback-only 0.095@1.68 
+S32 delays_sensor_off +1.146 -> +1.076 (-0.070) [+0.574,+1.609]->[+0.566,+1.609] | ao+v1 minus ctl :: persistence 2.490@0.00 | feedback-only 0.100@1.63 
+S32 delays_sensor_off +1.143 -> +1.072 (-0.071) [+0.583,+1.594]->[+0.575,+1.594] | ao+v1 minus ctl :: persistence 2.490@0.00 | feedback-only 0.100@1.63 
+S32 delays_sensor_off +1.279 -> +1.209 (-0.070) [+0.624,+1.865]->[+0.616,+1.865] | ao+v2 minus ctl :: persistence 2.490@0.00 | feedback-only 0.100@1.63 
+S32 delays_sensor_off +1.159 -> +1.087 (-0.072) [+0.663,+1.594]->[+0.655,+1.594] | ao+v1 minus ctl :: persistence 2.490@0.00 | feedback-only 0.095@1.68 
+S32 delays_sensor_off +1.294 -> +1.224 (-0.070) [+0.704,+1.865]->[+0.696,+1.865] | ao+v2 minus ctl :: persistence 2.490@0.00 | feedback-only 0.095@1.68 
+S32 table3    +0.839 -> +0.772 (-0.067) [+0.08566,+1.46454]->[+0.08613,+1.46454] |   0.90969  1.433  30.02  3.416   minus METHOD :: METHOD                              0.07054  2.043
+S33 coverage  +0.063 -> +0.047 (-0.016) [-0.045,+0.246]->[-0.054,+0.225] | feedback-only  - controller :: cache results/predictions/both_scenario33.npz
+S33 coverage  +2.234 -> +2.223 (-0.011) [+1.925,+2.511]->[+1.918,+2.499] | always-on      - controller :: cache results/predictions/both_scenario33.npz
+S33 stale_observations +0.063 -> +0.047 (-0.016) [-0.045,+0.246]->[-0.054,+0.225] | d=0 :: value of sensing (feedback - controller), paired p
+S33 stale_observations -0.059 -> -0.076 (-0.017) [-0.159,+0.022]->[-0.172,-0.006] | d=1 :: value of sensing (feedback - controller), paired p
+S33 stale_observations -0.100 -> -0.116 (-0.016) [-0.234,-0.002]->[-0.247,-0.031] | d=2 :: value of sensing (feedback - controller), paired p
+S33 loso      -0.116 -> -0.100 (+0.016) [-0.325,+0.028]->[-0.307,+0.040] | method minus this :: === scenario33: feedback-only 0.249 @ 1.77 | selec
+S33 loso      +0.004 -> -0.012 (-0.016) [-0.212,+0.229]->[-0.231,+0.215] | value vs fb :: === scenario33: feedback-only 0.249 @ 1.77 | selec
+S33 loso      +0.085 -> +0.069 (-0.016) [-0.009,+0.252]->[-0.016,+0.233] | value vs fb :: === scenario33: feedback-only 0.249 @ 1.77 | selec
+S33 invocation_ablation +1.162 -> +1.150 (-0.012) [+0.863,+1.532]->[+0.857,+1.504] | only (A: no trial) minus Need x verify (ours) :: Need only (B: no check)   2.364   0.34    92.5    
+S33 invocation_ablation +2.177 -> +2.166 (-0.011) [+1.858,+2.464]->[+1.854,+2.447] | only (B: no check) minus Need x verify (ours) :: Need only (B: no check)   2.364   0.34    92.5    
+S33 delays    +0.063 -> +0.047 (-0.016) [-0.045,+0.240]->[-0.055,+0.222] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays    +1.772 -> +1.761 (-0.011) [+1.496,+2.019]->[+1.488,+2.002] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays    +2.001 -> +1.989 (-0.012) [+1.707,+2.267]->[+1.699,+2.252] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays    +0.060 -> +0.044 (-0.016) [-0.048,+0.236]->[-0.058,+0.218] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays    +1.762 -> +1.749 (-0.013) [+1.489,+2.005]->[+1.480,+1.986] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays    +2.014 -> +1.987 (-0.027) [+1.717,+2.285]->[+1.702,+2.240] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays    -0.059 -> -0.076 (-0.017) [-0.160,+0.022]->[-0.174,-0.006] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays    +1.717 -> +1.706 (-0.011) [+1.333,+2.032]->[+1.322,+2.018] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays    +1.882 -> +1.870 (-0.012) [+1.487,+2.213]->[+1.474,+2.199] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays    -0.114 -> -0.131 (-0.017) [-0.266,+0.000]->[-0.282,-0.023] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays    +1.668 -> +1.640 (-0.028) [+1.272,+2.000]->[+1.250,+1.963] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays    +1.829 -> +1.816 (-0.013) [+1.429,+2.171]->[+1.419,+2.153] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays    +0.052 -> +0.036 (-0.016) [-0.053,+0.227]->[-0.062,+0.208] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.323@1.77 
+S33 delays    +1.836 -> +1.809 (-0.027) [+1.561,+2.083]->[+1.541,+2.047] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.323@1.77 
+S33 delays    +1.997 -> +1.985 (-0.012) [+1.706,+2.260]->[+1.699,+2.242] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.323@1.77 
+S33 delays    +0.024 -> +0.038 (+0.014) [-0.079,+0.199]->[-0.060,+0.212] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.318@1.77 
+S33 delays    +2.130 -> +2.149 (+0.019) [+1.819,+2.417]->[+1.841,+2.431] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.318@1.77 
+S33 delays    +2.130 -> +2.149 (+0.019) [+1.819,+2.417]->[+1.841,+2.431] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.318@1.77 
+S33 delays    +0.023 -> +0.037 (+0.014) [-0.080,+0.198]->[-0.062,+0.212] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.318@1.77 
+S33 delays_sensor_off +0.063 -> +0.047 (-0.016) [-0.045,+0.240]->[-0.055,+0.222] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays_sensor_off +1.772 -> +1.761 (-0.011) [+1.496,+2.019]->[+1.488,+2.002] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays_sensor_off +2.001 -> +1.989 (-0.012) [+1.707,+2.267]->[+1.699,+2.252] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays_sensor_off +0.060 -> +0.044 (-0.016) [-0.048,+0.236]->[-0.058,+0.218] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays_sensor_off +1.762 -> +1.749 (-0.013) [+1.489,+2.005]->[+1.480,+1.986] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays_sensor_off +2.014 -> +1.987 (-0.027) [+1.717,+2.285]->[+1.702,+2.240] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays_sensor_off +0.058 -> +0.043 (-0.015) [-0.049,+0.235]->[-0.058,+0.217] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays_sensor_off +1.757 -> +1.745 (-0.012) [+1.485,+1.998]->[+1.478,+1.980] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays_sensor_off +1.984 -> +1.972 (-0.012) [+1.692,+2.246]->[+1.685,+2.229] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.249@1.77 
+S33 delays_sensor_off -0.059 -> -0.076 (-0.017) [-0.160,+0.022]->[-0.174,-0.006] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays_sensor_off +1.717 -> +1.706 (-0.011) [+1.333,+2.032]->[+1.322,+2.018] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays_sensor_off +1.882 -> +1.870 (-0.012) [+1.487,+2.213]->[+1.474,+2.199] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays_sensor_off -0.114 -> -0.131 (-0.017) [-0.266,+0.000]->[-0.282,-0.023] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays_sensor_off +1.668 -> +1.640 (-0.028) [+1.272,+2.000]->[+1.250,+1.963] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays_sensor_off +1.829 -> +1.816 (-0.013) [+1.429,+2.171]->[+1.419,+2.153] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.325@1.76 
+S33 delays_sensor_off +0.052 -> +0.036 (-0.016) [-0.053,+0.227]->[-0.062,+0.208] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.323@1.77 
+S33 delays_sensor_off +1.836 -> +1.809 (-0.027) [+1.561,+2.083]->[+1.541,+2.047] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.323@1.77 
+S33 delays_sensor_off +1.997 -> +1.985 (-0.012) [+1.706,+2.260]->[+1.699,+2.242] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.323@1.77 
+S33 delays_sensor_off +0.024 -> +0.038 (+0.014) [-0.079,+0.199]->[-0.060,+0.212] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.318@1.77 
+S33 delays_sensor_off +2.130 -> +2.149 (+0.019) [+1.819,+2.417]->[+1.841,+2.431] | ao+v1 minus ctl :: persistence 3.068@0.00 | feedback-only 0.318@1.77 
+S33 delays_sensor_off +2.130 -> +2.149 (+0.019) [+1.819,+2.417]->[+1.841,+2.431] | ao+v2 minus ctl :: persistence 3.068@0.00 | feedback-only 0.318@1.77 
+S33 delays_sensor_off +0.023 -> +0.037 (+0.014) [-0.080,+0.198]->[-0.062,+0.212] | VoI fb-ctl :: persistence 3.068@0.00 | feedback-only 0.318@1.77 
+S33 table2    +2.882 -> +2.851 (-0.031) [+2.408,+3.319]->[+2.401,+3.261] | causal persistence :: value = reference minus METHOD (positive: METHOD b
+S33 table2    +0.063 -> +0.047 (-0.016) [-0.045,+0.240]->[-0.055,+0.222] | feedback-only tracker :: value = reference minus METHOD (positive: METHOD b
+S33 table2    +0.062 -> +0.046 (-0.016) [-0.046,+0.239]->[-0.055,+0.221] | LLR, <=4 probes (09-29) :: value = reference minus METHOD (positive: METHOD b
+S33 table2    +0.062 -> +0.046 (-0.016) [-0.046,+0.239]->[-0.055,+0.221] | LLR, same criterion :: value = reference minus METHOD (positive: METHOD b
+S33 table2    +0.083 -> +0.068 (-0.015) [-0.047,+0.313]->[-0.056,+0.298] | re-sweep, any budget (09-30) :: value = reference minus METHOD (positive: METHOD b
+S33 table2    +2.177 -> +2.166 (-0.011) [+1.859,+2.472]->[+1.852,+2.456] | unverified invocation :: value = reference minus METHOD (positive: METHOD b
+S33 table2    +2.234 -> +2.223 (-0.011) [+1.922,+2.521]->[+1.915,+2.505] | always-on :: value = reference minus METHOD (positive: METHOD b
+S33 table2    +1.772 -> +1.761 (-0.011) [+1.496,+2.019]->[+1.488,+2.002] | always-on + verification :: value = reference minus METHOD (positive: METHOD b
+S33 factorial -0.016 -> -0.031 (-0.016) [-0.06691,+0.04019]->[-0.07429,+0.00592] | plain tracker - sensor only :: differences (first minus second; positive = second
+S33 table3    +0.063 -> +0.047 (-0.016) [-0.04524,+0.23959]->[-0.05463,+0.22155] |   0.24897  1.768   0.00  1.224   minus METHOD :: METHOD                              0.18645  2.122
+S33 table3    +1.162 -> +1.150 (-0.012) [+0.85812,+1.52246]->[+0.85610,+1.49562] |   1.34815  1.676  30.10  4.254   minus METHOD :: METHOD                              0.18645  2.122
+S33 table3    +2.177 -> +2.166 (-0.011) [+1.85905,+2.47204]->[+1.85186,+2.45579] |   2.36357  0.339  92.48  4.903   minus METHOD :: METHOD                              0.18645  2.122
+S33 seeds_s1  +0.064 -> +0.049 (-0.015) [-0.046,+0.241]->[-0.054,+0.223] | VoI :: 
+S33 seeds_s2  +0.079 -> +0.063 (-0.016) [-0.015,+0.248]->[-0.022,+0.229] | VoI :: 
+max |delta| of paired estimates per log:
+S31:attribution=0.001 S31:controls_gate=0.000 S31:coverage=0.002 S31:decimation_sensor_off=0.006 S31:delays=0.041 S31:delays_sensor_off=0.041 S31:factorial=0.000 S31:invocation_ablation=0.002 S31:loso=0.001 S31:seeds_s1=0.000 S31:seeds_s2=0.000 S31:stale_observations=0.001 S31:table2=0.082 S31:table3=0.002 S31:warmup=0.001 S32:attribution=0.001 S32:controls_gate=0.000 S32:coverage=0.004 S32:decimation_sensor_off=0.007 S32:delays=0.072 S32:delays_sensor_off=0.072 S32:factorial=0.001 S32:invocation_ablation=0.067 S32:loso=0.001 S32:seeds_s1=0.001 S32:seeds_s2=0.001 S32:stale_observations=0.001 S32:table2=0.005 S32:table3=0.067 S32:warmup=0.000 S33:attribution=0.001 S33:controls_gate=0.001 S33:coverage=0.016 S33:decimation_sensor_off=0.003 S33:delays=0.028 S33:delays_sensor_off=0.028 S33:factorial=0.016 S33:invocation_ablation=0.012 S33:loso=0.016 S33:seeds_s1=0.015 S33:seeds_s2=0.016 S33:stale_observations=0.017 S33:table2=0.031 S33:table3=0.016 S33:warmup=0.001

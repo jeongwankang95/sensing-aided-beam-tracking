@@ -1,0 +1,11 @@
+[missing_rescoring] analysis/invocation_ablation.py: 3 scoring lines patched
+
+=== dataset/scenario33 (18 test passes) slack 0.8 ===
+policy                    loss    p/f  model%     p95
+Feedback-only tracker    0.219   1.77     0.0    1.22
+Need x verify (ours)     0.173   2.12     1.6    0.73
+Need only (A: no trial)   1.322   1.67    30.4    4.25
+Need only (B: no check)   2.338   0.34    93.4    4.90
+  Need only (A: no trial) minus Need x verify (ours)   +1.150 [+0.857, +1.504]
+  Need only (B: no check) minus Need x verify (ours)   +2.166 [+1.854, +2.447]
+NEEDONLY_DONE

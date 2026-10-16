@@ -1,0 +1,4 @@
+scenario9  replay rule 0.8193 | held-missing excluded 0.8193 (n=0) | any-missing frames excluded 0.8193 (n=0)
+scenario31 replay rule 0.1139 | held-missing excluded 0.1139 (n=0) | any-missing frames excluded 0.1137 (n=79)
+scenario32 replay rule 0.1573 | held-missing excluded 0.1387 (n=1) | any-missing frames excluded 0.1392 (n=21)
+scenario33 replay rule 0.1941 | held-missing excluded 0.1639 (n=2) | any-missing frames excluded 0.1647 (n=38)

@@ -1,0 +1,6 @@
+
+################ scenario9  model-side confidence (post cache post_scenario9.npz)
+covered frames 970; large-error (>1 bin) rate 28.8%; >1 dB rate 11.5%
+  AUC(pmax  ) for large-error event 0.532, for >1 dB event 0.598
+  AUC(margin) for large-error event 0.586, for >1 dB event 0.646
+CONF_DONE scenario9

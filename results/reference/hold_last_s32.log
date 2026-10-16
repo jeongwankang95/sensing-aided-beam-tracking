@@ -1,0 +1,10 @@
+
+  cache both_scenario32.npz          coverage 97.8%
+    policy                   loss dB  probes/f
+    sensor-always K=inf        1.465      0.00
+    sensor-always K=3          1.359      0.98
+    sensor-always K=2          1.312      1.46
+    sensor-always K=1          1.155      2.93
+    3 test passes, 272.0 scored frames per pass on average; scored frames before the first prediction of a pass: min 6, max 6
+    hold-last by frame: with a prediction 1.491 dB on 97.79% of scored frames, without 0.304 dB on 2.21%; share of total loss without a prediction 0.5%
+NAIVE_DONE

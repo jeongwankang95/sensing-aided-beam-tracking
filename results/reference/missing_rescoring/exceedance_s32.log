@@ -1,0 +1,10 @@
+[missing_rescoring] analysis/exceedance.py: 2 scoring lines patched
+
+=== dataset/scenario32 (3 test passes) tracker slack 0.8 ===
+policy                    mean    p/f model% >1dB >2dB >3dB     p95
+Causal persistence       2.495   0.00    0.0  72.6  53.4  38.2    5.66
+Feedback-only tracker    0.055   1.68    0.0   0.1   0.0   0.0    0.28
+Need x verify (ours)     0.071   2.05    1.0   0.5   0.0   0.0    0.38
+Always-on                1.463   0.10   98.6  48.0  29.9  18.4    4.39
+  + verification         1.152   3.03   98.6  41.7  23.6   9.6    3.63
+EXCEED_DONE

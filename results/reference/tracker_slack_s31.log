@@ -1,0 +1,12 @@
+scenario31: 6 validation passes
+  slack 0.1  loss 0.1370 dB  probes 3.381
+  slack 0.2  loss 0.1382 dB  probes 3.326
+  slack 0.3  loss 0.1375 dB  probes 3.237
+  slack 0.4  loss 0.1524 dB  probes 2.987
+  slack 0.6  loss 0.0761 dB  probes 2.293
+  slack 0.8  loss 0.0927 dB  probes 1.954
+  slack 1.0  loss 0.0983 dB  probes 2.104
+  slack 1.5  loss 0.2638 dB  probes 1.343
+  slack 2.0  loss 0.2350 dB  probes 1.385
+  slack 3.0  loss 0.2157 dB  probes 1.258
+  selected among 0.4/0.6/0.8/1/1.5/2/3: 0.6 (loss 0.0761 dB, 2.293 probes/epoch)

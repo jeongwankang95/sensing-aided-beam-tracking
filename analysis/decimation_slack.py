@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
-"""Final locked evaluation: multi-regime val-selected constants, run ONCE per
-scenario test set, with the feedback-only tracker at its own val-selected slack."""
+"""decimation_slack.py LOCKED ROOT SLACK --cache=CACHE: (1) on Scenario 9, the per-pass gains over the plain tracker on the 17
+validation passes and the histories of the high-gain test passes; (2) the feedback-only comparator's slack re-selected on the
+decimated validation passes at each d = 1, 2, 4 (the reference grid plus 1.2; Scenario 33 uses Scenario 32's) and scored on
+test. Writes results/analysis/scenario9_valdist.json and results/analysis/<scenario>_perd_slack.json (read by
+analysis/every_frame.py and every_frame_reselect.py).
+Paper: supplementary Secs. S17-H (validation losses 0.483 and 0.258 dB, the 17 per-pass gains from -0.19 to +3.44 dB) and
+S17-I (the re-selected comparator at d = 2 and 4).
+usage: python analysis/decimation_slack.py configs/locked_v3.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]
@@ -38,7 +44,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # rev_20260930/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1

@@ -1,0 +1,81 @@
+\begin{tikzpicture}[x=0.62cm,y=2.45cm]
+  % The vertical coordinate is log10(loss); tick labels remain in dB.
+  \draw[line width=0.45pt] (0,-0.92) -- (10.8,-0.92);
+  \draw[line width=0.45pt] (0,-0.92) -- (0,0.90);
+  \foreach \x in {0,2,4,6,8,10}{
+    \draw[line width=0.4pt] (\x,-0.92) -- ++(0,-2.5pt);
+    \node[font=\scriptsize,anchor=north] at (\x,-0.95) {\x};}
+  \foreach \y/\lab in {-0.69897/0.2,-0.30103/0.5,0/1,0.30103/2,0.69897/5}{
+    \draw[line width=0.4pt] (0,\y) -- ++(-2.5pt,0);
+    \node[font=\scriptsize,anchor=east] at (-0.12,\y) {\lab};}
+  \node[font=\footnotesize,anchor=north] at (5.4,-1.15)
+    {candidate-beam probes/epoch};
+  \node[font=\footnotesize,rotate=90] at (-1.00,-0.01) {mean power loss (dB)};
+
+  \draw[black!70,line width=0.75pt]
+    plot coordinates {(0.343,0.80299) (0.572,0.76895) (0.802,0.73202)
+      (1.031,0.69165) (1.260,0.64714) (1.490,0.59754) (1.719,0.54153)
+      (1.948,0.47722) (2.177,0.40171) (2.407,0.31024) (2.636,0.19422)
+      (2.853,0.06280) (3.070,-0.12656) (3.144,-0.16928) (3.217,-0.21667)
+      (3.405,-0.27728) (3.594,-0.34775) (3.782,-0.43192) (3.922,-0.49241)
+      (4.062,-0.56273) (4.232,-0.64772) (4.401,-0.75350) (4.650,-0.77774)
+      (4.900,-0.80341) (5.150,-0.83069) (5.400,-0.85981)};
+
+  \foreach \x/\y in {0.343/0.80299,0.468/0.79951,0.534/0.79903,
+    0.702/0.79910,0.730/0.79913,0.759/0.79235,1.042/0.78769,
+    1.148/0.79346,1.153/0.78564,1.581/0.77858,1.599/0.77462,
+    1.614/0.77413,2.191/0.75595,2.437/0.74990,2.508/0.74906,
+    3.380/0.68217,3.444/0.64406,5.133/-0.06415}{
+      \node[regular polygon,regular polygon sides=3,shape border rotate=180,
+        draw=black!45,minimum size=3.5pt,inner sep=0pt,line width=0.4pt]
+        at (\x,\y) {};}
+  \foreach \x/\y in {3.000/0.74103,4.938/0.37029,6.758/-0.09763}{
+      \node[rectangle,draw=black!45,minimum size=3.3pt,inner sep=0pt,
+        line width=0.4pt] at (\x,\y) {};}
+  \foreach \x/\y in {2.957/0.14047,4.843/0.04836}{
+      \node[regular polygon,regular polygon sides=3,draw=black!45,
+        minimum size=3.5pt,inner sep=0pt,line width=0.4pt] at (\x,\y) {};}
+  \foreach \x/\y in {2.551/0.30423,2.592/0.31494,2.605/0.35638,
+    2.636/0.19422,3.073/0.20959,3.428/0.08240,3.639/0.01898}{
+      \node[circle,draw=black!45,minimum size=3.5pt,inner sep=0pt,
+        line width=0.4pt] at (\x,\y) {};}
+  \foreach \x/\y in {2.310/0.78944,3.000/0.76716,4.980/-0.05702,8.610/-0.21258,10.380/-0.78529}{\node[black!55,font=\scriptsize] at (\x,\y) {$+$};}
+  \foreach \x/\y in {3.663/-0.03929,3.704/-0.04115,3.722/-0.04827,3.760/-0.07068,3.833/-0.08428,4.362/-0.10891,4.594/-0.12033,4.641/-0.20712,4.884/-0.21653,5.978/-0.31229,10.900/-0.32386}{\node[black!55,font=\scriptsize,inner sep=0pt] at (\x,\y) {$\times$};}
+
+  \foreach \x/\y in {2.963/0.12001,3.040/-0.04629,3.070/-0.12656,3.208/-0.16330,3.214/-0.16755,3.217/-0.21667,3.769/-0.38153,3.782/-0.43192,4.062/-0.56273,4.119/-0.58536,4.401/-0.75350,5.400/-0.85981}{\node[regular polygon,regular polygon sides=5,draw=black!45,minimum size=3.8pt,inner sep=0pt,line width=0.4pt] at (\x,\y) {};}
+
+    \draw[black!55,densely dotted,line width=0.55pt]
+    (3.247,-0.64782) -- (4.232,-0.64782);
+  \draw[black,line width=0.6pt] (4.232,-0.68782) -- (4.232,-0.60782);
+  \node[diamond,draw=black,fill=black,minimum size=5.4pt,inner sep=0pt]
+    at (3.247,-0.64782) {};
+  \node[font=\scriptsize,anchor=east,inner sep=1pt] at (3.10,-0.65) {ours};
+  \node[diamond,draw=black,fill=white,minimum size=5.4pt,inner sep=0pt,line width=0.5pt]
+    at (4.119,-0.58536) {};
+  \node[font=\scriptsize,anchor=west,inner sep=1pt] at (4.32,-0.52) {sensor disabled};
+
+  % Compact in-panel legend; the upper-right region contains no observations.
+  \draw[black!30,line width=0.3pt] (3.93,0.47) rectangle (10.50,0.925);
+  \draw[black!70,line width=0.75pt] (4.05,0.86)--(4.48,0.86);
+  \node[font=\scriptsize,anchor=west] at (4.58,0.86) {frontier};
+  \node[regular polygon,regular polygon sides=3,shape border rotate=180,
+    draw=black!45,minimum size=3.5pt,inner sep=0pt,line width=0.4pt]
+    at (4.26,0.75) {};
+  \node[font=\scriptsize,anchor=west] at (4.58,0.75) {periodic};
+  \node[rectangle,draw=black!45,minimum size=3.3pt,inner sep=0pt,
+    line width=0.4pt] at (4.26,0.64) {};
+  \node[font=\scriptsize,anchor=west] at (4.58,0.64) {fixed cadence};
+  \node[regular polygon,regular polygon sides=3,draw=black!45,
+    minimum size=3.5pt,inner sep=0pt,line width=0.4pt] at (4.26,0.53) {};
+  \node[font=\scriptsize,anchor=west] at (4.58,0.53) {extrapolation};
+  \node[circle,draw=black!45,minimum size=3.5pt,inner sep=0pt,
+    line width=0.4pt] at (7.60,0.86) {};
+  \node[font=\scriptsize,anchor=west] at (7.92,0.86) {innovation};
+  \node[black!55,font=\scriptsize] at (7.60,0.75) {$+$};
+  \node[font=\scriptsize,anchor=west] at (7.92,0.75) {Bayes/HMM};
+  \node[regular polygon,regular polygon sides=5,draw=black!45,minimum size=3.8pt,
+    inner sep=0pt,line width=0.4pt] at (7.60,0.64) {};
+    \node[font=\scriptsize,anchor=west] at (7.92,0.64) {re-sweep};
+  \node[black!55,font=\scriptsize,inner sep=0pt] at (7.60,0.53) {$\times$};
+  \node[font=\scriptsize,anchor=west] at (7.92,0.53) {lock-loss rec.};
+\end{tikzpicture}

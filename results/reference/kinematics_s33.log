@@ -1,0 +1,2 @@
+scenario33  test gps=unit2_loc     passes=18 dur=18.8512 net=53.0 trav=2.7849 step=1.718 straight=0.169 rate=2.1175 rmed=38.538 rmin=11.096 innov=0.333
+KIN2_DONE

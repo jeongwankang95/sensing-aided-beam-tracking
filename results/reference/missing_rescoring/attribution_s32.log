@@ -1,0 +1,21 @@
+[missing_rescoring] analysis/attribution.py: 3 scoring lines patched
+
+=== dataset/scenario32 (3 test passes) attribution, cache both_scenario32.npz ===
+  hook check: Ctl 0.071 dB / 2.05 p/f / 1.0%   CtlVar 0.071 / 2.05 / 1.0   IDENTICAL
+  random-gate opening probability matched to 1.0% invocations: p = 0.0033
+
+policy                         loss     p/f  model%     p95  delta vs ours [95% CI]
+feedback-only tracker         0.055    1.68     0.0    0.28
+need x verify (ours)          0.071    2.05     1.0    0.38   (deployed)
+  -- candidate replaced (perfect sensing information) --
+  oracle candidate            0.289    1.98     6.4    2.01  +0.218 [-0.004, +0.979]   trials 0/1 won
+  -- candidate replaced (no sensing information) --
+  own extrapolation           0.071    2.05     1.0    0.38  +0.000 [+0.000, +0.000]   trials 0/1 won
+  random offset               0.071    2.05     1.0    0.38  +0.000 [+0.000, +0.000]   trials 0/1 won
+  stale prediction            0.071    2.05     1.0    0.38  +0.000 [+0.000, +0.000]   trials 0/1 won
+  -- gate replaced (everything else unchanged) --
+  random opening              0.059    2.03     1.0    0.29  -0.011 [-0.020, -0.005]   trials 0/1 won
+  measurement age >=2         0.055    2.17     1.7    0.28  -0.016 [-0.055, +0.008]   trials 0/1 won
+  measurement age >=3         0.056    2.13     1.0    0.29  -0.015 [-0.059, +0.010]   trials 0/1 won
+  no gate at all              0.069    2.07     1.0    0.38  -0.001 [-0.003, +0.000]   trials 0/1 won
+ATTRIB_DONE

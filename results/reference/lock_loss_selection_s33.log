@@ -1,0 +1,91 @@
+
+######## scenario33: 0 val / 18 test passes, reference slack 0.8
+no validation split: inheriting {'X': 8, 'N': 1, 'how': 'full', 'ref': 'sweep'} {'X': 8, 'N': 1, 'how': 'full', 'ref': 'sweep'}
+selected on val (min loss): {'X': 8, 'N': 1, 'how': 'full', 'ref': 'sweep'}  (min loss, val probes <= 4): {'X': 8, 'N': 1, 'how': 'full', 'ref': 'sweep'}
+TEST policy                                 loss dB  probes  model% sweeps
+reference tracker                             0.249    1.77     0.0      0
+controller (deployed)                         0.256    1.83     1.7      0
+velocity-init tracker (2nd sweep)             0.771    2.02     0.0     18
+LLR tracker, val-selected                     0.248    1.82     0.0      2
+controller + same LLR                         0.256    1.83     1.7      0
+velocity-init + LLR (val-selected)            0.770    2.07     0.0     20
+value of sensing  [reference tracker] - [controller (deployed)]: -0.007 [-0.109, +0.065]
+value of sensing  [LLR tracker, val-selected] - [controller (deployed)]: -0.008 [-0.109, +0.063]
+value of sensing  [LLR tracker, val-selected] - [controller + same LLR]: -0.008 [-0.109, +0.063]
+value of sensing  [velocity-init tracker (2nd sweep)] - [controller (deployed)]: +0.515 [+0.011, +1.094]
+
+TEST grid (all 72 LLR settings, sorted by probes):
+  X=8   N=2 full   sweep   loss 0.249  probes 1.77  sweeps 0
+  X=8   N=2 full   runmax  loss 0.249  probes 1.77  sweeps 0
+  X=8   N=2 coarse sweep   loss 0.249  probes 1.77  sweeps 0
+  X=8   N=2 coarse runmax  loss 0.249  probes 1.77  sweeps 0
+  X=8   N=3 full   sweep   loss 0.249  probes 1.77  sweeps 0
+  X=8   N=3 full   runmax  loss 0.249  probes 1.77  sweeps 0
+  X=8   N=3 coarse sweep   loss 0.249  probes 1.77  sweeps 0
+  X=8   N=3 coarse runmax  loss 0.249  probes 1.77  sweeps 0
+  X=10  N=2 full   sweep   loss 0.249  probes 1.77  sweeps 0
+  X=10  N=2 full   runmax  loss 0.249  probes 1.77  sweeps 0
+  X=10  N=2 coarse sweep   loss 0.249  probes 1.77  sweeps 0
+  X=10  N=2 coarse runmax  loss 0.249  probes 1.77  sweeps 0
+  X=10  N=3 full   sweep   loss 0.249  probes 1.77  sweeps 0
+  X=10  N=3 full   runmax  loss 0.249  probes 1.77  sweeps 0
+  X=10  N=3 coarse sweep   loss 0.249  probes 1.77  sweeps 0
+  X=10  N=3 coarse runmax  loss 0.249  probes 1.77  sweeps 0
+  X=8   N=1 coarse sweep   loss 0.248  probes 1.80  sweeps 2
+  X=8   N=1 coarse runmax  loss 0.248  probes 1.80  sweeps 2
+  X=10  N=1 coarse sweep   loss 0.248  probes 1.80  sweeps 2
+  X=10  N=1 coarse runmax  loss 0.248  probes 1.80  sweeps 2
+  X=8   N=1 full   sweep   loss 0.248  probes 1.82  sweeps 2
+  X=8   N=1 full   runmax  loss 0.248  probes 1.82  sweeps 2
+  X=10  N=1 full   sweep   loss 0.248  probes 1.82  sweeps 2
+  X=10  N=1 full   runmax  loss 0.248  probes 1.82  sweeps 2
+  X=6   N=2 coarse sweep   loss 0.241  probes 1.91  sweeps 8
+  X=6   N=1 coarse sweep   loss 0.246  probes 1.95  sweeps 13
+  X=6   N=3 coarse sweep   loss 0.251  probes 1.95  sweeps 6
+  X=6   N=2 coarse runmax  loss 0.239  probes 1.96  sweeps 12
+  X=6   N=3 coarse runmax  loss 0.265  probes 2.00  sweeps 9
+  X=5   N=3 coarse sweep   loss 0.292  probes 2.01  sweeps 12
+  X=6   N=3 full   sweep   loss 0.266  probes 2.02  sweeps 6
+  X=6   N=2 full   sweep   loss 0.309  probes 2.03  sweeps 8
+  X=5   N=2 coarse sweep   loss 0.213  probes 2.04  sweeps 13
+  X=4   N=3 coarse sweep   loss 0.390  probes 2.07  sweeps 15
+  X=4   N=2 coarse sweep   loss 0.253  probes 2.07  sweeps 17
+  X=6   N=1 full   sweep   loss 0.241  probes 2.10  sweeps 13
+  X=6   N=3 full   runmax  loss 0.270  probes 2.10  sweeps 9
+  X=5   N=1 coarse sweep   loss 0.258  probes 2.11  sweeps 20
+  X=3   N=3 coarse sweep   loss 0.300  probes 2.11  sweeps 18
+  X=6   N=2 full   runmax  loss 0.274  probes 2.14  sweeps 12
+  X=5   N=3 full   sweep   loss 0.292  probes 2.15  sweeps 12
+  X=5   N=3 coarse runmax  loss 0.338  probes 2.16  sweeps 24
+  X=4   N=1 coarse sweep   loss 0.225  probes 2.16  sweeps 26
+  X=6   N=1 coarse runmax  loss 0.281  probes 2.17  sweeps 25
+  X=3   N=2 coarse sweep   loss 0.251  probes 2.20  sweeps 26
+  X=5   N=2 full   sweep   loss 0.248  probes 2.22  sweeps 13
+  X=4   N=3 full   sweep   loss 0.292  probes 2.26  sweeps 15
+  X=3   N=1 coarse sweep   loss 0.257  probes 2.26  sweeps 42
+  X=4   N=2 full   sweep   loss 0.289  probes 2.29  sweeps 17
+  X=5   N=2 coarse runmax  loss 0.269  probes 2.30  sweeps 35
+  X=5   N=1 full   sweep   loss 0.231  probes 2.32  sweeps 20
+  X=4   N=3 coarse runmax  loss 0.276  probes 2.33  sweeps 39
+  X=3   N=3 full   sweep   loss 0.262  probes 2.34  sweeps 19
+  X=5   N=3 full   runmax  loss 0.343  probes 2.42  sweeps 24
+  X=6   N=1 full   runmax  loss 0.276  probes 2.44  sweeps 25
+  X=4   N=1 full   sweep   loss 0.339  probes 2.45  sweeps 26
+  X=4   N=2 coarse runmax  loss 0.297  probes 2.47  sweeps 50
+  X=5   N=1 coarse runmax  loss 0.250  probes 2.49  sweeps 55
+  X=3   N=2 full   sweep   loss 0.317  probes 2.52  sweeps 26
+  X=3   N=3 coarse runmax  loss 0.353  probes 2.63  sweeps 60
+  X=5   N=2 full   runmax  loss 0.402  probes 2.69  sweeps 35
+  X=4   N=3 full   runmax  loss 0.299  probes 2.75  sweeps 39
+  X=3   N=1 full   sweep   loss 0.257  probes 2.76  sweeps 43
+  X=3   N=2 coarse runmax  loss 0.249  probes 2.79  sweeps 84
+  X=4   N=1 coarse runmax  loss 0.229  probes 2.79  sweeps 88
+  X=4   N=2 full   runmax  loss 0.316  probes 3.10  sweeps 53
+  X=5   N=1 full   runmax  loss 0.219  probes 3.12  sweeps 57
+  X=3   N=1 coarse runmax  loss 0.210  probes 3.13  sweeps 129
+  X=3   N=3 full   runmax  loss 0.275  probes 3.25  sweeps 59
+  X=3   N=2 full   runmax  loss 0.276  probes 3.74  sweeps 84
+  X=4   N=1 full   runmax  loss 0.217  probes 3.82  sweeps 90
+  X=3   N=1 full   runmax  loss 0.234  probes 4.57  sweeps 129
+  71 of the 72 settings within 4 probes/epoch on test; lowest loss among them: X=3 N=1 coarse runmax  loss 0.210  probes 3.13
+LLR_DONE scenario33

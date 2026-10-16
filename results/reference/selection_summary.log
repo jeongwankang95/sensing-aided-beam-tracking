@@ -1,0 +1,10 @@
+primary setting 66489: {"th_on": 0.8, "th_off": 0.5, "margin": 0.5, "t_trial": 2, "bl": 256, "verify": 4, "slack": 0.6}, re-sweep ["coarse", 3], mean regret -0.0671 dB
+within 0.01 dB: 22 settings, 22 of them with the coarse re-sweep three epochs after setup
+within 0.02 dB: 67 settings, 64 of them with the coarse re-sweep three epochs after setup
+within 0.05 dB: 419 settings, 304 of them with the coarse re-sweep three epochs after setup
+selected constants on a grid edge: ['bl'] | grid: {'th_on': [0.4, 0.6, 0.8, 1.0], 'th_off': [0.3, 0.5, 0.65], 'margin': [0.0, 0.5, 1.0, 2.0], 't_trial': [1, 2, 4], 'bl': [32, 64, 256], 'verify': [2, 4, 8, 16], 'slack': [0.4, 0.6, 0.8, 1.0, 1.5, 2.0, 3.0], 'resweep_k': [2, 3, 5, 7, 10, 15, 20]}
+earlier constants (2026-08-10): mean regret -0.0042, meets the probing condition: False; rank 657 of the 62717 settings that meet it (55718 with and 6999 without the re-sweep); sel3_val.json: rank 657 of 62717
+loso_without_S9   setting  80679: 0.8/0.65/0.5/2/32/2/0.8, re-sweep ["coarse", 3], pool mean regret +0.003
+loso_without_S31  setting 123924: 1.0/0.65/0.0/4/64/2/0.6, re-sweep ["coarse", 3], pool mean regret -0.127
+loso_without_S32  setting   6009: 0.4/0.3/0.5/2/256/4/0.6, re-sweep ["coarse", 3], pool mean regret -0.115
+-> results/analysis/loso3_val.json

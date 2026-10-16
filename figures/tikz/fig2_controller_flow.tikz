@@ -1,0 +1,24 @@
+\begin{tikzpicture}[
+  >=Latex,
+  node distance=1.20cm,
+  state/.style={draw=black, rounded corners=1.5pt, align=center,
+    minimum height=1.18cm, text width=1.43cm, inner sep=2.5pt,
+    font=\scriptsize},
+  trans/.style={-{Latex[length=1.6mm]}, line width=0.45pt},
+  lab/.style={font=\tiny, align=center, fill=white, inner sep=1pt}
+]
+  \node[state] (track) {\textbf{TRACK}\\feedback\\tracker};
+  \node[state, right=of track] (trial) {\textbf{TRIAL}\\invoke sensor;\\probe $p\pm1$};
+  \node[state, right=of trial] (sense) {\textbf{SENSE}\\sensor-guided;\\verify every $K$};
+
+      \draw[trans] (track.west) ++(-0.40,0) node[lab,left,fill=none]
+    {link setup;\\re-sweep at\\epoch $3$} -- (track.west);
+  \draw[trans] (track) -- node[lab,above=1pt,fill=none]
+    {$\hat\sigma>\theta_{\rm on}$\\$r_{\rm bl}=0$\\window} (trial);
+  \draw[trans] (trial) -- node[lab,above=1pt,fill=none]
+    {$q$ beats $a$\\by $m$} (sense);
+  \draw[trans] (trial.north) .. controls +(0,0.40) and +(0,0.40) ..
+    node[lab,above,fill=none] {reject; blacklist $N_{\rm bl}$} (track.north);
+  \draw[trans] (sense.south) .. controls +(0,-0.70) and +(0,-0.70) ..
+    node[lab,below,fill=none] {$\hat\sigma<\theta_{\rm off}$ or verified collapse} (track.south);
+\end{tikzpicture}

@@ -4,7 +4,7 @@
 criterion as the controller: minimize the mean validation regret over Scenarios 9, 31 and 32 against
 each scenario's validation-selected feedback-only tracker; then evaluate once on the four test sets.
 Controller class Ctl copied verbatim from needonly.py; ConfAdmit/SAFB from rev11/rev6; BayesFuse from rev10.
-usage: comp3.py locked_multi.json"""
+usage: python analysis/competitors.py configs/locked_v3.json"""
 import numpy as np, pandas as pd, os, sys, glob, json, itertools
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 C = 64
@@ -49,7 +49,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # rev_20260930/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1

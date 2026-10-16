@@ -1,0 +1,5 @@
+[missing_rescoring] analysis/decimation_sensor_off.py: 1 scoring lines patched
+scenario32 d=1 optimistic: sensor off 0.05159 @ 2.101 | with sensor 0.07061 @ 2.051 (model 1.0%) | V_sense -0.01902 [-0.05739, -0.00514] | probe saving 2.4%
+scenario32 d=2 optimistic: sensor off 0.06433 @ 2.420 | with sensor 0.06155 @ 2.402 (model 1.5%) | V_sense +0.00278 [-0.00344, +0.00860] | probe saving 0.7%
+scenario32 d=4 optimistic: sensor off 0.14434 @ 3.040 | with sensor 0.72557 @ 3.080 (model 4.5%) | V_sense -0.58122 [-1.23216, -0.01554] | probe saving -1.3%
+DECSK_DONE scenario32

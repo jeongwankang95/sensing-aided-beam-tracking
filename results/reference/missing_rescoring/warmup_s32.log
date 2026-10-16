@@ -1,0 +1,14 @@
+[missing_rescoring] analysis/warmup.py: 2 scoring lines patched
+
+################ scenario32 gate warm-up variants (fb-only 0.055; steady-state innovation medians 0.91/0.50/0.36/0.37)
+variant                        |    loss   p/ep  model%    p95 | trials  won first-cov open-med  g-med |      VoI deployed minus variant [95% CI]
+deployed                       |   0.071   2.05     1.0   0.38 |      4    0    3/3           7   1.42 |   -0.016 +0.000 [+0.000, +0.000]
+warm 3 acq                     |   0.071   2.05     1.0   0.38 |      4    0    3/3           7   1.42 |   -0.016 +0.000 [+0.000, +0.000]
+warm 6 acq                     |   0.069   2.06     1.0   0.37 |      4    0    0/3           8   1.02 |   -0.015 +0.001 [-0.001, +0.004]
+warm 10 acq                    |   0.056   2.09     1.0   0.27 |      4    0    0/3          12   0.99 |   -0.002 +0.014 [+0.001, +0.057]
+warm 16 acq                    |   0.061   2.01     1.0   0.34 |      4    0    0/3          22   0.92 |   -0.006 +0.010 [-0.007, +0.056]
+gate EMA init 0.0              |   0.071   2.05     1.0   0.38 |      4    0    3/3           7   1.12 |   -0.016 +0.000 [+0.000, +0.000]
+gate EMA init 0.5              |   0.071   2.05     1.0   0.38 |      4    0    3/3           7   1.20 |   -0.016 +0.000 [+0.000, +0.000]
+gate EMA 0.0 + warm 3          |   0.071   2.05     1.0   0.38 |      4    0    3/3           7   1.12 |   -0.016 +0.000 [+0.000, +0.000]
+gate EMA 0.0 + warm 6          |   0.069   2.08     1.0   0.37 |      4    0    0/3           8   0.87 |   -0.015 +0.002 [-0.001, +0.004]
+REV4_DONE scenario32

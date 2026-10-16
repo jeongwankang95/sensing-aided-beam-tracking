@@ -1,0 +1,12 @@
+
+=== dataset/scenario9: arm accuracy and coverage under decimation ===
+                                        d=1      d=2      d=4
+Accuracy, consecutive frames          44.7%    46.0%    48.8%
+Accuracy, d-spaced frames             44.7%    18.8%     0.9%
+Frames carrying a prediction          85.2%    85.1%    89.8%
+DECACC_DONE
+
+coverage per construction:
+  consec     d=1  acc  44.7%  coverage  85.2%
+  d2         d=2  acc  18.8%  coverage  70.1%
+  d4         d=4  acc   0.9%  coverage  38.7%

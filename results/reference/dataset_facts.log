@@ -1,0 +1,5 @@
+S9: epoch 111.0 ms; passes 136; train=91 (max len 65); val=17 (max len 50); test=28 (max len 50)
+S31: epoch 92.3 ms; passes 52; train=35 (max len 281); val=6 (max len 203); test=11 (max len 216)
+S32: epoch 91.9 ms; passes 15; train=10 (max len 405); val=2 (max len 258); test=3 (max len 376)
+S33: epoch 92.1 ms; passes 18; test=18 (max len 399)
+BS distance S9-S31 109.9 m, S32-S33 5.3 m

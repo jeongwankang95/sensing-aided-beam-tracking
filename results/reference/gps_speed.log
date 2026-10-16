@@ -1,0 +1,8 @@
+unit2_loc      med    mean-of-pass: LL 3.77 rest 3.81 | median-of-pass: LL 3.92 rest 3.98
+unit2_loc      mean   mean-of-pass: LL 3.76 rest 3.77 | median-of-pass: LL 3.86 rest 3.83
+unit2_loc      net    mean-of-pass: LL 3.72 rest 3.73 | median-of-pass: LL 3.84 rest 3.82
+unit2_loc      path   mean-of-pass: LL 3.76 rest 3.77 | median-of-pass: LL 3.86 rest 3.83
+unit2_loc_cal  med    mean-of-pass: LL 3.77 rest 3.81 | median-of-pass: LL 3.92 rest 3.98
+unit2_loc_cal  mean   mean-of-pass: LL 3.76 rest 3.77 | median-of-pass: LL 3.86 rest 3.83
+unit2_loc_cal  net    mean-of-pass: LL 3.72 rest 3.73 | median-of-pass: LL 3.84 rest 3.82
+unit2_loc_cal  path   mean-of-pass: LL 3.76 rest 3.77 | median-of-pass: LL 3.86 rest 3.83

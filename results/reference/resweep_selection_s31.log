@@ -1,0 +1,114 @@
+
+######## scenario31: 6 val / 11 test passes, reference slack 0.6
+val  reference tracker: loss 0.076  probes 2.29
+selected on val (min loss): {'slack': 0.4, 'how': 'coarse', 'k': 2}  (min loss, val probes <= 4): {'slack': 0.4, 'how': 'coarse', 'k': 2}
+TEST policy                                     loss dB  probes  model% sweeps  lockloss
+reference tracker                                 0.109    2.27     0.0      0         0
+controller (deployed)                             0.132    1.91     4.2      0         0
+re-sweep tracker, val-selected                    0.120    2.95     0.0     11         0
+controller + same re-sweep                        0.186    2.24     3.7     11         0
+paired  [reference tracker] - [controller (deployed)]: -0.023 [-0.147, +0.094]
+paired  [re-sweep tracker, val-selected] - [controller (deployed)]: -0.012 [-0.173, +0.185]
+paired  [re-sweep tracker, val-selected] - [controller + same re-sweep]: -0.066 [-0.185, +0.025]
+paired  [controller (deployed)] - [controller + same re-sweep]: -0.054 [-0.173, +0.005]
+
+TEST grid (98 re-sweep settings, sorted by probes; per-pass sums saved):
+  slack=3   coarse k=3   loss 0.269  probes 1.37
+  slack=3   coarse k=5   loss 0.251  probes 1.43
+  slack=1.5 coarse k=2   loss 0.259  probes 1.50
+  slack=2   coarse k=2   loss 0.232  probes 1.50
+  slack=3   coarse k=2   loss 0.325  probes 1.51
+  slack=3   coarse k=10  loss 0.310  probes 1.51
+  slack=1.5 coarse k=3   loss 0.202  probes 1.52
+  slack=3   coarse k=7   loss 0.315  probes 1.55
+  slack=3   coarse k=15  loss 0.268  probes 1.57
+  slack=3   coarse k=20  loss 0.243  probes 1.57
+  slack=2   coarse k=3   loss 0.191  probes 1.58
+  slack=2   coarse k=5   loss 0.193  probes 1.58
+  slack=1.5 coarse k=5   loss 0.178  probes 1.59
+  slack=1.5 coarse k=20  loss 0.126  probes 1.62
+  slack=1.5 coarse k=7   loss 0.358  probes 1.65
+  slack=1.5 coarse k=10  loss 0.159  probes 1.68
+  slack=2   coarse k=7   loss 0.360  probes 1.68
+  slack=1.5 coarse k=15  loss 0.162  probes 1.69
+  slack=2   coarse k=20  loss 0.201  probes 1.70
+  slack=3   full   k=3   loss 0.269  probes 1.72
+  slack=2   coarse k=10  loss 0.216  probes 1.72
+  slack=2   coarse k=15  loss 0.178  probes 1.73
+  slack=3   full   k=5   loss 0.268  probes 1.78
+  slack=1.5 full   k=2   loss 0.217  probes 1.80
+  slack=3   full   k=2   loss 0.241  probes 1.82
+  slack=2   full   k=2   loss 0.182  probes 1.83
+  slack=1.5 full   k=3   loss 0.202  probes 1.87
+  slack=3   full   k=10  loss 0.264  probes 1.88
+  slack=3   full   k=15  loss 0.278  probes 1.89
+  slack=1.5 full   k=5   loss 0.177  probes 1.90
+  slack=3   full   k=20  loss 0.250  probes 1.90
+  slack=3   full   k=7   loss 0.308  probes 1.92
+  slack=2   full   k=5   loss 0.190  probes 1.93
+  slack=2   full   k=3   loss 0.191  probes 1.93
+  slack=1.5 full   k=7   loss 0.192  probes 1.97
+  slack=1.5 full   k=20  loss 0.137  probes 1.99
+  slack=2   full   k=10  loss 0.162  probes 2.02
+  slack=1.5 full   k=10  loss 0.152  probes 2.02
+  slack=2   full   k=7   loss 0.198  probes 2.03
+  slack=1.5 full   k=15  loss 0.153  probes 2.03
+  slack=2   full   k=15  loss 0.177  probes 2.05
+  slack=2   full   k=20  loss 0.200  probes 2.07
+  slack=0.8 coarse k=3   loss 0.128  probes 2.16
+  slack=0.8 coarse k=10  loss 0.131  probes 2.16
+  slack=1   coarse k=3   loss 0.160  probes 2.21
+  slack=1   coarse k=10  loss 0.145  probes 2.22
+  slack=0.8 coarse k=2   loss 0.160  probes 2.24
+  slack=0.8 coarse k=5   loss 0.086  probes 2.24
+  slack=1   coarse k=2   loss 0.149  probes 2.25
+  slack=1   coarse k=20  loss 0.078  probes 2.28
+  slack=1   coarse k=5   loss 0.124  probes 2.31
+  slack=0.8 coarse k=20  loss 0.090  probes 2.31
+  slack=1   coarse k=15  loss 0.080  probes 2.32
+  slack=1   coarse k=7   loss 0.221  probes 2.35
+  slack=0.8 coarse k=7   loss 0.309  probes 2.35
+  slack=0.8 coarse k=15  loss 0.080  probes 2.37
+  slack=0.6 coarse k=7   loss 0.314  probes 2.39
+  slack=0.6 coarse k=3   loss 0.115  probes 2.41
+  slack=0.6 coarse k=10  loss 0.174  probes 2.43
+  slack=0.6 coarse k=5   loss 0.105  probes 2.48
+  slack=0.6 coarse k=2   loss 0.135  probes 2.49
+  slack=0.8 full   k=3   loss 0.128  probes 2.51
+  slack=1   full   k=2   loss 0.081  probes 2.51
+  slack=1   full   k=10  loss 0.080  probes 2.54
+  slack=0.8 full   k=10  loss 0.091  probes 2.55
+  slack=1   full   k=3   loss 0.160  probes 2.56
+  slack=0.8 full   k=2   loss 0.103  probes 2.56
+  slack=0.6 coarse k=20  loss 0.061  probes 2.58
+  slack=1   full   k=7   loss 0.084  probes 2.59
+  slack=0.8 full   k=5   loss 0.086  probes 2.59
+  slack=1   full   k=15  loss 0.080  probes 2.61
+  slack=1   full   k=20  loss 0.078  probes 2.61
+  slack=0.6 coarse k=15  loss 0.059  probes 2.62
+  slack=0.8 full   k=7   loss 0.112  probes 2.64
+  slack=0.8 full   k=20  loss 0.087  probes 2.67
+  slack=1   full   k=5   loss 0.124  probes 2.70
+  slack=0.8 full   k=15  loss 0.100  probes 2.71
+  slack=0.6 full   k=3   loss 0.115  probes 2.76
+  slack=0.6 full   k=2   loss 0.110  probes 2.76
+  slack=0.6 full   k=7   loss 0.109  probes 2.80
+  slack=0.6 full   k=5   loss 0.067  probes 2.81
+  slack=0.6 full   k=10  loss 0.102  probes 2.86
+  slack=0.6 full   k=15  loss 0.063  probes 2.89
+  slack=0.6 full   k=20  loss 0.062  probes 2.91
+  slack=0.4 coarse k=3   loss 0.088  probes 2.92
+  slack=0.4 coarse k=2   loss 0.120  probes 2.95
+  slack=0.4 coarse k=10  loss 0.136  probes 2.98
+  slack=0.4 coarse k=5   loss 0.067  probes 3.00
+  slack=0.4 coarse k=15  loss 0.067  probes 3.02
+  slack=0.4 coarse k=20  loss 0.068  probes 3.02
+  slack=0.4 coarse k=7   loss 0.223  probes 3.17
+  slack=0.4 full   k=3   loss 0.088  probes 3.27
+  slack=0.4 full   k=2   loss 0.066  probes 3.30
+  slack=0.4 full   k=7   loss 0.072  probes 3.33
+  slack=0.4 full   k=15  loss 0.068  probes 3.34
+  slack=0.4 full   k=5   loss 0.067  probes 3.35
+  slack=0.4 full   k=10  loss 0.068  probes 3.35
+  slack=0.4 full   k=20  loss 0.068  probes 3.37
+RESWEEP_DONE scenario31

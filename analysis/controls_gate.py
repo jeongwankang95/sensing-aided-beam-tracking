@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-"""Final locked evaluation: multi-regime val-selected constants, run ONCE per
-scenario test set, with the feedback-only tracker at its own val-selected slack."""
+"""controls_gate.py LOCKED ROOT SLACK --cache=CACHE: variants of the gate and the blacklist: an initial innovation estimate
+below the gate threshold (the gate opens only on measured innovation), blacklisting only proposals whose probed neighborhood
+falls below the served beam (proposals merely within the margin get a short blacklist), and both; the selected controller is
+reproduced first. Paired bootstrap against the selected controller. Writes results/analysis/<scenario>_variants.json.
+Paper: supplementary Sec. S17-C (the blacklist variant changes Scenario-9 loss by +0.003 dB [-0.013, +0.024]).
+usage: python analysis/controls_gate.py configs/locked_v3.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]
@@ -38,7 +42,7 @@ class Ctl:
         self.acq,self.p_acq,self.n=b,p,0; return good
     def _rs(self,Pt):
         # Option 3 (2026-10-02): one scheduled re-sweep rs_k epochs after link setup, logic verbatim from
-        # rev_20260930/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
+        # src/rs_classes.py RS.step; returns (beam, probes) on that epoch and None otherwise
         self.rs_t+=1
         if self.rs_k is None or self.rs_t!=self.rs_k: return None
         self.sweeps+=1

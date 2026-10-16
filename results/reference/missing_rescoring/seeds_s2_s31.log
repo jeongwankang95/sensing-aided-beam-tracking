@@ -1,0 +1,4 @@
+[missing_rescoring] analysis/seeds.py: 2 scoring lines patched
+
+[seed] scenario31 cache=both_scenario31_s2 | vision arm top-1 25.7% loss 0.516 cover 95.3% | fb 0.109@2.27 | ctl 0.117@2.28 model 5.3% p95 0.47 | VoI -0.008 [-0.027, +0.016] | always-on 0.490@0.21, +verify1 0.394@3.07, +verify2 0.445@1.63
+REV3_DONE scenario31 both_scenario31_s2

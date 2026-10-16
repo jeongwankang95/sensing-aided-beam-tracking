@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Cold-review check (2026-09-29), reviewer B-M1: does the Scenario-9 value of sensing survive a
-feedback-only reference with an absolute lock-loss detector and a charged re-acquisition sweep
-(BFR-like), or a velocity-initialized start? LLR parameters are selected on VALIDATION passes and
-evaluated once on TEST. The controller (class Ctl, copied verbatim from needonly.py) is unchanged.
-usage: llr.py locked_multi.json <root> <ref slack> --cache=results/predictions/both_<scn>.npz [--inherit=<json>]"""
+"""reselection_test.py LOCKED ROOT SLACK --cache=CACHE: the one-time test evaluation of the selections made on validation by
+analysis/selection.py (configs/sel3_val.json): the controller, its sensitivity selections and the lock-loss-recovery and
+re-sweep references selected with the same probe condition, with paired bootstrap intervals (10^5 resamples, seed 42) against
+the plain tracker and the re-sweep references; LOCKED (the earlier constants) gives the "deployed 08-10" row. Writes
+results/analysis/test3_<scenario>.json.
+Paper: supplementary Sec. S17-N and Table S21 (test columns), Secs. S17-O and S17-P and Tables S22-S23.
+usage: python analysis/reselection_test.py configs/locked_multi.json dataset/scenario9 0.4 --cache=results/predictions/both_scenario9.npz"""
 import numpy as np, pandas as pd, os, sys, glob, json, itertools
 LK = json.load(open(sys.argv[1])); K = LK['selected']
 root = sys.argv[2]; TSL = float(sys.argv[3])
@@ -146,8 +148,8 @@ class LLR(Ctl):
 
 
 # ======================= Option 3 TEST evaluation (2026-10-02) =======================
-# Each selection pre-registered in rev_20261002/PREREG.md and made on validation by sel3.py is evaluated ONCE here.
-# usage: test3.py locked_multi.json <root> <ref slack> --cache=results/predictions/both_<scn>.npz
+# Each selection, declared before the validation run and made on validation by analysis/selection.py, is evaluated ONCE here.
+# usage: python analysis/reselection_test.py configs/locked_multi.json <root> <ref slack> --cache=results/predictions/both_<scn>.npz
 def perpass(passes, pol):
     out = []
     for P, keys, pid in passes:

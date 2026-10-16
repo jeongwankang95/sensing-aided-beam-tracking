@@ -1,0 +1,29 @@
+[missing_rescoring] analysis/table2.py: 2 scoring lines patched
+
+######## scenario32: 3 test passes, reference slack 0.8; LLR<=4 {'X': 8, 'N': 1, 'how': 'full', 'ref': 'sweep'}; LLR same {'X': 8, 'N': 1, 'how': 'full', 'ref': 'sweep'}; RS free {'slack': 0.8, 'how': 'full', 'k': 2}; RS same {'slack': 0.6, 'how': 'coarse', 'k': 3}
+policy                                  loss probes model%    p95  >1dB%  >2dB%  >3dB%  LL
+causal persistence                     2.495   0.00    0.0   5.66   72.6   53.4   38.2   2
+feedback-only tracker                  0.055   1.68    0.0   0.28    0.1    0.0    0.0   0
+own tracker + re-sweep, no sensor      0.052   2.10    0.0   0.25    0.2    0.0    0.0   0
+LLR, <=4 probes (09-29)                0.055   1.68    0.0   0.28    0.1    0.0    0.0   0
+LLR, same criterion                    0.055   1.68    0.0   0.28    0.1    0.0    0.0   0
+re-sweep, any budget (09-30)           0.054   1.97    0.0   0.28    0.1    0.0    0.0   0
+re-sweep, same criterion               0.052   2.10    0.0   0.25    0.2    0.0    0.0   0
+METHOD                                 0.071   2.05    1.0   0.38    0.5    0.0    0.0   0
+unverified invocation                  1.462   0.19   98.6   4.39   48.0   29.9   18.4   1
+always-on                              1.463   0.10   98.6   4.39   48.0   29.9   18.4   1
+always-on + verification               1.152   3.03   98.6   3.63   41.7   23.6    9.6   0
+value = reference minus METHOD (positive: METHOD better); 10^5 paired pass bootstrap, seed 42; range over passes
+  causal persistence                   +2.424 [+1.012, +3.923]   pass range +1.012..+3.923
+  feedback-only tracker                -0.016 [-0.074, +0.010]   pass range -0.074..+0.010
+  own tracker + re-sweep, no sensor    -0.019 [-0.057, -0.005]   pass range -0.057..-0.005
+  LLR, <=4 probes (09-29)              -0.016 [-0.074, +0.010]   pass range -0.074..+0.010
+  LLR, same criterion                  -0.016 [-0.074, +0.010]   pass range -0.074..+0.010
+  re-sweep, any budget (09-30)         -0.017 [-0.074, +0.002]   pass range -0.074..+0.002
+  re-sweep, same criterion             -0.019 [-0.057, -0.005]   pass range -0.057..-0.005
+  unverified invocation                +1.392 [+0.772, +2.169]   pass range +0.772..+2.169
+  always-on                            +1.392 [+0.768, +2.175]   pass range +0.768..+2.175
+  always-on + verification             +1.081 [+0.661, +1.565]   pass range +0.661..+1.565
+per-pass value (fb - METHOD), sorted: -0.07 -0.01 0.01
+  frame-weighted mean -0.016, unweighted mean -0.023, median -0.006, passes > 1 dB: 0, positive: 1 of 3
+T2_DONE scenario32

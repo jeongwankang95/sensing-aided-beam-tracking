@@ -1,0 +1,11 @@
+scenario9 median epoch 0.1110 s | median net/decision d=1,2,4: 1.395 2.857 5.950 | trav 12.374 idx/s x epoch = 1.373
+scenario31 median epoch 0.0919 s | median net/decision d=1,2,4: 0.385 0.776 1.552 | trav 3.780 idx/s x epoch = 0.347
+scenario32 median epoch 0.0916 s | median net/decision d=1,2,4: 0.159 0.321 0.688 | trav 1.595 idx/s x epoch = 0.146
+scenario33 median epoch 0.0919 s | median net/decision d=1,2,4: 0.279 0.553 1.097 | trav 2.785 idx/s x epoch = 0.256
+best_prev       n=  1138 median 1.416 p95 5.228
+best_cur        n=  1138 median 1.467 p95 5.328
+top5_prev       n=  5690 median 1.548 p95 5.811
+above_med       n= 36416 median 0.962 p95 4.696
+all_lin_rel     n= 72832 median 1.312 p95 4.785
+setup_beam      n=  1138 median 0.687 p95 3.212
+served_window3  n=  3414 median 1.447 p95 5.464

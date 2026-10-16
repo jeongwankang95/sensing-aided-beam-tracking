@@ -1,0 +1,12 @@
+scenario31: scored frames 1391, frames with any missing reading 13
+  persistence        served-missing=  2 | loss 1.633 | (a) 1.549 | (b) 1.551
+  feedback-only      served-missing=  0 | loss 0.109 | (a) 0.109 | (b) 0.109
+  controller         served-missing=  0 | loss 0.118 | (a) 0.118 | (b) 0.117
+  skeleton           served-missing=  0 | loss 0.115 | (a) 0.115 | (b) 0.115
+  always-on          served-missing=  0 | loss 0.453 | (a) 0.453 | (b) 0.451
+  always-on+verify1  served-missing=  0 | loss 0.369 | (a) 0.369 | (b) 0.367
+  always-on+verify2  served-missing=  0 | loss 0.413 | (a) 0.413 | (b) 0.411
+  always-on+verify8  served-missing=  0 | loss 0.445 | (a) 0.445 | (b) 0.443
+  G_sys fb-ctl      current -0.008 [-0.026, +0.015] | (a) -0.008 [-0.026, +0.015] | (b) -0.008 [-0.026, +0.016]
+  V_sense skel-ctl  current -0.002 [-0.016, +0.019] | (a) -0.002 [-0.016, +0.019] | (b) -0.002 [-0.016, +0.019]
+  ao+v1 minus ctl   current +0.252 [+0.045, +0.427] | (a) +0.252 [+0.045, +0.427] | (b) +0.250 [+0.044, +0.425]

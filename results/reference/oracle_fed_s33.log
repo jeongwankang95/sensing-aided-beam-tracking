@@ -1,0 +1,11 @@
+  (111 NaN power entries -> replaced with 0)
+dataset/scenario33: 937 sequences x 7 slots (step 4)
+
+hold (oracle-fb) cap 0.952  loss  0.25 dB  >=90%  84.6%  >=50%  99.2%   per-slot dB [0.00 0.15 0.17 0.21 0.28 0.32 0.37]
+hold+-1 (3 probes) cap 0.976  loss  0.12 dB  >=90%  92.2%  >=50%  99.4%   per-slot dB [0.00 0.07 0.08 0.10 0.14 0.17 0.20]
+hold+-2 (5 probes) cap 0.984  loss  0.08 dB  >=90%  95.2%  >=50%  99.5%   per-slot dB [0.00 0.05 0.05 0.06 0.08 0.11 0.12]
+hold+-3 (7 probes) cap 0.989  loss  0.06 dB  >=90%  96.6%  >=50%  99.5%   per-slot dB [0.00 0.04 0.04 0.04 0.06 0.08 0.09]
+oracle           cap 1.000  loss  0.00 dB  >=90% 100.0%  >=50% 100.0%   per-slot dB [-0.00 -0.00 -0.00 -0.00 -0.00 -0.00 -0.00]
+
+beam drift from slot-t: per-slot mean [ 0.0  1.6  1.8  2.1  2.3  2.5  2.6] bins
+LINK_DONE

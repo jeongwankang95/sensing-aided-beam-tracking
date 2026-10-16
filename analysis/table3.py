@@ -4,7 +4,7 @@ exec(compile(open(_CORE).read(), _CORE, "exec"))   # same namespace as the origi
 
 # ======================= Option 3 (2026-10-02): Table II rows with the re-selected method =======================
 # Run on prelude3 (patched Ctl) with configs/locked_v3.json. Persist/SAFB verbatim from exceed_tail.py,
-# LLR verbatim from rev_20260929/llr_tail_classes.py, RS verbatim from rev_20260930/rs_classes.py.
+# LLR verbatim from src/llr_tail_classes.py, RS verbatim from src/rs_classes.py.
 class Persist:
     """Causal persistence: hold the link-setup beam, never probe."""
     def reset(self, a0, p0): self.a = int(a0); self.sense = self.trial = 0
@@ -212,7 +212,7 @@ def gate_random(rate):    return lambda s, pred: s.rng.random() < rate
 #   (b) Scenario 9: Table III attribution controls (random-gate rate re-matched by the same 14-step bisection as in
 #       attrib3.py) and the always-on rows with verification period none / 2 / 1;
 #   (c) Scenario 9: LLR without probing cap (validation selection sel_free of configs/llr_scenario9.json) and the
-#       velocity-initialized start, as rows fb(**sel_free) and fb(init2=True) of rev_20260929/llr.py;
+#       velocity-initialized start, as rows fb(**sel_free) and fb(init2=True) of analysis/lock_loss_selection.py;
 #   (d) every scenario: current-slot top-1 accuracy and coverage of the vision cache under decimation d = 1, 2, 4 with
 #       consecutive inputs, logic verbatim from decacc_tail.py (acc_cov), for --cache and, if given, --oldcache.
 SCN = os.path.basename(root); s = int(SCN.replace('scenario', ''))

@@ -1,0 +1,3 @@
+setup argmax [14, 14, 14, 14, 14, 14, 14]  argmax at t=3 [2, 1, 1, 2, 1, 1, 2]
+setup peak/median dB per pass [2.83 0.88 2.6  5.4  4.81 3.34 2.69] median 2.83
+rest-of-pass peak/median: pooled median 7.01, median of pass medians 7.21

@@ -1,0 +1,8 @@
+[missing_rescoring] analysis/decimation_slack.py: 2 scoring lines patched
+
+[B-4] scenario31 comparator slack re-selected on scenario31 validation at each d (deployed d=1 slack 0.6)
+ d | val-best fb(reselected) | fb(deployed)  | controller    | VoI-res VoI-dep
+ 1 | 0.6       0.109 @  2.38 |  0.109 @  2.38 |  0.117 @  2.38 |  -0.008  -0.008
+ 2 | 0.6       0.130 @  3.11 |  0.130 @  3.11 |  0.135 @  2.42 |  -0.006  -0.006
+ 4 | 2.0       0.871 @  2.67 |  0.591 @  4.03 |  0.276 @  2.94 |  +0.594  +0.314
+REV7_DONE scenario31

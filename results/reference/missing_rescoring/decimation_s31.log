@@ -1,0 +1,8 @@
+[missing_rescoring] analysis/decimation.py: 2 scoring lines patched
+
+=== dataset/scenario31 decimation (cache both_scenario31.npz) ===
+ d      drift  innov med |  fb loss  p/step |  ctl loss  p/step   inv% |     VoI
+ 1       1.51       0.50 |    0.109    2.27 |     0.117    2.30    6.9 |  -0.008
+ 2       1.57       0.58 |    0.130    2.88 |     0.135    2.48   23.7 |  -0.006
+ 4       2.22       1.08 |    0.591    3.87 |     0.276    3.09   34.4 |  +0.314
+DECIM_DONE
